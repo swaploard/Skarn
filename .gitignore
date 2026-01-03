@@ -4,3 +4,5 @@ Cargo.lock.orig
 .DS_Store
 skarn.toml
 
+# Internal planning/strategy memo — not part of the published project.
+Global High-Star Rust Project Research.md

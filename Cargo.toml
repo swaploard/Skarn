@@ -27,3 +27,7 @@ authors = ["Skarn contributors"]
 keywords = ["mcp", "sandbox", "ai", "agent", "llm"]
 categories = ["command-line-utilities", "development-tools"]
 
+[workspace.dependencies]
+# Internal crates
+skarn-common = { path = "crates/skarn-common", version = "1.0.0" }
+skarn-sandbox = { path = "crates/skarn-sandbox", version = "1.0.0" }
