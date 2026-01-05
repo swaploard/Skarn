@@ -8,3 +8,9 @@ use std::path::PathBuf;
 
 use serde::{Deserialize, Serialize};
 
+/// A fully-resolved command invocation.
+#[derive(Clone, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
+pub struct CommandSpec {
+    /// The program to execute (looked up on `PATH` unless absolute).
+    pub program: String,
+    /// Arguments passed to the program, not including `program` itself.

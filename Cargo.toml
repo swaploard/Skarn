@@ -31,3 +31,5 @@ categories = ["command-line-utilities", "development-tools"]
 # Internal crates
 skarn-common = { path = "crates/skarn-common", version = "1.0.0" }
 skarn-sandbox = { path = "crates/skarn-sandbox", version = "1.0.0" }
+skarn-compress = { path = "crates/skarn-compress", version = "1.0.0" }
+skarn-codemode = { path = "crates/skarn-codemode", version = "1.0.0" }
