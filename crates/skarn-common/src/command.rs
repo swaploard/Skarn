@@ -14,3 +14,10 @@ pub struct CommandSpec {
     /// The program to execute (looked up on `PATH` unless absolute).
     pub program: String,
     /// Arguments passed to the program, not including `program` itself.
+    pub args: Vec<String>,
+    /// Working directory. `None` means "inherit the parent's".
+    pub cwd: Option<PathBuf>,
+    /// Extra environment variables to set (added to the inherited environment).
+    pub env: Vec<(String, String)>,
+}
+

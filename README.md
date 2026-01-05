@@ -6,3 +6,4 @@
 
 [![CI](https://github.com/Rani367/Skarn/actions/workflows/ci.yml/badge.svg)](https://github.com/Rani367/Skarn/actions/workflows/ci.yml)
 [![MSRV](https://img.shields.io/badge/rustc-1.95+-blue.svg)](https://www.rust-lang.org)
+[![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-green.svg)](#license)

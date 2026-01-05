@@ -12,3 +12,9 @@ use serde::{Deserialize, Serialize};
 /// used on every compressed command, so it must be cheap. With the `tiktoken`
 /// feature enabled it instead uses the `o200k_base` tokenizer for exact counts.
 pub fn estimate_tokens(text: &str) -> usize {
+    #[cfg(feature = "tiktoken")]
+    {
+        token_count_tiktoken(text)
+    }
+    #[cfg(not(feature = "tiktoken"))]
+    {

@@ -2,3 +2,4 @@ name: Release
 
 on:
   push:
+    tags: ["v*"]
