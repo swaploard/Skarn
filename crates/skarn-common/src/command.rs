@@ -21,3 +21,10 @@ pub struct CommandSpec {
     pub env: Vec<(String, String)>,
 }
 
+impl CommandSpec {
+    /// Build a spec from a program name and an iterator of arguments.
+    pub fn new<P, A, S>(program: P, args: A) -> Self
+    where
+        P: Into<String>,
+        A: IntoIterator<Item = S>,
+        S: Into<String>,

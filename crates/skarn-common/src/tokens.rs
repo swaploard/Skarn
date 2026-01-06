@@ -18,3 +18,5 @@ pub fn estimate_tokens(text: &str) -> usize {
     }
     #[cfg(not(feature = "tiktoken"))]
     {
+        heuristic_tokens(text)
+    }

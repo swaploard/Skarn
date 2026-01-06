@@ -1,3 +1,6 @@
 [package]
 name = "skarn-common"
 description = "Shared primitives for the Skarn workspace: command specs, token estimation, errors."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
