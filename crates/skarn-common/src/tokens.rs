@@ -28,3 +28,7 @@ pub fn heuristic_tokens(text: &str) -> usize {
     if text.is_empty() {
         return 0;
     }
+    // ~4 bytes per token, but never report fewer than 1 for non-empty input,
+    // and add a small per-line surcharge because newlines/indentation tend to
+    // tokenize less efficiently than prose.
+    let bytes = text.len();

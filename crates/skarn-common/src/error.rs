@@ -14,3 +14,8 @@ pub type Result<T> = std::result::Result<T, Error>;
 #[non_exhaustive]
 pub enum Error {
     /// A filesystem or process I/O error.
+    #[error("io error: {0}")]
+    Io(#[from] std::io::Error),
+
+    /// A JSON (de)serialization error.
+    #[error("json error: {0}")]

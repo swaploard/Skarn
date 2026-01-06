@@ -35,3 +35,10 @@ impl CommandSpec {
             cwd: None,
             env: Vec::new(),
         }
+    }
+
+    /// Parse a spec from an argv-style slice (`["cargo", "test", "--quiet"]`).
+    ///
+    /// Returns `None` if the slice is empty.
+    pub fn from_argv<S: AsRef<str>>(argv: &[S]) -> Option<Self> {
+        let (program, rest) = argv.split_first()?;
