@@ -19,3 +19,6 @@ pub enum Error {
 
     /// A JSON (de)serialization error.
     #[error("json error: {0}")]
+    Json(#[from] serde_json::Error),
+
+    /// Invalid or unsupported configuration.

@@ -9,3 +9,4 @@
 [![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-green.svg)](#license)
 ![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg)
 
+*Cut your agent's API bill while physically stopping it from wiping your disk or exfiltrating your secrets.*

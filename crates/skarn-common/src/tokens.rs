@@ -32,3 +32,8 @@ pub fn heuristic_tokens(text: &str) -> usize {
     // and add a small per-line surcharge because newlines/indentation tend to
     // tokenize less efficiently than prose.
     let bytes = text.len();
+    let lines = text.bytes().filter(|&b| b == b'\n').count();
+    (bytes / 4).max(1) + lines / 8
+}
+
+#[cfg(feature = "tiktoken")]
