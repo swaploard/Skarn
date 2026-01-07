@@ -30,3 +30,6 @@ pub enum Error {
     Sandbox(String),
 
     /// The current platform / kernel does not support the requested sandbox and
+    /// `fail_closed` was set, so execution was refused.
+    #[error("sandbox unsupported on this platform: {0}")]
+    SandboxUnsupported(String),

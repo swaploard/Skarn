@@ -67,3 +67,11 @@ impl CommandSpec {
         let mut out = self.program.clone();
         for a in &self.args {
             out.push(' ');
+            if a.contains(char::is_whitespace) {
+                out.push('"');
+                out.push_str(a);
+                out.push('"');
+            } else {
+                out.push_str(a);
+            }
+        }

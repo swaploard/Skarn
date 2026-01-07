@@ -61,3 +61,7 @@ lto = true
 codegen-units = 1
 strip = true
 
+# A dedicated profile for distributable binaries that keeps unwinding (so the
+# Code Mode worker can isolate panics) while still optimizing hard for size.
+[profile.dist]
+inherits = "release"

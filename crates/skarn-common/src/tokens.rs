@@ -51,3 +51,10 @@ pub struct Savings {
     /// Estimated tokens before compression.
     pub before: usize,
     /// Estimated tokens after compression.
+    pub after: usize,
+}
+
+impl Savings {
+    /// Construct savings by estimating tokens for both strings.
+    pub fn measure(before: &str, after: &str) -> Self {
+        Self {
