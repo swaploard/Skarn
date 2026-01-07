@@ -27,3 +27,6 @@ pub enum Error {
 
     /// The OS-native sandbox layer rejected or could not apply a policy.
     #[error("sandbox error: {0}")]
+    Sandbox(String),
+
+    /// The current platform / kernel does not support the requested sandbox and

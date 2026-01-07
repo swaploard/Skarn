@@ -48,3 +48,6 @@ fn token_count_tiktoken(text: &str) -> usize {
 /// A before/after token comparison produced by the compression layer.
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Savings {
+    /// Estimated tokens before compression.
+    pub before: usize,
+    /// Estimated tokens after compression.

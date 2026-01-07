@@ -61,3 +61,9 @@ impl CommandSpec {
         self.env.push((key.into(), value.into()));
         self
     }
+
+    /// Render the command back to a human-readable shell-ish string (for logs).
+    pub fn display(&self) -> String {
+        let mut out = self.program.clone();
+        for a in &self.args {
+            out.push(' ');

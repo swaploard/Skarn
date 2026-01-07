@@ -4,3 +4,4 @@
 //! of types that are used across the sandbox, compression, code-mode, gateway,
 //! and CLI crates so they do not have to depend on one another for trivial
 //! data structures.
+
