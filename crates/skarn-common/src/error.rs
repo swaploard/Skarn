@@ -44,3 +44,6 @@ pub enum Error {
 
     /// A downstream MCP server or transport error.
     #[error("mcp error: {0}")]
+    Mcp(String),
+
+    /// A tool was requested that the gateway does not know about.

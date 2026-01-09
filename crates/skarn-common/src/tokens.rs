@@ -72,3 +72,8 @@ impl Savings {
     /// zero or if compression somehow grew the output.
     pub fn ratio(&self) -> f64 {
         if self.before == 0 || self.after >= self.before {
+            return 0.0;
+        }
+        self.saved() as f64 / self.before as f64
+    }
+

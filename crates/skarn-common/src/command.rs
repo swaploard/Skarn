@@ -95,3 +95,5 @@ impl CommandSpec {
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub enum ProgramClass {
+    /// Rust build / test tooling (`cargo`, `rustc`).
+    Rust,
