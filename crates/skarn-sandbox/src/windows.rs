@@ -15,3 +15,7 @@
 //! This file is compiled and tested in CI on Windows runners.
 
 #![cfg(windows)]
+
+use std::ffi::{OsStr, c_void};
+use std::os::windows::ffi::OsStrExt;
+

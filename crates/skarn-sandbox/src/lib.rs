@@ -11,3 +11,6 @@
 //!
 //! # Execution model
 //!
+//! The most robust way to confine *arbitrary* programs (including a program we
+//! do not control, like `cat`) is to run them through a **worker that is born
+//! sandboxed**. On Unix the worker calls [`apply_to_current_process`] as its

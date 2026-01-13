@@ -107,3 +107,7 @@ pub enum ProgramClass {
     Listing,
     /// Search (`grep`, `rg`, `ag`).
     Search,
+    /// Anything else.
+    Other,
+}
+

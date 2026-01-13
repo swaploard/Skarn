@@ -50,3 +50,4 @@ pub enum Error {
     #[error("unknown tool: {0}")]
     UnknownTool(String),
 
+    /// A catch-all for anything that does not fit the variants above.
