@@ -5,3 +5,5 @@
 //! filesystem and network access. We use "best effort" compatibility so that on
 //! an older kernel we degrade gracefully (and, if `fail_closed` is set, the
 //! caller refuses to run). seccomp adds defense-in-depth by killing syscalls
+//! Landlock cannot reason about (`ptrace`, `mount`, `bpf`, module loading, …).
+//!
