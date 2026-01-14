@@ -9,3 +9,4 @@
 //!   read    <path>        try to read a file at <path>
 //!   connect <host:port>   try to open a TCP connection
 //!
+//! Exit codes:

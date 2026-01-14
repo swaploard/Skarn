@@ -21,3 +21,7 @@ use crate::{Backend, NetPolicy, Policy, RestrictionReport, RestrictionStatus};
 
 /// System directories programs need to read/execute to start.
 const SYSTEM_READ: &[&str] = &["/usr", "/lib", "/lib64", "/bin", "/sbin", "/etc"];
+const SYSTEM_DEV_READ: &[&str] = &["/dev/null", "/dev/zero", "/dev/random", "/dev/urandom"];
+const PROC_SELF: &str = "/proc/self";
+
+/// Syscalls we deny outright via seccomp regardless of Landlock support.

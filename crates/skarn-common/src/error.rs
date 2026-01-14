@@ -59,3 +59,4 @@ impl Error {
     /// Construct a [`Error::Other`] from anything string-like.
     pub fn other(msg: impl fmt::Display) -> Self {
         Error::Other(msg.to_string())
+    }

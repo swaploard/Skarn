@@ -24,3 +24,4 @@ const SYSTEM_EXEC_SUBPATHS: &[&str] = &["/usr/bin", "/bin", "/usr/sbin", "/sbin"
 /// Generate the SBPL profile string for a policy.
 ///
 /// This is a pure function so it can be unit-tested directly without touching
+/// the kernel.

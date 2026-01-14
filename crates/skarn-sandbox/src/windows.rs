@@ -59,3 +59,6 @@ use crate::{Backend, NetPolicy, Policy, RestrictionReport, RestrictionStatus};
 /// `SE_GROUP_ENABLED` — the capability SID is active in the token.
 const SE_GROUP_ENABLED: u32 = 0x0000_0004;
 
+const APPCONTAINER_NAME: &str = "Skarn.Sandbox";
+
+/// A handle to a process running inside an AppContainer + Job Object, with the

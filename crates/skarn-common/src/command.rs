@@ -133,3 +133,6 @@ mod tests {
     use super::*;
 
     #[test]
+    fn argv_round_trip() {
+        let spec = CommandSpec::from_argv(&["cargo", "test", "--quiet"]).unwrap();
+        assert_eq!(spec.program, "cargo");

@@ -10,3 +10,4 @@ mod error;
 mod tokens;
 
 pub use command::{CommandSpec, classify_program};
+pub use error::{Error, Result};
