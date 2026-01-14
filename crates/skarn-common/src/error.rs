@@ -55,3 +55,5 @@ pub enum Error {
     Other(String),
 }
 
+impl Error {
+    /// Construct a [`Error::Other`] from anything string-like.

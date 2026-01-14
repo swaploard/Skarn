@@ -127,3 +127,5 @@ pub fn classify_program(tool_name: &str) -> ProgramClass {
         _ => ProgramClass::Other,
     }
 }
+
+#[cfg(test)]

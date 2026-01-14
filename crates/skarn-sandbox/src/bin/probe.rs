@@ -5,3 +5,5 @@
 //!     skarn-sandbox-probe <op> <arg>
 //!
 //! Operations:
+//!   write   <path>        try to create+write a file at <path>
+//!   read    <path>        try to read a file at <path>

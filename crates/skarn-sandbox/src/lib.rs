@@ -24,3 +24,6 @@
 //!
 //! The [`skarn`] CLI wires this together; this crate only provides the
 //! primitives and the [`Policy`] type.
+//!
+//! [`skarn`]: https://crates.io/crates/skarn
+

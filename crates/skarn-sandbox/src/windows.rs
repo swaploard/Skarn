@@ -44,3 +44,8 @@ use windows::Win32::System::JobObjects::{
     JOBOBJECT_BASIC_LIMIT_INFORMATION, JOBOBJECT_EXTENDED_LIMIT_INFORMATION,
     JobObjectExtendedLimitInformation, SetInformationJobObject,
 };
+use windows::Win32::System::Pipes::CreatePipe;
+use windows::Win32::System::Threading::{
+    CreateProcessW, DeleteProcThreadAttributeList, EXTENDED_STARTUPINFO_PRESENT,
+    GetExitCodeProcess, InitializeProcThreadAttributeList, LPPROC_THREAD_ATTRIBUTE_LIST,
+    PROC_THREAD_ATTRIBUTE_SECURITY_CAPABILITIES, PROCESS_CREATION_FLAGS, PROCESS_INFORMATION,

@@ -19,3 +19,5 @@ unsafe extern "C" {
 }
 
 /// System directories programs are executed from.
+const SYSTEM_EXEC_SUBPATHS: &[&str] = &["/usr/bin", "/bin", "/usr/sbin", "/sbin", "/usr/local/bin"];
+
