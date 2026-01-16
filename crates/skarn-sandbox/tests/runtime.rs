@@ -21,3 +21,4 @@ const EXIT_DENIED: i32 = 10;
 
 fn unique_root() -> PathBuf {
     let home = std::env::var("HOME").expect("HOME set");
+    let nanos = SystemTime::now()

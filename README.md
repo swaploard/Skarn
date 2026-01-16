@@ -19,3 +19,4 @@
 
 Autonomous AI coding agents have three expensive, dangerous habits:
 
+1. **Token bloat** — they pump raw `cargo test` / `npm install` output and *hundreds* of MCP tool schemas straight into the context window.

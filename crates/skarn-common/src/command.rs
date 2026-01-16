@@ -138,3 +138,6 @@ mod tests {
         assert_eq!(spec.program, "cargo");
         assert_eq!(spec.args, vec!["test", "--quiet"]);
         assert_eq!(spec.display(), "cargo test --quiet");
+    }
+
+    #[test]

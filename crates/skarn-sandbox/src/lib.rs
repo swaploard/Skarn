@@ -42,3 +42,8 @@ mod linux;
 use linux as imp;
 
 #[cfg(windows)]
+mod windows;
+#[cfg(windows)]
+use windows as imp;
+#[cfg(windows)]
+pub use windows::{Captured, SandboxChild, spawn_appcontainer};

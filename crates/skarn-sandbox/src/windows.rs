@@ -68,3 +68,5 @@ pub struct SandboxChild {
     thread: HANDLE,
     job: HANDLE,
     stdout_read: HANDLE,
+    stderr_read: HANDLE,
+}

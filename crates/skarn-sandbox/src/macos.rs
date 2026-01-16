@@ -28,3 +28,6 @@ const SYSTEM_EXEC_SUBPATHS: &[&str] = &["/usr/bin", "/bin", "/usr/sbin", "/sbin"
 pub fn profile_sbpl(policy: &Policy) -> String {
     let policy = policy.canonicalized();
     let mut p = String::with_capacity(1024);
+    p.push_str("(version 1)\n");
+    p.push_str("(deny default)\n");
+
