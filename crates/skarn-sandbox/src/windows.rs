@@ -70,3 +70,7 @@ pub struct SandboxChild {
     stdout_read: HANDLE,
     stderr_read: HANDLE,
 }
+
+/// Captured output of a sandboxed child.
+pub struct Captured {
+    pub stdout: Vec<u8>,

@@ -64,3 +64,4 @@ impl Error {
     /// Construct a [`Error::Config`] from anything string-like.
     pub fn config(msg: impl fmt::Display) -> Self {
         Error::Config(msg.to_string())
+    }

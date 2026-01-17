@@ -27,3 +27,9 @@ const PROC_SELF: &str = "/proc/self";
 /// Syscalls we deny outright via seccomp regardless of Landlock support.
 /// These are operations a sandboxed code/command runner never legitimately
 /// needs, and which are common privilege-escalation / escape primitives.
+fn dangerous_syscalls() -> &'static [libc::c_long] {
+    &[
+        libc::SYS_ptrace,
+        libc::SYS_mount,
+        libc::SYS_umount2,
+        libc::SYS_init_module,

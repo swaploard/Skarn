@@ -107,3 +107,6 @@ mod tests {
         assert!((s.ratio() - 0.9).abs() < 1e-9);
         assert_eq!(s.percent(), 90);
     }
+
+    #[test]
+    fn savings_never_negative() {

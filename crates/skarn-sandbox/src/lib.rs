@@ -47,3 +47,6 @@ mod windows;
 use windows as imp;
 #[cfg(windows)]
 pub use windows::{Captured, SandboxChild, spawn_appcontainer};
+
+#[cfg(not(any(target_os = "macos", target_os = "linux", windows)))]
+mod unsupported;

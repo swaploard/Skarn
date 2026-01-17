@@ -31,3 +31,5 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     p.push_str("(version 1)\n");
     p.push_str("(deny default)\n");
 
+    // Baseline capabilities a normal process needs just to run.
+    p.push_str("(allow process-fork)\n");
