@@ -83,3 +83,7 @@ impl SandboxChild {
     pub fn wait(&self) -> Result<i32> {
         // SAFETY: `process` is a valid handle until `Drop`.
         unsafe {
+            WaitForSingleObject(self.process, u32::MAX);
+            let mut code = 0u32;
+            GetExitCodeProcess(self.process, &mut code)
+                .map_err(|e| Error::sandbox(format!("GetExitCodeProcess: {e}")))?;

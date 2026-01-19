@@ -62,3 +62,7 @@ pub use skarn_common::{Error, Result};
 /// expressed precisely and is treated as "allow outbound" there (documented in
 /// the per-rule notes of the returned [`RestrictionReport`]).
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum NetPolicy {
+    /// Deny all network access (the secure default).
+    #[default]

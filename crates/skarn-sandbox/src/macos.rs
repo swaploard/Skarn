@@ -36,3 +36,8 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     p.push_str("(allow signal (target self))\n");
     p.push_str("(allow sysctl-read)\n");
     p.push_str("(allow mach-lookup)\n");
+    p.push_str("(allow file-read-metadata)\n");
+
+    // Filesystem reads.
+    //
+    // On modern macOS the dynamic loader pulls libraries from the dyld shared

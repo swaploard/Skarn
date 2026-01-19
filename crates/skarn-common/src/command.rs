@@ -146,3 +146,6 @@ mod tests {
         assert_eq!(spec.tool_name(), "cargo");
         assert_eq!(classify_program(&spec.tool_name()), ProgramClass::Rust);
     }
+
+    #[test]
+    fn empty_argv_is_none() {

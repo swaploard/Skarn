@@ -68,3 +68,5 @@ impl Error {
 
     /// Construct a [`Error::Sandbox`] from anything string-like.
     pub fn sandbox(msg: impl fmt::Display) -> Self {
+        Error::Sandbox(msg.to_string())
+    }

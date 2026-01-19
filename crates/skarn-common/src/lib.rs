@@ -11,3 +11,4 @@ mod tokens;
 
 pub use command::{CommandSpec, classify_program};
 pub use error::{Error, Result};
+pub use tokens::{Savings, estimate_tokens};
