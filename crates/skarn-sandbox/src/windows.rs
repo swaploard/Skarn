@@ -87,3 +87,13 @@ impl SandboxChild {
             let mut code = 0u32;
             GetExitCodeProcess(self.process, &mut code)
                 .map_err(|e| Error::sandbox(format!("GetExitCodeProcess: {e}")))?;
+            Ok(code as i32)
+        }
+    }
+
+    /// Drain the child's stdout and stderr to EOF (on separate threads, to avoid
+    /// the classic full-pipe deadlock), wait for exit, and return the captured
+    /// output and exit code.
+    pub fn wait_with_output(self) -> Result<Captured> {
+        // `HANDLE` is `!Send`; pass the raw value across the thread boundary.
+        let out_val = self.stdout_read.0 as isize;

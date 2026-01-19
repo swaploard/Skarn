@@ -41,3 +41,4 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     // Filesystem reads.
     //
     // On modern macOS the dynamic loader pulls libraries from the dyld shared
+    // cache via paths that move between OS releases (Cryptexes, firmlinks, …),

@@ -28,3 +28,5 @@ fn unique_root() -> PathBuf {
     let pid = std::process::id();
     let root = PathBuf::from(home).join(format!(".skarn-sbx-test-{pid}-{nanos}"));
     std::fs::create_dir_all(&root).unwrap();
+    root
+}

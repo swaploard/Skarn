@@ -66,3 +66,7 @@ pub use skarn_common::{Error, Result};
 pub enum NetPolicy {
     /// Deny all network access (the secure default).
     #[default]
+    DenyAll,
+    /// Allow loopback traffic only (localhost).
+    AllowLoopback,
+    /// Allow outbound connections but deny inbound binds.
