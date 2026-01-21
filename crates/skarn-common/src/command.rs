@@ -149,3 +149,6 @@ mod tests {
 
     #[test]
     fn empty_argv_is_none() {
+        let empty: &[&str] = &[];
+        assert!(CommandSpec::from_argv(empty).is_none());
+    }

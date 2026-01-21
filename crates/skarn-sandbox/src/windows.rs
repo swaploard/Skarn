@@ -97,3 +97,9 @@ impl SandboxChild {
     pub fn wait_with_output(self) -> Result<Captured> {
         // `HANDLE` is `!Send`; pass the raw value across the thread boundary.
         let out_val = self.stdout_read.0 as isize;
+        let err_val = self.stderr_read.0 as isize;
+        let out_thread = std::thread::spawn(move || drain_pipe(out_val));
+        let err_thread = std::thread::spawn(move || drain_pipe(err_val));
+
+        // SAFETY: `process` is valid until `self` (and thus `Drop`) ends, which
+        // is after the joins below.

@@ -14,3 +14,4 @@
 //!   10  operation was denied (permission denied / connection refused-by-sandbox)
 //!   11  operation failed for another reason
 //!   12  applying the sandbox failed
+//!   20  bad invocation

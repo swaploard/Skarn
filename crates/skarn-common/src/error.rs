@@ -70,3 +70,4 @@ impl Error {
     pub fn sandbox(msg: impl fmt::Display) -> Self {
         Error::Sandbox(msg.to_string())
     }
+}

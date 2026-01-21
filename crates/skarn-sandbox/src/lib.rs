@@ -70,3 +70,8 @@ pub enum NetPolicy {
     /// Allow loopback traffic only (localhost).
     AllowLoopback,
     /// Allow outbound connections but deny inbound binds.
+    AllowOutbound,
+    /// Allow all network access (escape hatch; discouraged).
+    AllowAll,
+}
+

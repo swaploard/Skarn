@@ -30,3 +30,5 @@ fn unique_root() -> PathBuf {
     std::fs::create_dir_all(&root).unwrap();
     root
 }
+
+fn run_probe(policy: &Policy, op: &str, arg: &str) -> i32 {
