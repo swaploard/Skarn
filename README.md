@@ -29,3 +29,4 @@ Autonomous AI coding agents have three expensive, dangerous habits:
 - **Compresses** shell output with declarative, per-tool filters — typically **70–90% fewer tokens**, while *guaranteeing* errors and warnings survive.
 - **Sandboxes** everything it executes with **OS-native kernel primitives** — Seatbelt on macOS, Landlock + seccomp on Linux, AppContainer on Windows — with **no Docker, no daemon, no VM**.
 
+```

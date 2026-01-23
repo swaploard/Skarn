@@ -103,3 +103,9 @@ pub struct Policy {
 }
 
 impl Default for Policy {
+    fn default() -> Self {
+        Self {
+            fs_read: Vec::new(),
+            fs_read_write: Vec::new(),
+            fs_exec: Vec::new(),
+            fs_deny_read: Vec::new(),

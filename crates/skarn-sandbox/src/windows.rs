@@ -150,3 +150,11 @@ fn drain_pipe(handle_val: isize) -> Vec<u8> {
             Ok(()) => {
                 if read == 0 {
                     break; // EOF
+                }
+                out.extend_from_slice(&buf[..read as usize]);
+            }
+            Err(e) => {
+                if e.code() != ERROR_BROKEN_PIPE.to_hresult() {
+                    tracing::debug!(error = %e, "sandbox pipe read ended");
+                }
+                break;
