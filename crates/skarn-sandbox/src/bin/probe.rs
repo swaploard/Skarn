@@ -27,3 +27,5 @@ fn main() {
     if args.len() < 3 {
         eprintln!("usage: probe <op> <arg>");
         std::process::exit(20);
+    }
+    let op = &args[1];

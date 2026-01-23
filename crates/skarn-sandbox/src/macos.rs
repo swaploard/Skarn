@@ -64,3 +64,6 @@ pub fn profile_sbpl(policy: &Policy) -> String {
         }
     }
 
+    // Execution: by default allow exec broadly (the danger we guard against is
+    // writes / network / reading secrets, not exec itself), but if the caller
+    // pinned an exec allow-list, honor it strictly.

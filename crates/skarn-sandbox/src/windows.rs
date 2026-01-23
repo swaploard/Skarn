@@ -158,3 +158,7 @@ fn drain_pipe(handle_val: isize) -> Vec<u8> {
                     tracing::debug!(error = %e, "sandbox pipe read ended");
                 }
                 break;
+            }
+        }
+    }
+    out

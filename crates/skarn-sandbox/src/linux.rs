@@ -54,3 +54,5 @@ fn dangerous_syscalls() -> &'static [libc::c_long] {
 pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     let policy = policy.canonicalized();
     let abi = ABI::V5; // FS read/write/exec + network (V4) + ioctl_dev (V5)
+
+    let mut ruleset = Ruleset::default()

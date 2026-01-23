@@ -109,3 +109,7 @@ impl Default for Policy {
             fs_read_write: Vec::new(),
             fs_exec: Vec::new(),
             fs_deny_read: Vec::new(),
+            net: NetPolicy::DenyAll,
+            allow_read_system: true,
+            fail_closed: true,
+        }

@@ -50,3 +50,6 @@ fn skip_if_unenforced() -> bool {
     false
 }
 
+#[test]
+fn writes_inside_workspace_are_allowed() {
+    if skip_if_unenforced() {
