@@ -113,3 +113,7 @@ impl Default for Policy {
             allow_read_system: true,
             fail_closed: true,
         }
+    }
+}
+
+/// Well-known secret locations under the user's home directory that should not

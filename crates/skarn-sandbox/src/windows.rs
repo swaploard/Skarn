@@ -162,3 +162,10 @@ fn drain_pipe(handle_val: isize) -> Vec<u8> {
         }
     }
     out
+}
+
+fn wide(s: &str) -> Vec<u16> {
+    OsStr::new(s)
+        .encode_wide()
+        .chain(std::iter::once(0))
+        .collect()

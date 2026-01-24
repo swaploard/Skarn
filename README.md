@@ -30,3 +30,4 @@ Autonomous AI coding agents have three expensive, dangerous habits:
 - **Sandboxes** everything it executes with **OS-native kernel primitives** — Seatbelt on macOS, Landlock + seccomp on Linux, AppContainer on Windows — with **no Docker, no daemon, no VM**.
 
 ```
+            ┌──────────────────────────── Skarn (one binary) ────────────────────────────┐

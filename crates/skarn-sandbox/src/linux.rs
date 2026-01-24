@@ -56,3 +56,8 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     let abi = ABI::V5; // FS read/write/exec + network (V4) + ioctl_dev (V5)
 
     let mut ruleset = Ruleset::default()
+        .set_compatibility(CompatLevel::BestEffort)
+        .handle_access(AccessFs::from_all(abi))
+        .map_err(|e| Error::sandbox(format!("landlock handle fs: {e}")))?;
+
+    // Landlock network filtering is port-based and cannot express "loopback
