@@ -130,3 +130,9 @@ pub fn default_secret_paths() -> Vec<PathBuf> {
         ".docker",
         ".netrc",
         ".npmrc",
+        ".pypirc",
+        ".config/gcloud",
+        ".config/gh",
+        ".cargo/credentials",
+        ".cargo/credentials.toml",
+    ]

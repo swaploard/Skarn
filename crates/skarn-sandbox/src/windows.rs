@@ -192,3 +192,8 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
     let policy = policy.canonicalized();
     // SAFETY: a long unsafe block of Win32 calls; each is documented inline.
     unsafe {
+        let sid = create_or_derive_sid()?;
+
+        // Grant the AppContainer SID the access the policy implies.
+        grant_access(
+            sid,

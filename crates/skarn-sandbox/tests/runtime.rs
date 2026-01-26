@@ -62,3 +62,7 @@ fn writes_inside_workspace_are_allowed() {
     let policy = Policy::builder().workspace(&workspace).build();
     let target = workspace.join("out.txt");
     let code = run_probe(&policy, "write", target.to_str().unwrap());
+
+    cleanup(&root);
+    assert_eq!(code, EXIT_OK, "writing inside the workspace should succeed");
+}

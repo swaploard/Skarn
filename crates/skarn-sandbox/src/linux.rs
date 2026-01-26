@@ -71,3 +71,4 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     }
 
     let mut created = ruleset
+        .create()
