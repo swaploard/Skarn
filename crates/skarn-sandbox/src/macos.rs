@@ -91,3 +91,7 @@ pub fn profile_sbpl(policy: &Policy) -> String {
                 "  (subpath {})\n",
                 sbpl_quote(&path.to_string_lossy())
             ));
+        }
+        p.push_str(")\n");
+    }
+

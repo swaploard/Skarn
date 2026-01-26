@@ -80,3 +80,4 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     // System paths legitimately vary across distros/arches (e.g. no `/lib64`),
     // so their skips are not worth reporting; user-requested paths are.
     let mut sys_skipped = Vec::new();
+    let mut skipped = Vec::new();

@@ -38,3 +38,5 @@ fn main() {
             Err(e) => {
                 eprintln!("bad policy json: {e}");
                 std::process::exit(20);
+            }
+        };

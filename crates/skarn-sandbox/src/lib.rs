@@ -156,3 +156,8 @@ impl Policy {
     /// process cannot move itself into an AppContainer — so it returns
     /// [`Error::SandboxUnsupported`]; use [`spawn_appcontainer`] instead.
     ///
+    /// Call this as early as possible in a worker process, before spawning
+    /// threads, so the restriction is inherited by everything that follows.
+    pub fn apply_to_current_process(&self) -> Result<RestrictionReport> {
+        let report = imp::apply(self);
+        match report {

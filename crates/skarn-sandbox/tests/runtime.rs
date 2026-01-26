@@ -72,3 +72,5 @@ fn writes_outside_workspace_are_denied() {
     if skip_if_unenforced() {
         return;
     }
+    let root = unique_root();
+    let workspace = root.join("workspace");

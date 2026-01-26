@@ -228,3 +228,9 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
         };
 
         // Build the proc-thread attribute list carrying the capabilities.
+        let mut size = 0usize;
+        let _ = InitializeProcThreadAttributeList(None, 1, None, &mut size);
+        let mut attr_buf = vec![0u8; size];
+        let attr_list = LPPROC_THREAD_ATTRIBUTE_LIST(attr_buf.as_mut_ptr() as _);
+        InitializeProcThreadAttributeList(Some(attr_list), 1, None, &mut size)
+            .map_err(|e| Error::sandbox(format!("InitializeProcThreadAttributeList: {e}")))?;
