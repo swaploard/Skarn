@@ -203,3 +203,11 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
         for p in &policy.fs_read {
             grant_access(sid, &p.to_string_lossy(), FILE_GENERIC_READ.0)?;
         }
+        for p in &policy.fs_read_write {
+            grant_access(
+                sid,
+                &p.to_string_lossy(),
+                FILE_GENERIC_READ.0 | FILE_GENERIC_WRITE.0 | FILE_GENERIC_EXECUTE.0,
+            )?;
+        }
+

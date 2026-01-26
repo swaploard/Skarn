@@ -84,3 +84,4 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     }
 
     // Readable subtrees.
+    if !policy.fs_read.is_empty() || !policy.fs_read_write.is_empty() {

@@ -141,3 +141,9 @@ pub fn default_secret_paths() -> Vec<PathBuf> {
     .collect()
 }
 
+impl Policy {
+    /// Start building a policy.
+    pub fn builder() -> PolicyBuilder {
+        PolicyBuilder {
+            policy: Policy::default(),
+        }

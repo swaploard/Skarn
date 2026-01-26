@@ -74,3 +74,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
         .create()
         .map_err(|e| Error::sandbox(format!("landlock create: {e}")))?;
 
+    let read = AccessFs::from_read(abi);
+    let read_write = AccessFs::from_read(abi) | AccessFs::from_write(abi);

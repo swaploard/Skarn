@@ -33,3 +33,5 @@ fn main() {
 
     if std::env::var("SKARN_PROBE_SELFAPPLY").as_deref() == Ok("1") {
         let policy_json = std::env::var("SKARN_PROBE_POLICY").unwrap_or_default();
+        let policy: Policy = match serde_json::from_str(&policy_json) {
+            Ok(p) => p,
