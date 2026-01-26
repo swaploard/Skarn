@@ -211,3 +211,11 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
             )?;
         }
 
+        // Network is granted by attaching well-known capability SIDs. With none,
+        // a default-deny AppContainer blocks all network (NetPolicy::DenyAll).
+        // `_sid_bufs` owns the SID memory `cap_attrs` points into; both must live
+        // until after CreateProcessW.
+        let (mut cap_attrs, _sid_bufs) = capability_sids(policy.net)?;
+        let security_caps = SECURITY_CAPABILITIES {
+            AppContainerSid: sid,
+            Capabilities: if cap_attrs.is_empty() {

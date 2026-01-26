@@ -85,3 +85,8 @@ pub fn profile_sbpl(policy: &Policy) -> String {
 
     // Readable subtrees.
     if !policy.fs_read.is_empty() || !policy.fs_read_write.is_empty() {
+        p.push_str("(allow file-read*\n");
+        for path in policy.fs_read.iter().chain(policy.fs_read_write.iter()) {
+            p.push_str(&format!(
+                "  (subpath {})\n",
+                sbpl_quote(&path.to_string_lossy())

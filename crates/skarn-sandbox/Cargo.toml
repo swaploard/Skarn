@@ -17,3 +17,4 @@ categories.workspace = true
 # filesystem/network operation and exits with a status code the test asserts on.
 name = "skarn-sandbox-probe"
 path = "src/bin/probe.rs"
+

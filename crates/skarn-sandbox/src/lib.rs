@@ -147,3 +147,7 @@ impl Policy {
         PolicyBuilder {
             policy: Policy::default(),
         }
+    }
+
+    /// Apply this policy to the **current process**, irreversibly.
+    ///

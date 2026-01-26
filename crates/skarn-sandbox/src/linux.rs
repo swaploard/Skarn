@@ -76,3 +76,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
 
     let read = AccessFs::from_read(abi);
     let read_write = AccessFs::from_read(abi) | AccessFs::from_write(abi);
+
+    // System paths legitimately vary across distros/arches (e.g. no `/lib64`),
