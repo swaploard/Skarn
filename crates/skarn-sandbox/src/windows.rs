@@ -169,3 +169,10 @@ fn wide(s: &str) -> Vec<u16> {
         .encode_wide()
         .chain(std::iter::once(0))
         .collect()
+}
+
+/// A process cannot move *itself* into an AppContainer on Windows, so the
+/// self-apply path is unsupported here; callers must use [`spawn_appcontainer`].
+pub fn apply(_policy: &Policy) -> Result<RestrictionReport> {
+    Err(Error::SandboxUnsupported(
+        "Windows cannot sandbox the current process; launch via spawn_appcontainer".to_string(),

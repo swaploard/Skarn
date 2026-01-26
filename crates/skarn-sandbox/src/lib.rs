@@ -117,3 +117,8 @@ impl Default for Policy {
 }
 
 /// Well-known secret locations under the user's home directory that should not
+/// be readable by sandboxed code, even when broad reads are permitted.
+pub fn default_secret_paths() -> Vec<PathBuf> {
+    let Some(home) = std::env::var_os("HOME").map(PathBuf::from) else {
+        return Vec::new();
+    };

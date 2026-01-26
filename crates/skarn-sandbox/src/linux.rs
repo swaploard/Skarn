@@ -61,3 +61,6 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
         .map_err(|e| Error::sandbox(format!("landlock handle fs: {e}")))?;
 
     // Landlock network filtering is port-based and cannot express "loopback
+    // only", so we only enforce it for the strict DenyAll case. AllowLoopback
+    // degrades to "unrestricted, with a note" (see below).
+    let restrict_net = matches!(policy.net, NetPolicy::DenyAll);

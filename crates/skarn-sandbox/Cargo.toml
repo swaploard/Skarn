@@ -15,3 +15,4 @@ categories.workspace = true
 # A tiny helper used by the integration tests (and handy for manual debugging):
 # it self-applies a policy passed via $SKARN_PROBE_POLICY, then performs a single
 # filesystem/network operation and exits with a status code the test asserts on.
+name = "skarn-sandbox-probe"

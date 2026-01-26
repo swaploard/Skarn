@@ -29,3 +29,4 @@ fn main() {
         std::process::exit(20);
     }
     let op = &args[1];
+    let arg = &args[2];

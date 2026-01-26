@@ -68,3 +68,6 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     // writes / network / reading secrets, not exec itself), but if the caller
     // pinned an exec allow-list, honor it strictly.
     if policy.fs_exec.is_empty() {
+        p.push_str("(allow process-exec*)\n");
+    } else {
+        p.push_str("(allow process-exec*\n");
