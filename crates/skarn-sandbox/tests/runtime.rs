@@ -56,3 +56,6 @@ fn writes_inside_workspace_are_allowed() {
         return;
     }
     let root = unique_root();
+    let workspace = root.join("workspace");
+    std::fs::create_dir_all(&workspace).unwrap();
+

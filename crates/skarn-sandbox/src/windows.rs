@@ -176,3 +176,12 @@ fn wide(s: &str) -> Vec<u16> {
 pub fn apply(_policy: &Policy) -> Result<RestrictionReport> {
     Err(Error::SandboxUnsupported(
         "Windows cannot sandbox the current process; launch via spawn_appcontainer".to_string(),
+    ))
+}
+
+/// Probe AppContainer availability. Always supported on Windows 8+, which is our
+/// minimum, so this reports `FullyEnforced`.
+pub fn probe() -> RestrictionReport {
+    RestrictionReport::new(Backend::AppContainer, RestrictionStatus::FullyEnforced)
+        .note("Windows AppContainer available")
+}

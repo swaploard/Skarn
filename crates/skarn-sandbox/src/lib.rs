@@ -122,3 +122,8 @@ pub fn default_secret_paths() -> Vec<PathBuf> {
     let Some(home) = std::env::var_os("HOME").map(PathBuf::from) else {
         return Vec::new();
     };
+    [
+        ".ssh",
+        ".aws",
+        ".gnupg",
+        ".kube",

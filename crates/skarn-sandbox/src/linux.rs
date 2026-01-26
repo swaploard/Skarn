@@ -64,3 +64,8 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     // only", so we only enforce it for the strict DenyAll case. AllowLoopback
     // degrades to "unrestricted, with a note" (see below).
     let restrict_net = matches!(policy.net, NetPolicy::DenyAll);
+    if restrict_net {
+        ruleset = ruleset
+            .handle_access(AccessNet::from_all(abi))
+            .map_err(|e| Error::sandbox(format!("landlock handle net: {e}")))?;
+    }
