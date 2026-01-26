@@ -136,3 +136,8 @@ pub fn default_secret_paths() -> Vec<PathBuf> {
         ".cargo/credentials",
         ".cargo/credentials.toml",
     ]
+    .iter()
+    .map(|s| home.join(s))
+    .collect()
+}
+

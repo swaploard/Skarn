@@ -72,3 +72,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
 
     let mut created = ruleset
         .create()
+        .map_err(|e| Error::sandbox(format!("landlock create: {e}")))?;
+

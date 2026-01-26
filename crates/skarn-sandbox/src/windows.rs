@@ -197,3 +197,9 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
         // Grant the AppContainer SID the access the policy implies.
         grant_access(
             sid,
+            &spec.program,
+            FILE_GENERIC_READ.0 | FILE_GENERIC_EXECUTE.0,
+        )?;
+        for p in &policy.fs_read {
+            grant_access(sid, &p.to_string_lossy(), FILE_GENERIC_READ.0)?;
+        }

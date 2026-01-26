@@ -77,3 +77,10 @@ pub fn profile_sbpl(policy: &Policy) -> String {
         for path in &policy.fs_exec {
             p.push_str(&format!(
                 "  (subpath {})\n",
+                sbpl_quote(&path.to_string_lossy())
+            ));
+        }
+        p.push_str(")\n");
+    }
+
+    // Readable subtrees.

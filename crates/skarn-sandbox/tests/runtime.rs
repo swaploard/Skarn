@@ -66,3 +66,5 @@ fn writes_inside_workspace_are_allowed() {
     cleanup(&root);
     assert_eq!(code, EXIT_OK, "writing inside the workspace should succeed");
 }
+
+#[test]
