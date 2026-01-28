@@ -161,3 +161,6 @@ impl Policy {
     pub fn apply_to_current_process(&self) -> Result<RestrictionReport> {
         let report = imp::apply(self);
         match report {
+            Ok(r) => {
+                if r.status == RestrictionStatus::NotEnforced && self.fail_closed {
+                    return Err(Error::SandboxUnsupported(format!(

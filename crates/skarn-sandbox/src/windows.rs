@@ -234,3 +234,12 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
         let attr_list = LPPROC_THREAD_ATTRIBUTE_LIST(attr_buf.as_mut_ptr() as _);
         InitializeProcThreadAttributeList(Some(attr_list), 1, None, &mut size)
             .map_err(|e| Error::sandbox(format!("InitializeProcThreadAttributeList: {e}")))?;
+        UpdateProcThreadAttribute(
+            attr_list,
+            0,
+            PROC_THREAD_ATTRIBUTE_SECURITY_CAPABILITIES as usize,
+            Some(&security_caps as *const _ as *const _),
+            std::mem::size_of::<SECURITY_CAPABILITIES>(),
+            None,
+            None,
+        )

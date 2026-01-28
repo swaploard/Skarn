@@ -74,3 +74,5 @@ fn writes_outside_workspace_are_denied() {
     }
     let root = unique_root();
     let workspace = root.join("workspace");
+    std::fs::create_dir_all(&workspace).unwrap();
+

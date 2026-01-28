@@ -40,3 +40,4 @@ fn main() {
                 std::process::exit(20);
             }
         };
+        if let Err(e) = policy.apply_to_current_process() {

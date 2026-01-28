@@ -81,3 +81,6 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     // so their skips are not worth reporting; user-requested paths are.
     let mut sys_skipped = Vec::new();
     let mut skipped = Vec::new();
+
+    // System read + exec.
+    if policy.allow_read_system {
