@@ -99,3 +99,5 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     if !policy.fs_read_write.is_empty() {
         p.push_str("(allow file-write*\n");
         for path in &policy.fs_read_write {
+            p.push_str(&format!(
+                "  (subpath {})\n",

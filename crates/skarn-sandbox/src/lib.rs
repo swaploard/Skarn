@@ -172,3 +172,8 @@ impl Policy {
             }
             Err(e) => Err(e),
         }
+    }
+
+    /// Canonicalize all paths in the policy, dropping any that do not exist.
+    ///
+    /// Kernel sandboxes generally require real, absolute paths. This is applied

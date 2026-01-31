@@ -36,3 +36,4 @@ Autonomous AI coding agents have three expensive, dangerous habits:
  (Claude    │      (≈1k tokens,            (QuickJS, hermetic,    │                 │         │
   Code,     │       not 30k)               OS-sandboxed)          ▼                 │         │
   Cursor…)  │                                              ┌────────────┐   ┌────────────┐   │
+            │   compressed 15-token  ◀──  return summary ──┤ MCP client │…  │ MCP client │   │
