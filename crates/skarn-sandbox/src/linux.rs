@@ -94,3 +94,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     }
 
     for path in &policy.fs_read {
+        created = add_path_rule(created, &path.to_string_lossy(), read, &mut skipped)?;
+    }

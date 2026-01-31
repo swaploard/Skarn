@@ -266,3 +266,5 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
                 hStdError: err_write,
                 ..Default::default()
             },
+            lpAttributeList: attr_list,
+        };
