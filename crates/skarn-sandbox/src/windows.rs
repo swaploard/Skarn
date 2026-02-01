@@ -271,3 +271,13 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
         let mut pi = PROCESS_INFORMATION::default();
 
         let mut cmdline = build_command_line(spec);
+        let cwd = policy
+            .fs_read_write
+            .first()
+            .map(|p| wide(&p.to_string_lossy()));
+
+        CreateProcessW(
+            PCWSTR::null(),
+            Some(PWSTR(cmdline.as_mut_ptr())),
+            None,
+            None,

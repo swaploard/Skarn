@@ -191,3 +191,5 @@ impl Policy {
             fs_exec: canon(&self.fs_exec),
             fs_deny_read: canon(&self.fs_deny_read),
             net: self.net,
+            allow_read_system: self.allow_read_system,
+            fail_closed: self.fail_closed,

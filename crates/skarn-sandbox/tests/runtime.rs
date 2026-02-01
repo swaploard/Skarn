@@ -86,3 +86,4 @@ fn writes_outside_workspace_are_denied() {
         code, EXIT_DENIED,
         "writing outside the workspace must be denied"
     );
+}

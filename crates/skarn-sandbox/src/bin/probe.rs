@@ -45,3 +45,5 @@ fn main() {
             std::process::exit(12);
         }
     }
+
+    let code = match op.as_str() {
