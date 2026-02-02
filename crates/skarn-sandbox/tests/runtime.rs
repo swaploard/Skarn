@@ -90,3 +90,6 @@ fn writes_outside_workspace_are_denied() {
 
 #[test]
 fn reading_a_designated_secret_is_denied() {
+    if skip_if_unenforced() {
+        return;
+    }

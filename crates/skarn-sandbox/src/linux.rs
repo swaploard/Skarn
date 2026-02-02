@@ -106,3 +106,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
             read | AccessFs::Execute,
             &mut skipped,
         )?;
+    }
+

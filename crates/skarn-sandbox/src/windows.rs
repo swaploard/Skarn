@@ -290,3 +290,11 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
             &si.StartupInfo,
             &mut pi,
         )
+        .map_err(|e| Error::sandbox(format!("CreateProcessW: {e}")))?;
+
+        DeleteProcThreadAttributeList(attr_list);
+
+        // Close the ends the child owns so our reads see EOF when it exits, and
+        // close the unused stdin pipe entirely (the child gets immediate EOF).
+        let _ = CloseHandle(out_write);
+        let _ = CloseHandle(err_write);

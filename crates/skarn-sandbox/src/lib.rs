@@ -199,3 +199,10 @@ impl Policy {
 
 /// Builder for [`Policy`].
 #[derive(Clone, Debug)]
+pub struct PolicyBuilder {
+    policy: Policy,
+}
+
+impl PolicyBuilder {
+    /// Confine to a single project directory: read+write the directory, read
+    /// (and exec) the system directories, deny the user's secret stores, and
