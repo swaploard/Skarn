@@ -114,3 +114,4 @@ pub fn profile_sbpl(policy: &Policy) -> String {
 
     // Network.
     match policy.net {
+        NetPolicy::DenyAll => { /* denied by default */ }

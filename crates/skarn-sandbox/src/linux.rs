@@ -108,3 +108,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
         )?;
     }
 
+    let mut notes = Vec::new();
+    if !skipped.is_empty() {

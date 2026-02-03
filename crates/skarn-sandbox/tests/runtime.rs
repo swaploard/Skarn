@@ -93,3 +93,4 @@ fn reading_a_designated_secret_is_denied() {
     if skip_if_unenforced() {
         return;
     }
+    let root = unique_root();

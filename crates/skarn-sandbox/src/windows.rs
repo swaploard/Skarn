@@ -298,3 +298,8 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
         // close the unused stdin pipe entirely (the child gets immediate EOF).
         let _ = CloseHandle(out_write);
         let _ = CloseHandle(err_write);
+        let _ = CloseHandle(in_read);
+        let _ = CloseHandle(in_write);
+
+        // Assign to a kill-on-close Job Object.
+        let job = CreateJobObjectW(None, PCWSTR::null())

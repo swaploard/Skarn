@@ -48,3 +48,7 @@ fn main() {
 
     let code = match op.as_str() {
         "write" => match try_write(arg) {
+            Ok(()) => 0,
+            Err(e) if is_denied(&e) => 10,
+            Err(_) => 11,
+        },

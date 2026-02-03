@@ -10,3 +10,4 @@ env:
   RUSTFLAGS: -D warnings
 
 jobs:
+  test:

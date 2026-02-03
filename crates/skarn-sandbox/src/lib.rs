@@ -206,3 +206,6 @@ pub struct PolicyBuilder {
 impl PolicyBuilder {
     /// Confine to a single project directory: read+write the directory, read
     /// (and exec) the system directories, deny the user's secret stores, and
+    /// deny network. This is the right default for `skarn run`.
+    pub fn workspace(mut self, dir: impl AsRef<Path>) -> Self {
+        self.policy.fs_read_write.push(dir.as_ref().to_path_buf());
