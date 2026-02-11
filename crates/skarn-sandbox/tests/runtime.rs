@@ -96,3 +96,4 @@ fn reading_a_designated_secret_is_denied() {
     let root = unique_root();
     let workspace = root.join("workspace");
     let secret_dir = root.join("secrets");
+    std::fs::create_dir_all(&workspace).unwrap();

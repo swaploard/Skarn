@@ -212,3 +212,8 @@ impl PolicyBuilder {
         self.policy.fs_deny_read.extend(default_secret_paths());
         self.policy.allow_read_system = true;
         self.policy.net = NetPolicy::DenyAll;
+        self
+    }
+
+    /// Mark a subtree as a secret that must not be readable.
+    pub fn deny_read(mut self, dir: impl AsRef<Path>) -> Self {

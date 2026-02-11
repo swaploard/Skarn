@@ -308,3 +308,6 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
             BasicLimitInformation: JOBOBJECT_BASIC_LIMIT_INFORMATION {
                 LimitFlags: JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE,
                 ..Default::default()
+            },
+            ..Default::default()
+        };

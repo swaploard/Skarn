@@ -55,3 +55,4 @@ fn main() {
         "read" => match try_read(arg) {
             Ok(()) => 0,
             Err(e) if is_denied(&e) => 10,
+            Err(_) => 11,
