@@ -209,3 +209,6 @@ impl PolicyBuilder {
     /// deny network. This is the right default for `skarn run`.
     pub fn workspace(mut self, dir: impl AsRef<Path>) -> Self {
         self.policy.fs_read_write.push(dir.as_ref().to_path_buf());
+        self.policy.fs_deny_read.extend(default_secret_paths());
+        self.policy.allow_read_system = true;
+        self.policy.net = NetPolicy::DenyAll;

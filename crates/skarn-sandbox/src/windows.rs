@@ -303,3 +303,8 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
 
         // Assign to a kill-on-close Job Object.
         let job = CreateJobObjectW(None, PCWSTR::null())
+            .map_err(|e| Error::sandbox(format!("CreateJobObjectW: {e}")))?;
+        let info = JOBOBJECT_EXTENDED_LIMIT_INFORMATION {
+            BasicLimitInformation: JOBOBJECT_BASIC_LIMIT_INFORMATION {
+                LimitFlags: JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE,
+                ..Default::default()

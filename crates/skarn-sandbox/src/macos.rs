@@ -115,3 +115,5 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     // Network.
     match policy.net {
         NetPolicy::DenyAll => { /* denied by default */ }
+        NetPolicy::AllowLoopback => {
+            p.push_str("(allow network* (local ip \"localhost:*\") (remote ip \"localhost:*\"))\n");

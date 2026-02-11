@@ -94,3 +94,5 @@ fn reading_a_designated_secret_is_denied() {
         return;
     }
     let root = unique_root();
+    let workspace = root.join("workspace");
+    let secret_dir = root.join("secrets");
