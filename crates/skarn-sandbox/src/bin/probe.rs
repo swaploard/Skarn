@@ -56,3 +56,5 @@ fn main() {
             Ok(()) => 0,
             Err(e) if is_denied(&e) => 10,
             Err(_) => 11,
+        },
+        "connect" => match try_connect(arg) {

@@ -1,2 +1,3 @@
 # Skarn built-in compression rules.
 #
+# `default` applies to every command. `profiles.<tool>` patches the default for

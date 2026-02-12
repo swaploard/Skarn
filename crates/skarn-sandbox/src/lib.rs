@@ -217,3 +217,6 @@ impl PolicyBuilder {
 
     /// Mark a subtree as a secret that must not be readable.
     pub fn deny_read(mut self, dir: impl AsRef<Path>) -> Self {
+        self.policy.fs_deny_read.push(dir.as_ref().to_path_buf());
+        self
+    }

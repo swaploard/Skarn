@@ -115,3 +115,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
             skipped.len(),
             skipped.join(", ")
         ));
+    }
+    if matches!(policy.net, NetPolicy::AllowLoopback) {
