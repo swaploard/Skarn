@@ -132,3 +132,6 @@ pub fn profile_sbpl(policy: &Policy) -> String {
 }
 
 /// Quote a string for SBPL (double-quoted, backslash-escaped).
+fn sbpl_quote(s: &str) -> String {
+    let mut out = String::with_capacity(s.len() + 2);
+    out.push('"');

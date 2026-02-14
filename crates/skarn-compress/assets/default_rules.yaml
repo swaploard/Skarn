@@ -4,3 +4,4 @@
 # a specific tool (matched on the program's base name). Scalar fields override;
 # `drop`/`keep` lists are appended. `keep` always beats `drop`, and keep-matching
 # lines are rescued from the elided middle when output is truncated.
+#

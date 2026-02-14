@@ -337,3 +337,7 @@ enum PipeEnd {
     Read,
     Write,
 }
+
+/// Create a pipe and return `(read_end, write_end)`, clearing the inherit flag on
+/// the end the parent keeps.
+///

@@ -120,3 +120,6 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
         notes.push(
             "Landlock cannot restrict network to loopback; network left unrestricted".to_string(),
         );
+    }
+    // For DenyAll we governed AccessNet but added zero NetPort rules, so every
+    // bind/connect is denied.

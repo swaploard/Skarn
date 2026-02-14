@@ -8,3 +8,4 @@ use crate::rules::Rules;
 pub struct CompiledProfile {
     strip_ansi: bool,
     collapse_carriage_returns: bool,
+    collapse_blank_lines: bool,

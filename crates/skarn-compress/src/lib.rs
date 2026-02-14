@@ -4,3 +4,6 @@
 //! it feeds back into the model is mostly noise: progress bars, "Compiling …"
 //! spam, thousands of passing-test confirmations. [`Compressor`] strips that
 //! down to the semantic signal — errors, warnings, failures — typically cutting
+//! 70–90% of the tokens while *guaranteeing* error lines survive truncation.
+//!
+//! ```

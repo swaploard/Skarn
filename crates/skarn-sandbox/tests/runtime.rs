@@ -108,3 +108,4 @@ fn reading_a_designated_secret_is_denied() {
         .build();
     let code = run_probe(&policy, "read", secret.to_str().unwrap());
 
+    cleanup(&root);
