@@ -233,3 +233,5 @@ impl PolicyBuilder {
         self
     }
 
+    /// Allow executing binaries from a subtree.
+    pub fn exec(mut self, dir: impl AsRef<Path>) -> Self {

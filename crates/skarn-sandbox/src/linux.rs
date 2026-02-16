@@ -127,3 +127,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     let status = created
         .restrict_self()
         .map_err(|e| Error::sandbox(format!("landlock restrict_self: {e}")))?;
+
+    let restriction_status = match status.ruleset {

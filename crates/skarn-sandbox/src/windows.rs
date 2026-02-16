@@ -344,3 +344,6 @@ enum PipeEnd {
 /// # Safety
 /// `sa` must be a valid `SECURITY_ATTRIBUTES`.
 unsafe fn make_pipe(sa: &SECURITY_ATTRIBUTES, parent: PipeEnd) -> Result<(HANDLE, HANDLE)> {
+    let mut read = HANDLE::default();
+    let mut write = HANDLE::default();
+    unsafe {

@@ -137,3 +137,5 @@ fn sbpl_quote(s: &str) -> String {
     out.push('"');
     for c in s.chars() {
         if c == '"' || c == '\\' {
+            out.push('\\');
+        }

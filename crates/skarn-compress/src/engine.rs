@@ -11,3 +11,6 @@ pub struct CompiledProfile {
     collapse_blank_lines: bool,
     dedupe_consecutive: bool,
     max_lines: usize,
+    head_lines: usize,
+    tail_lines: usize,
+    max_rescued_lines: usize,

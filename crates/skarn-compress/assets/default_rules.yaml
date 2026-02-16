@@ -6,3 +6,6 @@
 # lines are rescued from the elided middle when output is truncated.
 #
 # Regexes use Rust `regex` syntax. Single-quoted YAML keeps backslashes literal.
+
+default:
+  strip_ansi: true

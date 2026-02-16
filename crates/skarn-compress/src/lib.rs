@@ -7,3 +7,7 @@
 //! 70–90% of the tokens while *guaranteeing* error lines survive truncation.
 //!
 //! ```
+//! use skarn_common::CommandSpec;
+//! use skarn_compress::Compressor;
+//!
+//! let c = Compressor::builtin();
