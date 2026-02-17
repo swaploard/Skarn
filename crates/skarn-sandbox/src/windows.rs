@@ -347,3 +347,12 @@ unsafe fn make_pipe(sa: &SECURITY_ATTRIBUTES, parent: PipeEnd) -> Result<(HANDLE
     let mut read = HANDLE::default();
     let mut write = HANDLE::default();
     unsafe {
+        CreatePipe(&mut read, &mut write, Some(sa as *const _), 0)
+            .map_err(|e| Error::sandbox(format!("CreatePipe: {e}")))?;
+        let parent_handle = match parent {
+            PipeEnd::Read => read,
+            PipeEnd::Write => write,
+        };
+        SetHandleInformation(parent_handle, HANDLE_FLAG_INHERIT.0, HANDLE_FLAGS(0))
+            .map_err(|e| Error::sandbox(format!("SetHandleInformation: {e}")))?;
+    }

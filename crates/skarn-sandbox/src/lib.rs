@@ -235,3 +235,5 @@ impl PolicyBuilder {
 
     /// Allow executing binaries from a subtree.
     pub fn exec(mut self, dir: impl AsRef<Path>) -> Self {
+        self.policy.fs_exec.push(dir.as_ref().to_path_buf());
+        self

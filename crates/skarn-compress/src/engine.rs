@@ -14,3 +14,8 @@ pub struct CompiledProfile {
     head_lines: usize,
     tail_lines: usize,
     max_rescued_lines: usize,
+    drop: RegexSet,
+    keep: RegexSet,
+}
+
+/// What a single stream's compression produced.
