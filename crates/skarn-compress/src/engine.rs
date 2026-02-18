@@ -24,3 +24,7 @@ pub struct StreamResult {
     pub original_lines: usize,
     pub kept_lines: usize,
 }
+
+impl CompiledProfile {
+    /// Compile rules. Invalid regexes are skipped (with the offending pattern
+    /// reported in `errors`) rather than failing the whole compressor.

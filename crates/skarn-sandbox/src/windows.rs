@@ -359,3 +359,8 @@ unsafe fn make_pipe(sa: &SECURITY_ATTRIBUTES, parent: PipeEnd) -> Result<(HANDLE
     Ok((read, write))
 }
 
+/// Build the AppContainer network capability SIDs for `net`. Returns the
+/// `SID_AND_ATTRIBUTES` array and the buffers that own the SID bytes (the array
+/// borrows them, so the caller must keep both alive together).
+fn capability_sids(net: NetPolicy) -> Result<(Vec<SID_AND_ATTRIBUTES>, Vec<Vec<u8>>)> {
+    let names: &[&str] = match net {

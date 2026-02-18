@@ -111,3 +111,6 @@ fn reading_a_designated_secret_is_denied() {
     cleanup(&root);
     assert_eq!(
         code, EXIT_DENIED,
+        "reading a designated secret must be denied"
+    );
+}

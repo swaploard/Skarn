@@ -240,3 +240,8 @@ impl PolicyBuilder {
     }
 
     /// Set the network policy.
+    pub fn net(mut self, net: NetPolicy) -> Self {
+        self.policy.net = net;
+        self
+    }
+

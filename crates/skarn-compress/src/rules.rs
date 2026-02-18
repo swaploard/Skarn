@@ -13,3 +13,6 @@ pub struct RuleSet {
     pub default: Rules,
     /// Keyed by tool name (see [`skarn_common::CommandSpec::tool_name`]).
     #[serde(default)]
+    pub profiles: BTreeMap<String, ProfilePatch>,
+}
+
