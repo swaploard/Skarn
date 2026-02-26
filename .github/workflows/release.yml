@@ -27,3 +27,4 @@ jobs:
         with:
           targets: ${{ matrix.target }}
       # Belt-and-suspenders: the repo's rust-toolchain.toml can shadow the action's
+      # `targets:` input, so install the target's std explicitly.

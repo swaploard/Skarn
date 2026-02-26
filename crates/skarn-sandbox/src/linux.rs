@@ -148,3 +148,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
 fn add_path_rule(
     created: landlock::RulesetCreated,
     path: &str,
+    access: BitFlags<AccessFs>,
+    skipped: &mut Vec<String>,

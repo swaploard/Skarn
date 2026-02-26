@@ -278,3 +278,5 @@ pub enum Backend {
 
 impl std::fmt::Display for Backend {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let s = match self {
+            Backend::Seatbelt => "Seatbelt",

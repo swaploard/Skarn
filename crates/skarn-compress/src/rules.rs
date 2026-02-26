@@ -36,3 +36,6 @@ pub struct Rules {
     #[serde(default = "default_max_lines")]
     pub max_lines: usize,
     /// Lines to keep from the start when truncating.
+    #[serde(default = "default_head")]
+    pub head_lines: usize,
+    /// Lines to keep from the end when truncating.

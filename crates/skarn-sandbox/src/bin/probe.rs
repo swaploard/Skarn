@@ -68,3 +68,7 @@ fn main() {
     };
     std::process::exit(code);
 }
+
+fn is_denied(e: &std::io::Error) -> bool {
+    // EPERM (1) and EACCES (13) both indicate the kernel sandbox refused us.
+    e.kind() == std::io::ErrorKind::PermissionDenied

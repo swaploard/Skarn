@@ -404,3 +404,7 @@ fn derive_capability_sid(name: &str) -> Result<Vec<u8>> {
 
     // SAFETY: out-params are valid; `wname` is a NUL-terminated wide string.
     unsafe {
+        DeriveCapabilitySidsFromName(
+            PCWSTR(wname.as_ptr()),
+            &mut group_sids,
+            &mut group_count,

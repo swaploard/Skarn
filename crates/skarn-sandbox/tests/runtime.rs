@@ -133,3 +133,4 @@ fn reading_system_files_is_allowed() {
         "/etc/hostname"
     };
     let code = run_probe(&policy, "read", probe_target);
+

@@ -159,3 +159,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     if rc != 0 {
         let msg = if errbuf.is_null() {
             format!("sandbox_init failed (rc={rc})")
+        } else {
+            // SAFETY: non-null errbuf points to a NUL-terminated string owned by
