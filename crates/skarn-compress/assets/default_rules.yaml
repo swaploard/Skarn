@@ -19,3 +19,4 @@ default:
   drop: []
   keep:
     - '(?i)\berror\b'
+    - '(?i)\bwarning\b'

@@ -385,3 +385,10 @@ fn capability_sids(net: NetPolicy) -> Result<(Vec<SID_AND_ATTRIBUTES>, Vec<Vec<u
         let buf = derive_capability_sid(name)?;
         // The `Vec<u8>` heap allocation is stable when moved into `bufs`.
         attrs.push(SID_AND_ATTRIBUTES {
+            Sid: PSID(buf.as_ptr() as *mut c_void),
+            Attributes: SE_GROUP_ENABLED,
+        });
+        bufs.push(buf);
+    }
+    Ok((attrs, bufs))
+}

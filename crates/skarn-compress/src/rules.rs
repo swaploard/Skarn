@@ -27,3 +27,5 @@ pub struct Rules {
     pub collapse_carriage_returns: bool,
     /// Collapse runs of blank lines to a single blank line.
     #[serde(default = "yes")]
+    pub collapse_blank_lines: bool,
+    /// Collapse runs of identical adjacent lines to `line  (×N)`.

@@ -155,3 +155,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     // SAFETY: `c_profile` is a valid NUL-terminated C string; `errbuf` is a
     // valid out-pointer. `sandbox_init` either returns 0 (success, *errbuf left
     // NULL) or non-zero and allocates an error string we must free.
+    let rc = unsafe { sandbox_init(c_profile.as_ptr(), 0, &mut errbuf) };
+    if rc != 0 {

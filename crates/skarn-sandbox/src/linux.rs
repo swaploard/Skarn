@@ -144,3 +144,4 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     report.notes = notes;
     Ok(report)
 }
+

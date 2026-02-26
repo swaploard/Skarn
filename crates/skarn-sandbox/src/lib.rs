@@ -267,3 +267,8 @@ impl PolicyBuilder {
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Backend {
     /// macOS Seatbelt (`sandbox_init`).
+    Seatbelt,
+    /// Linux Landlock LSM (+ seccomp-bpf).
+    Landlock,
+    /// Windows AppContainer.
+    AppContainer,
