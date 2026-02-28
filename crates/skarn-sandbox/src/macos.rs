@@ -163,3 +163,7 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
             // SAFETY: non-null errbuf points to a NUL-terminated string owned by
             // the sandbox library; we copy it then free it.
             let m = unsafe { CStr::from_ptr(errbuf) }
+                .to_string_lossy()
+                .into_owned();
+            unsafe { sandbox_free_error(errbuf) };
+            m

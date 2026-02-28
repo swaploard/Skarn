@@ -31,3 +31,4 @@ pub use rules::{ProfilePatch, RuleSet, Rules};
 #[derive(Clone, Debug)]
 pub struct Compressed {
     /// The compressed, agent-ready text (stdout, then stderr if non-empty).
+    pub text: String,

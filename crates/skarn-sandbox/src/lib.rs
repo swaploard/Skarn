@@ -284,3 +284,5 @@ impl std::fmt::Display for Backend {
             Backend::AppContainer => "AppContainer",
             Backend::None => "None",
         };
+        f.write_str(s)
+    }

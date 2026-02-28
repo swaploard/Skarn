@@ -134,3 +134,5 @@ fn reading_system_files_is_allowed() {
     };
     let code = run_probe(&policy, "read", probe_target);
 
+    cleanup(&root);
+    // On Linux this exercises the allow-list (/etc is granted); on macOS the

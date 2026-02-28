@@ -56,3 +56,6 @@ impl CompiledProfile {
         //    collapse below. CR handling first, ANSI strip per line after.
         let text = String::from_utf8_lossy(raw).into_owned();
         let original_lines = text.lines().count();
+
+        // 2. Per-line normalization + drop/keep filtering.
+        let mut lines: Vec<String> = Vec::with_capacity(original_lines);

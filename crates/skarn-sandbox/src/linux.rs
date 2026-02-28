@@ -151,3 +151,5 @@ fn add_path_rule(
     access: BitFlags<AccessFs>,
     skipped: &mut Vec<String>,
 ) -> Result<landlock::RulesetCreated> {
+    // Skip paths that do not exist — PathFd::new would fail and abort the whole
+    // ruleset otherwise. Record the skip so the caller can surface it.

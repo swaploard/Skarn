@@ -417,3 +417,9 @@ fn derive_capability_sid(name: &str) -> Result<Vec<u8>> {
             Err(Error::sandbox(format!(
                 "no capability SID derived for {name}"
             )))
+        } else {
+            let src = *cap_sids; // first capability SID
+            let len = GetLengthSid(src);
+            if len == 0 {
+                Err(Error::sandbox(format!(
+                    "zero-length capability SID for {name}"
