@@ -292,3 +292,9 @@ impl std::fmt::Display for Backend {
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub enum RestrictionStatus {
     /// The full policy is enforced.
+    FullyEnforced,
+    /// Some of the policy is enforced; the kernel is too old for the rest.
+    PartiallyEnforced,
+    /// Nothing is enforced (no backend / unsupported kernel).
+    NotEnforced,
+}

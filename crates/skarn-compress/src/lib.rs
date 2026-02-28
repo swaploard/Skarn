@@ -35,3 +35,5 @@ pub struct Compressed {
     /// Token estimate before/after.
     pub savings: Savings,
     /// Total input lines across both streams.
+    pub original_lines: usize,
+    /// Lines retained after filtering (before truncation markers).

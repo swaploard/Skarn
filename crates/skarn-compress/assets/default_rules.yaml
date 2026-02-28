@@ -31,3 +31,4 @@ profiles:
       - '^\s*Compiling '
       - '^\s*Downloading '
       - '^\s*Downloaded '
+      - '^\s*Updating '

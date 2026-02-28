@@ -139,3 +139,4 @@ fn reading_system_files_is_allowed() {
     // broad-read path. Either way a public system file should be readable.
     assert_eq!(code, EXIT_OK, "public system files should be readable");
 }
+

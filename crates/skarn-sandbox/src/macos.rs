@@ -172,3 +172,4 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     }
 
     Ok(
+        RestrictionReport::new(Backend::Seatbelt, RestrictionStatus::FullyEnforced)

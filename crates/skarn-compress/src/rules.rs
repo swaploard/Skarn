@@ -44,3 +44,5 @@ pub struct Rules {
     /// At most this many "important" (keep-matching) lines are rescued from the
     /// elided middle when truncating.
     #[serde(default = "default_max_rescued")]
+    pub max_rescued_lines: usize,
+    /// Regexes for lines to drop (noise).

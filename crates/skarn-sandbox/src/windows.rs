@@ -433,3 +433,5 @@ fn derive_capability_sid(name: &str) -> Result<Vec<u8>> {
         };
 
         // Free the OS-allocated SID arrays regardless of outcome.
+        if !group_sids.is_null() {
+            LocalFree(Some(HLOCAL(group_sids as *mut c_void)));

@@ -62,3 +62,9 @@ impl CompiledProfile {
         for raw_line in text.split('\n') {
             // A progress bar redraws with \r; keep only the final frame.
             let line = if self.collapse_carriage_returns {
+                raw_line.rsplit('\r').next().unwrap_or(raw_line)
+            } else {
+                raw_line.trim_end_matches('\r')
+            };
+            let line = if self.strip_ansi {
+                let stripped = strip_ansi_escapes::strip(line.as_bytes());
