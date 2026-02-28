@@ -158,3 +158,6 @@ fn add_path_rule(
         Err(_) => {
             skipped.push(path.to_string());
             return Ok(created);
+        }
+    };
+    created

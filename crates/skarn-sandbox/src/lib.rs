@@ -298,3 +298,7 @@ pub enum RestrictionStatus {
     /// Nothing is enforced (no backend / unsupported kernel).
     NotEnforced,
 }
+
+/// The result of applying (or probing) a sandbox.
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct RestrictionReport {

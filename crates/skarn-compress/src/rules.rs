@@ -46,3 +46,5 @@ pub struct Rules {
     #[serde(default = "default_max_rescued")]
     pub max_rescued_lines: usize,
     /// Regexes for lines to drop (noise).
+    #[serde(default)]
+    pub drop: Vec<String>,

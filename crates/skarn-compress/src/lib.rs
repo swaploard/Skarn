@@ -37,3 +37,4 @@ pub struct Compressed {
     /// Total input lines across both streams.
     pub original_lines: usize,
     /// Lines retained after filtering (before truncation markers).
+    pub kept_lines: usize,

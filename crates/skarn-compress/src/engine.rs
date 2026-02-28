@@ -68,3 +68,7 @@ impl CompiledProfile {
             };
             let line = if self.strip_ansi {
                 let stripped = strip_ansi_escapes::strip(line.as_bytes());
+                String::from_utf8_lossy(&stripped).into_owned()
+            } else {
+                line.to_string()
+            };

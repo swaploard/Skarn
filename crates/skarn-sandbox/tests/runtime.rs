@@ -140,3 +140,4 @@ fn reading_system_files_is_allowed() {
     assert_eq!(code, EXIT_OK, "public system files should be readable");
 }
 
+#[test]
