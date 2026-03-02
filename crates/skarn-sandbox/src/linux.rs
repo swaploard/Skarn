@@ -153,3 +153,16 @@ fn add_path_rule(
 ) -> Result<landlock::RulesetCreated> {
     // Skip paths that do not exist — PathFd::new would fail and abort the whole
     // ruleset otherwise. Record the skip so the caller can surface it.
+    let fd = match PathFd::new(path) {
+        Ok(fd) => fd,
+        Err(_) => {
+            skipped.push(path.to_string());
+            return Ok(created);
+        }
+    };
+    created
+        .add_rule(PathBeneath::new(fd, access))
+        .map_err(|e| Error::sandbox(format!("landlock add_rule {path}: {e}")))
+}
+
+fn install_seccomp() -> std::result::Result<(), String> {

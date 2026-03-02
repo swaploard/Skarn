@@ -27,3 +27,14 @@ default:
 profiles:
   cargo:
     max_lines: 160
+    drop:
+      - '^\s*Compiling '
+      - '^\s*Downloading '
+      - '^\s*Downloaded '
+      - '^\s*Updating '
+      - '^\s*Fresh '
+      - '^\s*Finished '
+      - '^\s*Blocking waiting'
+      - '^\s*Building '
+      - '^\s*Installing '
+      - '^\s*Adding '

@@ -286,3 +286,29 @@ impl std::fmt::Display for Backend {
         };
         f.write_str(s)
     }
+}
+
+/// How completely a policy was (or would be) enforced.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
+pub enum RestrictionStatus {
+    /// The full policy is enforced.
+    FullyEnforced,
+    /// Some of the policy is enforced; the kernel is too old for the rest.
+    PartiallyEnforced,
+    /// Nothing is enforced (no backend / unsupported kernel).
+    NotEnforced,
+}
+
+/// The result of applying (or probing) a sandbox.
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct RestrictionReport {
+    /// The backend that handled (or would handle) the policy.
+    pub backend: Backend,
+    /// Enforcement completeness.
+    pub status: RestrictionStatus,
+    /// Human-readable notes (e.g. degraded ABI levels, network caveats).
+    pub notes: Vec<String>,
+}
+
+impl RestrictionReport {
+    pub(crate) fn new(backend: Backend, status: RestrictionStatus) -> Self {

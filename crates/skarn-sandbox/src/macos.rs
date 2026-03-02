@@ -167,3 +167,13 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
                 .into_owned();
             unsafe { sandbox_free_error(errbuf) };
             m
+        };
+        return Err(Error::Sandbox(format!("sandbox_init: {msg}")));
+    }
+
+    Ok(
+        RestrictionReport::new(Backend::Seatbelt, RestrictionStatus::FullyEnforced)
+            .note("Seatbelt profile applied to current process via sandbox_init"),
+    )
+}
+

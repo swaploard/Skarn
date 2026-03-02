@@ -32,3 +32,12 @@ pub use rules::{ProfilePatch, RuleSet, Rules};
 pub struct Compressed {
     /// The compressed, agent-ready text (stdout, then stderr if non-empty).
     pub text: String,
+    /// Token estimate before/after.
+    pub savings: Savings,
+    /// Total input lines across both streams.
+    pub original_lines: usize,
+    /// Lines retained after filtering (before truncation markers).
+    pub kept_lines: usize,
+    /// The profile (tool name) that was applied, or `"default"`.
+    pub profile: String,
+}

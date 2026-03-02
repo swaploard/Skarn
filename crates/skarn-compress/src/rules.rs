@@ -41,3 +41,12 @@ pub struct Rules {
     /// Lines to keep from the end when truncating.
     #[serde(default = "default_tail")]
     pub tail_lines: usize,
+    /// At most this many "important" (keep-matching) lines are rescued from the
+    /// elided middle when truncating.
+    #[serde(default = "default_max_rescued")]
+    pub max_rescued_lines: usize,
+    /// Regexes for lines to drop (noise).
+    #[serde(default)]
+    pub drop: Vec<String>,
+    /// Regexes for lines to always keep (errors, failures). `keep` beats `drop`.
+    #[serde(default)]

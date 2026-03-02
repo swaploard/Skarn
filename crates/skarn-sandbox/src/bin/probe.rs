@@ -74,3 +74,6 @@ fn is_denied(e: &std::io::Error) -> bool {
     e.kind() == std::io::ErrorKind::PermissionDenied
         || matches!(e.raw_os_error(), Some(1) | Some(13))
 }
+
+fn try_write(path: &str) -> std::io::Result<()> {
+    let mut f = std::fs::File::create(path)?;
