@@ -40,3 +40,4 @@ profiles:
       - '^\s*Adding '
       - '^\s*Locking '
       - '^\s*running \d+ tests?$'
+      - '^test .* \.\.\. ok$'

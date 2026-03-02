@@ -77,3 +77,5 @@ fn is_denied(e: &std::io::Error) -> bool {
 
 fn try_write(path: &str) -> std::io::Result<()> {
     let mut f = std::fs::File::create(path)?;
+    f.write_all(b"skarn probe\n")?;
+    f.sync_all()?;

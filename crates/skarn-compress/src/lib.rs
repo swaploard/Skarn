@@ -46,3 +46,4 @@ pub struct Compressed {
 pub struct Compressor {
     ruleset: RuleSet,
     compiled: BTreeMap<String, CompiledProfile>,
+    default: CompiledProfile,

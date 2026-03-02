@@ -147,3 +147,6 @@ fn network_is_denied_by_default_and_allowed_for_loopback() {
     }
     let root = unique_root();
     let workspace = root.join("workspace");
+    std::fs::create_dir_all(&workspace).unwrap();
+
+    // A real listening socket on loopback so an *allowed* connect succeeds.

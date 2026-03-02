@@ -169,3 +169,5 @@ fn install_seccomp() -> std::result::Result<(), String> {
     use seccompiler::{SeccompAction, SeccompFilter, apply_filter};
     use std::collections::BTreeMap;
 
+    let mut rules = BTreeMap::new();
+    for &sysno in dangerous_syscalls() {

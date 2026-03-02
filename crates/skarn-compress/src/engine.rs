@@ -82,3 +82,6 @@ impl CompiledProfile {
         }
 
         // 3. Collapse blank runs.
+        if self.collapse_blank_lines {
+            lines = collapse_blanks(lines);
+        }

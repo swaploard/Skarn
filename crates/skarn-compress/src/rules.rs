@@ -52,3 +52,6 @@ pub struct Rules {
     #[serde(default)]
     pub keep: Vec<String>,
 }
+
+impl Default for Rules {
+    fn default() -> Self {

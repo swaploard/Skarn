@@ -11,3 +11,4 @@ pub fn apply(_policy: &Policy) -> Result<RestrictionReport> {
     )
 }
 
+pub fn probe() -> RestrictionReport {
