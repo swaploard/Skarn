@@ -165,3 +165,4 @@ fn add_path_rule(
         .map_err(|e| Error::sandbox(format!("landlock add_rule {path}: {e}")))
 }
 
+fn install_seccomp() -> std::result::Result<(), String> {

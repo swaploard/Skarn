@@ -49,3 +49,4 @@ pub struct Rules {
     #[serde(default)]
     pub drop: Vec<String>,
     /// Regexes for lines to always keep (errors, failures). `keep` beats `drop`.
+    #[serde(default)]

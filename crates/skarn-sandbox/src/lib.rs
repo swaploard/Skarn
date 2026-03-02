@@ -309,3 +309,6 @@ pub struct RestrictionReport {
     /// Human-readable notes (e.g. degraded ABI levels, network caveats).
     pub notes: Vec<String>,
 }
+
+impl RestrictionReport {
+    pub(crate) fn new(backend: Backend, status: RestrictionStatus) -> Self {

@@ -34,3 +34,7 @@ profiles:
       - '^\s*Updating '
       - '^\s*Fresh '
       - '^\s*Finished '
+      - '^\s*Blocking waiting'
+      - '^\s*Building '
+      - '^\s*Installing '
+      - '^\s*Adding '

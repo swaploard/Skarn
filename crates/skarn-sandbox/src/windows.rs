@@ -445,3 +445,8 @@ fn derive_capability_sid(name: &str) -> Result<Vec<u8>> {
 
 fn create_or_derive_sid() -> Result<PSID> {
     let name = wide(APPCONTAINER_NAME);
+    let display = wide("Skarn Sandbox");
+    let desc = wide("Confines LLM-generated code and untrusted commands");
+    // SAFETY: all arguments are valid NUL-terminated wide strings.
+    unsafe {
+        match CreateAppContainerProfile(

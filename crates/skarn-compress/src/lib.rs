@@ -39,3 +39,5 @@ pub struct Compressed {
     /// Lines retained after filtering (before truncation markers).
     pub kept_lines: usize,
     /// The profile (tool name) that was applied, or `"default"`.
+    pub profile: String,
+}
