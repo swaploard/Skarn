@@ -78,3 +78,6 @@ impl CompiledProfile {
         }
         // Drop a trailing empty line introduced by a final newline.
         if lines.last().map(|l| l.is_empty()).unwrap_or(false) {
+            lines.pop();
+        }
+

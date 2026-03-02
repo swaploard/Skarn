@@ -3,3 +3,5 @@
 **Status:** Accepted
 
 ## Context
+
+To sandbox an *arbitrary* program (e.g. `cargo`, which we do not control) we must

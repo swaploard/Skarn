@@ -312,3 +312,8 @@ pub struct RestrictionReport {
 
 impl RestrictionReport {
     pub(crate) fn new(backend: Backend, status: RestrictionStatus) -> Self {
+        Self {
+            backend,
+            status,
+            notes: Vec::new(),
+        }

@@ -177,3 +177,4 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     )
 }
 
+/// Probe support without applying. On macOS `sandbox_init` is always present, so

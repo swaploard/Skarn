@@ -450,3 +450,9 @@ fn create_or_derive_sid() -> Result<PSID> {
     // SAFETY: all arguments are valid NUL-terminated wide strings.
     unsafe {
         match CreateAppContainerProfile(
+            PCWSTR(name.as_ptr()),
+            PCWSTR(display.as_ptr()),
+            PCWSTR(desc.as_ptr()),
+            None,
+        ) {
+            Ok(sid) => Ok(sid),

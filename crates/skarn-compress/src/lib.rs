@@ -41,3 +41,6 @@ pub struct Compressed {
     /// The profile (tool name) that was applied, or `"default"`.
     pub profile: String,
 }
+
+/// A reusable compressor with all profiles pre-compiled.
+pub struct Compressor {

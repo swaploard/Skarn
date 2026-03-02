@@ -38,3 +38,4 @@ profiles:
       - '^\s*Building '
       - '^\s*Installing '
       - '^\s*Adding '
+      - '^\s*Locking '

@@ -166,3 +166,5 @@ fn add_path_rule(
 }
 
 fn install_seccomp() -> std::result::Result<(), String> {
+    use seccompiler::{SeccompAction, SeccompFilter, apply_filter};
+    use std::collections::BTreeMap;
