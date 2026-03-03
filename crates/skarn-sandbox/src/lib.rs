@@ -323,3 +323,4 @@ impl RestrictionReport {
         self.notes.push(note.into());
         self
     }
+}

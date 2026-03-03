@@ -171,3 +171,6 @@ fn install_seccomp() -> std::result::Result<(), String> {
 
     let mut rules = BTreeMap::new();
     for &sysno in dangerous_syscalls() {
+        // Empty rule vec => unconditional match for that syscall number.
+        rules.insert(sysno, Vec::new());
+    }

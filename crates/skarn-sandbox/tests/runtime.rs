@@ -150,3 +150,5 @@ fn network_is_denied_by_default_and_allowed_for_loopback() {
     std::fs::create_dir_all(&workspace).unwrap();
 
     // A real listening socket on loopback so an *allowed* connect succeeds.
+    let listener = TcpListener::bind("127.0.0.1:0").unwrap();
+    let addr = listener.local_addr().unwrap().to_string();

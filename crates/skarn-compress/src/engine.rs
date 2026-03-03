@@ -85,3 +85,4 @@ impl CompiledProfile {
         if self.collapse_blank_lines {
             lines = collapse_blanks(lines);
         }
+

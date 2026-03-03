@@ -182,3 +182,7 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
 pub fn probe() -> RestrictionReport {
     RestrictionReport::new(Backend::Seatbelt, RestrictionStatus::FullyEnforced)
         .note("macOS Seatbelt (sandbox_init) available")
+}
+
+#[cfg(test)]
+mod tests {

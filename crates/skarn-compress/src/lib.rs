@@ -47,3 +47,7 @@ pub struct Compressor {
     ruleset: RuleSet,
     compiled: BTreeMap<String, CompiledProfile>,
     default: CompiledProfile,
+    /// Any regexes that failed to compile, surfaced for diagnostics.
+    pub warnings: Vec<String>,
+}
+

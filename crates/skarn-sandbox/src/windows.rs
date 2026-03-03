@@ -464,3 +464,5 @@ fn create_or_derive_sid() -> Result<PSID> {
         }
     }
 }
+
+/// Grant `sid` `access_mask` on the filesystem object at `path` (inheritable).

@@ -41,3 +41,6 @@ profiles:
       - '^\s*Locking '
       - '^\s*running \d+ tests?$'
       - '^test .* \.\.\. ok$'
+      - '^test result: ok\.'
+      - '^\s*Doc-tests'
+      - '^\s*$'
