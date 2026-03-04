@@ -479,3 +479,7 @@ fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
             DACL_SECURITY_INFORMATION,
             None,
             None,
+            Some(&mut old_dacl),
+            None,
+            &mut sec_desc,
+        );

@@ -180,3 +180,4 @@ fn install_seccomp() -> std::result::Result<(), String> {
         .map_err(|e| format!("seccomp arch: {e:?}"))?;
     let filter = SeccompFilter::new(
         rules,
+        SeccompAction::Allow,                     // default: allow

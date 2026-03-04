@@ -60,3 +60,6 @@ impl Default for Rules {
             collapse_carriage_returns: true,
             collapse_blank_lines: true,
             dedupe_consecutive: true,
+            max_lines: default_max_lines(),
+            head_lines: default_head(),
+            tail_lines: default_tail(),

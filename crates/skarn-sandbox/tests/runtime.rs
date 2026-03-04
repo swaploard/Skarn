@@ -154,3 +154,7 @@ fn network_is_denied_by_default_and_allowed_for_loopback() {
     let addr = listener.local_addr().unwrap().to_string();
 
     let deny = Policy::builder()
+        .workspace(&workspace)
+        .net(NetPolicy::DenyAll)
+        .build();
+    let denied = run_probe(&deny, "connect", &addr);

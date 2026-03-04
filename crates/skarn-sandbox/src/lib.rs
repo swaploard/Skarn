@@ -332,3 +332,7 @@ impl RestrictionReport {
 /// kernel, or `sandbox_init` being present).
 pub fn backend_report() -> RestrictionReport {
     imp::probe()
+}
+
+/// The backend that this build targets.
+pub const fn backend() -> Backend {

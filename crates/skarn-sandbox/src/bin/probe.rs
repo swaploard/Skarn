@@ -81,3 +81,4 @@ fn try_write(path: &str) -> std::io::Result<()> {
     f.sync_all()?;
     Ok(())
 }
+

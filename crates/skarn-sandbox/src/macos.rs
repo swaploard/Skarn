@@ -189,3 +189,5 @@ mod tests {
     use super::*;
 
     #[test]
+    fn deny_default_present() {
+        let p = Policy::builder().workspace("/tmp").build();

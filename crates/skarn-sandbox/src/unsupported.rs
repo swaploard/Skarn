@@ -12,3 +12,4 @@ pub fn apply(_policy: &Policy) -> Result<RestrictionReport> {
 }
 
 pub fn probe() -> RestrictionReport {
+    RestrictionReport::new(Backend::None, RestrictionStatus::NotEnforced)
