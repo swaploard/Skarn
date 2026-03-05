@@ -51,3 +51,4 @@ profiles:
       - '\.\.\. FAILED$'
       - '^test result: FAILED'
       - '^failures:'
+      - '^\s*--> '

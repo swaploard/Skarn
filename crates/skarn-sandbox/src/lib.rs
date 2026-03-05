@@ -343,3 +343,7 @@ pub const fn backend() -> Backend {
     #[cfg(target_os = "linux")]
     {
         Backend::Landlock
+    }
+    #[cfg(windows)]
+    {
+        Backend::AppContainer

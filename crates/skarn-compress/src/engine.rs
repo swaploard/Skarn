@@ -102,3 +102,6 @@ impl CompiledProfile {
         }
     }
 
+    fn should_keep(&self, line: &str) -> bool {
+        if self.keep.is_match(line) {
+            return true;

@@ -202,3 +202,6 @@ mod tests {
         let sbpl = profile_sbpl(&p);
         assert!(sbpl.contains("(allow file-write*"));
         assert!(sbpl.contains("/tmp") || sbpl.contains("/private/tmp"));
+    }
+
+    #[test]

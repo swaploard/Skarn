@@ -59,3 +59,4 @@ impl Compressor {
 
     /// Build a compressor from a custom rule set, pre-compiling every profile.
     pub fn new(ruleset: RuleSet) -> Compressor {
+        let mut warnings = Vec::new();

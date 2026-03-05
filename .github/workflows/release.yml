@@ -31,3 +31,4 @@ jobs:
       - name: Add rust target
         run: rustup target add ${{ matrix.target }}
       - uses: Swatinem/rust-cache@v2
+      - name: Install cross toolchain (aarch64 linux)

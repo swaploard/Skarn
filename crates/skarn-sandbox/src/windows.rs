@@ -498,3 +498,5 @@ fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
             ptstrName: PWSTR(sid.0 as *mut u16),
         };
         let ea = EXPLICIT_ACCESS_W {
+            grfAccessPermissions: access_mask,
+            grfAccessMode: GRANT_ACCESS,
