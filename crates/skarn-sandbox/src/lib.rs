@@ -355,3 +355,5 @@ pub const fn backend() -> Backend {
 }
 
 #[cfg(test)]
+mod tests {
+    use super::*;

@@ -108,3 +108,5 @@ impl CompiledProfile {
         }
         !self.drop.is_match(line)
     }
+
+    fn is_important(&self, line: &str) -> bool {

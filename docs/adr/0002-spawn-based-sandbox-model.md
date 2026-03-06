@@ -5,3 +5,4 @@
 ## Context
 
 To sandbox an *arbitrary* program (e.g. `cargo`, which we do not control) we must
+apply the kernel sandbox to that program's process. macOS `sandbox_init` is

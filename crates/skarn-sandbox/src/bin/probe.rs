@@ -86,3 +86,6 @@ fn try_read(path: &str) -> std::io::Result<()> {
     let mut f = std::fs::File::open(path)?;
     let mut buf = Vec::new();
     f.read_to_end(&mut buf)?;
+    Ok(())
+}
+

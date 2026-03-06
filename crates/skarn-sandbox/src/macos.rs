@@ -207,3 +207,5 @@ mod tests {
     #[test]
     fn deny_all_omits_network_allow() {
         let p = Policy::builder().workspace("/tmp").build();
+        let sbpl = profile_sbpl(&p);
+        assert!(!sbpl.contains("(allow network"));

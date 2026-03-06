@@ -512,3 +512,7 @@ fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
 
         let rc = SetNamedSecurityInfoW(
             PWSTR(wpath.as_mut_ptr()),
+            SE_FILE_OBJECT,
+            DACL_SECURITY_INFORMATION,
+            None,
+            None,

@@ -64,3 +64,4 @@ impl Compressor {
         warnings.extend(errs);
 
         let mut compiled = BTreeMap::new();
+        for tool in ruleset.profiles.keys() {
