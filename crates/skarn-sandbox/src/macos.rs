@@ -213,3 +213,6 @@ mod tests {
 
     #[test]
     fn allow_all_network() {
+        let p = Policy::builder()
+            .workspace("/tmp")
+            .net(NetPolicy::AllowAll)

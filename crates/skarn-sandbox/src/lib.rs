@@ -364,3 +364,8 @@ mod tests {
         assert_eq!(p.fs_read_write, vec![PathBuf::from("/tmp/project")]);
         assert_eq!(p.net, NetPolicy::DenyAll);
         assert!(p.allow_read_system);
+        assert!(p.fail_closed);
+    }
+
+    #[test]
+    fn builder_chains() {

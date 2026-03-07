@@ -115,3 +115,8 @@ impl CompiledProfile {
 
     fn truncate(&self, lines: Vec<String>) -> Vec<String> {
         if lines.len() <= self.max_lines {
+            return lines;
+        }
+        let head = self.head_lines.min(lines.len());
+        let tail = self.tail_lines.min(lines.len().saturating_sub(head));
+        let mid_start = head;

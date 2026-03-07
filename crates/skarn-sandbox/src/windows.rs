@@ -525,3 +525,5 @@ fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
     }
     Ok(())
 }
+
+/// Build a properly-quoted, NUL-terminated wide command line.

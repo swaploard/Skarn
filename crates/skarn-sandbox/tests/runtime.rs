@@ -169,3 +169,6 @@ fn network_is_denied_by_default_and_allowed_for_loopback() {
 
     assert_eq!(
         denied, EXIT_DENIED,
+        "DenyAll must block loopback connections"
+    );
+    // On Linux, AllowLoopback degrades to "unrestricted" (port-based limitation),

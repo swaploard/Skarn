@@ -4,3 +4,4 @@
 
 ## Context
 
+The QuickJS `AsyncRuntime` is `!Send`. The MCP clients (built on `rmcp`) and

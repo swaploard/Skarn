@@ -58,3 +58,4 @@ profiles:
       - '^\s*Compiling '
     keep:
       - '^error'
+      - '^warning'
