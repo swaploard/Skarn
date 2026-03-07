@@ -209,3 +209,6 @@ mod tests {
         let p = Policy::builder().workspace("/tmp").build();
         let sbpl = profile_sbpl(&p);
         assert!(!sbpl.contains("(allow network"));
+    }
+
+    #[test]

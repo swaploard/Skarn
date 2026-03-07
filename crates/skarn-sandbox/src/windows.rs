@@ -516,3 +516,9 @@ fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
             DACL_SECURITY_INFORMATION,
             None,
             None,
+            Some(new_dacl),
+            None,
+        );
+        if rc.is_err() {
+            return Err(Error::sandbox("SetNamedSecurityInfoW failed"));
+        }

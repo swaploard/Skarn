@@ -55,3 +55,4 @@ profiles:
 
   rustc:
     drop:
+      - '^\s*Compiling '

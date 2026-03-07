@@ -357,3 +357,7 @@ pub const fn backend() -> Backend {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn builder_workspace_defaults() {
+        let p = Policy::builder().workspace("/tmp/project").build();

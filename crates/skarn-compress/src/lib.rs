@@ -65,3 +65,5 @@ impl Compressor {
 
         let mut compiled = BTreeMap::new();
         for tool in ruleset.profiles.keys() {
+            let rules = ruleset.resolve(tool);
+            let (prof, errs) = CompiledProfile::compile(&rules);

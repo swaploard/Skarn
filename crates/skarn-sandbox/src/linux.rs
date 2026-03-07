@@ -189,3 +189,8 @@ fn install_seccomp() -> std::result::Result<(), String> {
     let prog: seccompiler::BpfProgram = filter
         .try_into()
         .map_err(|e| format!("seccomp compile: {e}"))?;
+    apply_filter(&prog).map_err(|e| format!("seccomp apply: {e}"))?;
+    Ok(())
+}
+
+pub fn probe() -> RestrictionReport {
