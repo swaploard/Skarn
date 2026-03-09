@@ -196,3 +196,5 @@ fn install_seccomp() -> std::result::Result<(), String> {
 pub fn probe() -> RestrictionReport {
     // Try to create (but not enforce) a minimal ruleset to see if Landlock is
     // available on the running kernel.
+    let abi = ABI::V1;
+    match Ruleset::default()

@@ -369,3 +369,8 @@ mod tests {
 
     #[test]
     fn builder_chains() {
+        let p = Policy::builder()
+            .read("/etc/hosts")
+            .read_write("/work")
+            .exec("/usr/bin")
+            .net(NetPolicy::AllowLoopback)

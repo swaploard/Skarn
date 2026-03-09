@@ -68,3 +68,6 @@ impl Compressor {
             let rules = ruleset.resolve(tool);
             let (prof, errs) = CompiledProfile::compile(&rules);
             warnings.extend(errs);
+            compiled.insert(tool.clone(), prof);
+        }
+

@@ -5,3 +5,4 @@
 ## Context
 
 The QuickJS `AsyncRuntime` is `!Send`. The MCP clients (built on `rmcp`) and
+their child-process transports must be polled — *and dropped* — on the

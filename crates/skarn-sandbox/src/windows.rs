@@ -527,3 +527,8 @@ fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
 }
 
 /// Build a properly-quoted, NUL-terminated wide command line.
+fn build_command_line(spec: &CommandSpec) -> Vec<u16> {
+    let mut parts = Vec::with_capacity(spec.args.len() + 1);
+    parts.push(quote_arg(&spec.program));
+    for a in &spec.args {
+        parts.push(quote_arg(a));

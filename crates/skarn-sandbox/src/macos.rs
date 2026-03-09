@@ -216,3 +216,5 @@ mod tests {
         let p = Policy::builder()
             .workspace("/tmp")
             .net(NetPolicy::AllowAll)
+            .build();
+        let sbpl = profile_sbpl(&p);

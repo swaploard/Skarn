@@ -4,3 +4,4 @@
 
 ## Context
 
+Several Rust MCP gateways roll their own protocol implementation. The official
