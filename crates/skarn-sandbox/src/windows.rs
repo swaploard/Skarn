@@ -532,3 +532,9 @@ fn build_command_line(spec: &CommandSpec) -> Vec<u16> {
     parts.push(quote_arg(&spec.program));
     for a in &spec.args {
         parts.push(quote_arg(a));
+    }
+    let joined = parts.join(" ");
+    wide(&joined)
+}
+
+fn quote_arg(arg: &str) -> String {

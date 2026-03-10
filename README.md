@@ -59,3 +59,4 @@ This installs the `skarn` binary.
 ```bash
 # 1. Scaffold a config and see integration snippets
 skarn init
+

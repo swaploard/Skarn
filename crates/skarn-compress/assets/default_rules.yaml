@@ -59,3 +59,8 @@ profiles:
     keep:
       - '^error'
       - '^warning'
+
+  pytest:
+    max_lines: 160
+    drop:
+      - '^\.+$'

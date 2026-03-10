@@ -122,3 +122,5 @@ impl CompiledProfile {
         let mid_start = head;
         let mid_end = lines.len() - tail;
 
+        let mut out = Vec::with_capacity(head + tail + self.max_rescued_lines + 2);
+        out.extend(lines[..head].iter().cloned());

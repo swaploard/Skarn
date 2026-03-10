@@ -78,3 +78,5 @@ pub struct ProfilePatch {
     pub strip_ansi: Option<bool>,
     #[serde(default)]
     pub collapse_carriage_returns: Option<bool>,
+    #[serde(default)]
+    pub collapse_blank_lines: Option<bool>,

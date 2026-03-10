@@ -374,3 +374,4 @@ mod tests {
             .read_write("/work")
             .exec("/usr/bin")
             .net(NetPolicy::AllowLoopback)
+            .fail_closed(false)

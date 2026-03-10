@@ -218,3 +218,4 @@ mod tests {
             .net(NetPolicy::AllowAll)
             .build();
         let sbpl = profile_sbpl(&p);
+        assert!(sbpl.contains("(allow network*)"));

@@ -198,3 +198,5 @@ pub fn probe() -> RestrictionReport {
     // available on the running kernel.
     let abi = ABI::V1;
     match Ruleset::default()
+        .set_compatibility(CompatLevel::BestEffort)
+        .handle_access(AccessFs::from_all(abi))
