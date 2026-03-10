@@ -538,3 +538,10 @@ fn build_command_line(spec: &CommandSpec) -> Vec<u16> {
 }
 
 fn quote_arg(arg: &str) -> String {
+    if !arg.is_empty() && !arg.contains([' ', '\t', '"']) {
+        return arg.to_string();
+    }
+    let mut out = String::from("\"");
+    let mut backslashes = 0;
+    for c in arg.chars() {
+        match c {

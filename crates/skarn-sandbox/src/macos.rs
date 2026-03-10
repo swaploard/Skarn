@@ -219,3 +219,7 @@ mod tests {
             .build();
         let sbpl = profile_sbpl(&p);
         assert!(sbpl.contains("(allow network*)"));
+    }
+
+    #[test]
+    fn quoting_escapes_quotes_and_backslashes() {

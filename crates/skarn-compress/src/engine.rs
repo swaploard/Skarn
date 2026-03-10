@@ -124,3 +124,7 @@ impl CompiledProfile {
 
         let mut out = Vec::with_capacity(head + tail + self.max_rescued_lines + 2);
         out.extend(lines[..head].iter().cloned());
+
+        // Rescue important lines from the elided middle.
+        let mut rescued: Vec<String> = lines[mid_start..mid_end]
+            .iter()

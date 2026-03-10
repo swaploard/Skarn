@@ -200,3 +200,5 @@ pub fn probe() -> RestrictionReport {
     match Ruleset::default()
         .set_compatibility(CompatLevel::BestEffort)
         .handle_access(AccessFs::from_all(abi))
+        .and_then(|r| r.create())
+    {

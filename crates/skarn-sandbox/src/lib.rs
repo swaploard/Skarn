@@ -375,3 +375,4 @@ mod tests {
             .exec("/usr/bin")
             .net(NetPolicy::AllowLoopback)
             .fail_closed(false)
+            .build();

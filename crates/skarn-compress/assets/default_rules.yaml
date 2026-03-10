@@ -64,3 +64,4 @@ profiles:
     max_lines: 160
     drop:
       - '^\.+$'
+      - '^[.FsxX]+\s+\[\s*\d+%\]$'
