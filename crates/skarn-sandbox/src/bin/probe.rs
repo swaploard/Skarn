@@ -93,3 +93,4 @@ fn try_connect(hostport: &str) -> std::io::Result<()> {
     let addr: std::net::SocketAddr = hostport
         .parse()
         .map_err(|_| std::io::Error::new(std::io::ErrorKind::InvalidInput, "bad addr"))?;
+    let stream = TcpStream::connect_timeout(&addr, Duration::from_millis(1500))?;

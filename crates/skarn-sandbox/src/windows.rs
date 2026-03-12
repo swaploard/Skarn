@@ -550,3 +550,6 @@ fn quote_arg(arg: &str) -> String {
                 out.push('\\');
             }
             '"' => {
+                for _ in 0..=backslashes {
+                    out.push('\\');
+                }

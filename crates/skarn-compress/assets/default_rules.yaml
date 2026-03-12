@@ -68,3 +68,5 @@ profiles:
       - '(?i)\bPASSED\b'
       - '^platform '
       - '^cachedir:'
+      - '^rootdir:'
+      - '^plugins:'

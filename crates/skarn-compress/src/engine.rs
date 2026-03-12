@@ -132,3 +132,6 @@ impl CompiledProfile {
             .take(self.max_rescued_lines)
             .cloned()
             .collect();
+
+        let elided = (mid_end - mid_start) - rescued.len();
+        if elided > 0 {

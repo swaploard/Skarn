@@ -380,3 +380,9 @@ mod tests {
         assert_eq!(p.fs_read_write, vec![PathBuf::from("/work")]);
         assert_eq!(p.fs_exec, vec![PathBuf::from("/usr/bin")]);
         assert_eq!(p.net, NetPolicy::AllowLoopback);
+        assert!(!p.fail_closed);
+    }
+
+    #[test]
+    fn policy_serde_round_trips() {
+        let p = Policy::builder().workspace("/work").build();

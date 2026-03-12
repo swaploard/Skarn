@@ -71,3 +71,5 @@ impl Compressor {
             compiled.insert(tool.clone(), prof);
         }
 
+        Compressor {
+            ruleset,

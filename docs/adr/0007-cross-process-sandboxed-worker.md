@@ -4,3 +4,4 @@
 
 ## Context
 
+`skarn serve`'s `execute` originally ran the Code Mode isolate **in-process**:
