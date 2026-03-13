@@ -95,3 +95,4 @@ fn try_connect(hostport: &str) -> std::io::Result<()> {
         .map_err(|_| std::io::Error::new(std::io::ErrorKind::InvalidInput, "bad addr"))?;
     let stream = TcpStream::connect_timeout(&addr, Duration::from_millis(1500))?;
     drop(stream);
+    Ok(())

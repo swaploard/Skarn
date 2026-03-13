@@ -180,3 +180,4 @@ fn network_is_denied_by_default_and_allowed_for_loopback() {
 }
 
 fn cleanup(root: &Path) {
+    let _ = std::fs::remove_dir_all(root);

@@ -70,3 +70,6 @@ profiles:
       - '^cachedir:'
       - '^rootdir:'
       - '^plugins:'
+      - '^collected '
+      - '^\s*$'
+    keep:

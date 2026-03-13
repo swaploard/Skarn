@@ -141,3 +141,5 @@ impl CompiledProfile {
             out.push("… kept important lines from the hidden region:".to_string());
             out.append(&mut rescued);
         }
+        out.extend(lines[mid_end..].iter().cloned());
+        out

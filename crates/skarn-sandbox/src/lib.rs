@@ -389,3 +389,5 @@ mod tests {
         let json = serde_json::to_string(&p).unwrap();
         let back: Policy = serde_json::from_str(&json).unwrap();
         assert_eq!(back.fs_read_write, p.fs_read_write);
+        assert_eq!(back.net, p.net);
+    }

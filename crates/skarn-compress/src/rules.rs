@@ -83,3 +83,10 @@ pub struct ProfilePatch {
     #[serde(default)]
     pub dedupe_consecutive: Option<bool>,
     #[serde(default)]
+    pub max_lines: Option<usize>,
+    #[serde(default)]
+    pub head_lines: Option<usize>,
+    #[serde(default)]
+    pub tail_lines: Option<usize>,
+    #[serde(default)]
+    pub max_rescued_lines: Option<usize>,

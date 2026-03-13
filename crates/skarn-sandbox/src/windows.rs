@@ -557,3 +557,9 @@ fn quote_arg(arg: &str) -> String {
                 backslashes = 0;
             }
             _ => {
+                backslashes = 0;
+                out.push(c);
+            }
+        }
+    }
+    for _ in 0..backslashes {

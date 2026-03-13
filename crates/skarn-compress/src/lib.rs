@@ -77,3 +77,4 @@ impl Compressor {
             default,
             warnings,
         }
+    }
