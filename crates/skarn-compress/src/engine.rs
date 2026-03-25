@@ -143,3 +143,9 @@ impl CompiledProfile {
         }
         out.extend(lines[mid_end..].iter().cloned());
         out
+    }
+}
+
+fn compile_set(patterns: &[String]) -> (RegexSet, Vec<String>) {
+    // RegexSet::new fails if any pattern is invalid; filter invalid ones out and
+    // report them so a single typo in a user rule does not break everything.

@@ -73,3 +73,6 @@ profiles:
       - '^collected '
       - '^\s*$'
     keep:
+      - '(?i)\bFAILED\b'
+      - '(?i)\bERROR\b'
+      - '^E\s+'

@@ -78,3 +78,5 @@ impl Compressor {
             warnings,
         }
     }
+
+    /// The rule set backing this compressor.

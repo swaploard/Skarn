@@ -96,3 +96,4 @@ fn try_connect(hostport: &str) -> std::io::Result<()> {
     let stream = TcpStream::connect_timeout(&addr, Duration::from_millis(1500))?;
     drop(stream);
     Ok(())
+}

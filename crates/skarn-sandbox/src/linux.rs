@@ -207,3 +207,4 @@ pub fn probe() -> RestrictionReport {
         Err(e) => RestrictionReport::new(Backend::Landlock, RestrictionStatus::NotEnforced)
             .note(format!("Landlock unavailable: {e}")),
     }
+}

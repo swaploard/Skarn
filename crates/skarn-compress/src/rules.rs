@@ -90,3 +90,10 @@ pub struct ProfilePatch {
     pub tail_lines: Option<usize>,
     #[serde(default)]
     pub max_rescued_lines: Option<usize>,
+    #[serde(default)]
+    pub drop: Vec<String>,
+    #[serde(default)]
+    pub keep: Vec<String>,
+}
+
+impl RuleSet {
