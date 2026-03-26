@@ -61,3 +61,4 @@ This installs the `skarn` binary.
 skarn init
 
 # 2. Check which kernel sandbox is active on your machine
+skarn doctor

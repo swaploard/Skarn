@@ -98,3 +98,7 @@ impl Compressor {
         let mut text = out.text.clone();
         if !err.text.trim().is_empty() {
             if !text.is_empty() {
+                text.push_str("\n\n");
+            }
+            text.push_str("─── stderr ───\n");
+            text.push_str(&err.text);

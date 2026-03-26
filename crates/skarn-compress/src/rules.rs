@@ -108,3 +108,8 @@ impl RuleSet {
             if let Some(v) = p.collapse_carriage_returns {
                 r.collapse_carriage_returns = v;
             }
+            if let Some(v) = p.collapse_blank_lines {
+                r.collapse_blank_lines = v;
+            }
+            if let Some(v) = p.dedupe_consecutive {
+                r.dedupe_consecutive = v;

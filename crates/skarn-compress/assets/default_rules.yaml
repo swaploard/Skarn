@@ -82,3 +82,8 @@ profiles:
 
   python:
     keep:
+      - '(?i)traceback'
+      - '(?i)error'
+      - '^\s*File ".*", line \d+'
+
+  npm:

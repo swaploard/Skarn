@@ -171,3 +171,8 @@ fn collapse_blanks(lines: Vec<String>) -> Vec<String> {
         }
         prev_blank = blank;
         out.push(l);
+    }
+    out
+}
+
+fn dedupe(lines: Vec<String>) -> Vec<String> {
