@@ -134,3 +134,6 @@ impl RuleSet {
 
     /// Load the built-in default rule set (embedded at compile time).
     pub fn builtin() -> RuleSet {
+        serde_yaml_ng::from_str(BUILTIN_RULES_YAML).expect("built-in rules YAML is valid")
+    }
+

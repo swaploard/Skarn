@@ -198,3 +198,8 @@ fn dedupe(lines: Vec<String>) -> Vec<String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::rules::Rules;
+
+    fn profile(rules: Rules) -> CompiledProfile {
+        CompiledProfile::compile(&rules).0
+    }

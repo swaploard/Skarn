@@ -10,3 +10,5 @@ use serde::{Deserialize, Serialize};
 use skarn_common::{Error, Result};
 
 use crate::bridge::ToolBridge;
+
+/// Resource limits for a single Code Mode execution.

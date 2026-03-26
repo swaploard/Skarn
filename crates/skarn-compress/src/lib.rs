@@ -117,3 +117,4 @@ impl Compressor {
         };
 
         Compressed {
+            text,
