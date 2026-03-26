@@ -89,3 +89,12 @@ impl Compressor {
         let tool = spec.tool_name();
         let (profile_name, profile) = match self.compiled.get(&tool) {
             Some(p) => (tool.clone(), p),
+            None => ("default".to_string(), &self.default),
+        };
+
+        let out = profile.run(stdout);
+        let err = profile.run(stderr);
+
+        let mut text = out.text.clone();
+        if !err.text.trim().is_empty() {
+            if !text.is_empty() {

@@ -104,3 +104,7 @@ impl RuleSet {
         if let Some(p) = self.profiles.get(tool) {
             if let Some(v) = p.strip_ansi {
                 r.strip_ansi = v;
+            }
+            if let Some(v) = p.collapse_carriage_returns {
+                r.collapse_carriage_returns = v;
+            }

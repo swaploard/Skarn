@@ -165,3 +165,9 @@ fn collapse_blanks(lines: Vec<String>) -> Vec<String> {
     let mut out = Vec::with_capacity(lines.len());
     let mut prev_blank = false;
     for l in lines {
+        let blank = l.trim().is_empty();
+        if blank && prev_blank {
+            continue;
+        }
+        prev_blank = blank;
+        out.push(l);
