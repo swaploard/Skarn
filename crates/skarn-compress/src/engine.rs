@@ -158,3 +158,10 @@ fn compile_set(patterns: &[String]) -> (RegexSet, Vec<String>) {
         }
     }
     let set = RegexSet::new(&valid).unwrap_or_else(|_| RegexSet::empty());
+    (set, errors)
+}
+
+fn collapse_blanks(lines: Vec<String>) -> Vec<String> {
+    let mut out = Vec::with_capacity(lines.len());
+    let mut prev_blank = false;
+    for l in lines {

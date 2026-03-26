@@ -84,3 +84,8 @@ impl Compressor {
         &self.ruleset
     }
 
+    /// Compress a command's `stdout` and `stderr`.
+    pub fn compress(&self, spec: &CommandSpec, stdout: &[u8], stderr: &[u8]) -> Compressed {
+        let tool = spec.tool_name();
+        let (profile_name, profile) = match self.compiled.get(&tool) {
+            Some(p) => (tool.clone(), p),

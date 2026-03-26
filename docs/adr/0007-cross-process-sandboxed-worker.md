@@ -5,3 +5,4 @@
 ## Context
 
 `skarn serve`'s `execute` originally ran the Code Mode isolate **in-process**:
+the hermetic QuickJS context shares the gateway's address space, protected only

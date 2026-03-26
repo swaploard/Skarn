@@ -99,3 +99,8 @@ pub struct ProfilePatch {
 impl RuleSet {
     /// Resolve the effective [`Rules`] for a tool by layering its patch (if any)
     /// over the default.
+    pub fn resolve(&self, tool: &str) -> Rules {
+        let mut r = self.default.clone();
+        if let Some(p) = self.profiles.get(tool) {
+            if let Some(v) = p.strip_ansi {
+                r.strip_ansi = v;
