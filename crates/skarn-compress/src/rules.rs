@@ -118,3 +118,6 @@ impl RuleSet {
                 r.max_lines = v;
             }
             if let Some(v) = p.head_lines {
+                r.head_lines = v;
+            }
+            if let Some(v) = p.tail_lines {

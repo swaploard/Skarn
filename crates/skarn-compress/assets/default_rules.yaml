@@ -96,3 +96,4 @@ profiles:
       - '^removed \d+ packages'
       - '^\s*reify:'
       - '^\s*idealTree:'
+      - '^npm http (fetch|cache)'

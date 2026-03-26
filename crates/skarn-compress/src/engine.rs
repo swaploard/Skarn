@@ -189,3 +189,7 @@ fn dedupe(lines: Vec<String>) -> Vec<String> {
             for _ in 0..count {
                 out.push(lines[i].clone());
             }
+        }
+        i += count;
+    }
+    out

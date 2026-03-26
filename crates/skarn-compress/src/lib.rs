@@ -107,3 +107,7 @@ impl Compressor {
         // Measure savings against the raw (UTF-8) input so the numbers reflect
         // what the agent would otherwise have paid for.
         let raw_before = format!(
+            "{}{}",
+            String::from_utf8_lossy(stdout),
+            String::from_utf8_lossy(stderr)
+        );
