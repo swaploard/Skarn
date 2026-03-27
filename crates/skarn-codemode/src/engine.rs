@@ -29,3 +29,6 @@ pub struct ExecLimits {
 impl Default for ExecLimits {
     fn default() -> Self {
         Self {
+            memory_bytes: 64 * 1024 * 1024,
+            max_stack_bytes: 1024 * 1024,
+            wall_clock: Duration::from_secs(30),

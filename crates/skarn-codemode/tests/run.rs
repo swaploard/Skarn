@@ -11,3 +11,7 @@ fn math_bridge() -> Arc<dyn ToolBridge> {
     Arc::new(
         InProcessBridge::new()
             .with_tool("math", "add", "Add two numbers", |args| {
+                let v: serde_json::Value = serde_json::from_str(args).map_err(|e| e.to_string())?;
+                let a = v["a"].as_i64().unwrap_or(0);
+                let b = v["b"].as_i64().unwrap_or(0);
+                Ok(serde_json::json!(a + b).to_string())

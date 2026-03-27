@@ -145,3 +145,4 @@ impl RuleSet {
     /// Merge another rule set into this one: `other`'s default replaces nothing
     /// scalar-wise but its profiles override/add to ours (user overrides win).
     pub fn merged_with(mut self, other: RuleSet) -> RuleSet {
+        for (k, v) in other.profiles {

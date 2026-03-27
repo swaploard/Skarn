@@ -9,3 +9,5 @@ use crate::bridge::ToolDescriptor;
 /// surface per downstream server, with each tool's description carried through
 /// as a JSDoc comment.
 pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
+    let mut out = String::new();
+    out.push_str(DTS_HEADER);

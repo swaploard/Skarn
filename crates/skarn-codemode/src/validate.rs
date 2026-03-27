@@ -23,3 +23,8 @@ use std::path::Path;
 use oxc_allocator::Allocator;
 use oxc_ast::ast::*;
 use oxc_ast_visit::Visit;
+use oxc_ast_visit::walk::{
+    walk_computed_member_expression, walk_identifier_reference, walk_import_expression,
+    walk_new_expression, walk_static_member_expression,
+};
+use oxc_codegen::Codegen;

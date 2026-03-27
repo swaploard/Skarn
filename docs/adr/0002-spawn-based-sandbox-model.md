@@ -9,3 +9,4 @@ apply the kernel sandbox to that program's process. macOS `sandbox_init` is
 **per-process and irreversible**; Linux Landlock is per-thread but inherited
 across `execve`; Windows AppContainer can only be applied at process creation.
 
+A second hazard: applying a non-async-signal-safe function (like `sandbox_init`,

@@ -131,3 +131,4 @@ mod tests {
     use super::*;
 
     #[test]
+    fn compresses_cargo_test_output() {

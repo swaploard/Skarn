@@ -225,3 +225,6 @@ mod tests {
         assert_eq!(out.text, "same  (×3)\nother");
     }
 
+    #[test]
+    fn drops_noise_but_keeps_errors() {
+        let rules = Rules {
