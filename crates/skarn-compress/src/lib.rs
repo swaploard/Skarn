@@ -114,3 +114,20 @@ impl Compressor {
         let savings = Savings {
             before: estimate_tokens(&raw_before),
             after: estimate_tokens(&text),
+        };
+
+        Compressed {
+            text,
+            savings,
+            original_lines: out.original_lines + err.original_lines,
+            kept_lines: out.kept_lines + err.kept_lines,
+            profile: profile_name,
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]

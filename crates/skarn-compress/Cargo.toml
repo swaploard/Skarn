@@ -13,3 +13,4 @@ categories.workspace = true
 
 [dependencies]
 skarn-common = { workspace = true }
+serde = { workspace = true }

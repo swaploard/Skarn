@@ -130,3 +130,17 @@ impl RuleSet {
             r.keep.extend(p.keep.iter().cloned());
         }
         r
+    }
+
+    /// Load the built-in default rule set (embedded at compile time).
+    pub fn builtin() -> RuleSet {
+        serde_yaml_ng::from_str(BUILTIN_RULES_YAML).expect("built-in rules YAML is valid")
+    }
+
+    /// Parse a rule set from YAML.
+    pub fn from_yaml(s: &str) -> Result<RuleSet, String> {
+        serde_yaml_ng::from_str(s).map_err(|e| e.to_string())
+    }
+
+    /// Merge another rule set into this one: `other`'s default replaces nothing
+    /// scalar-wise but its profiles override/add to ours (user overrides win).

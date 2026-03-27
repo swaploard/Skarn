@@ -7,3 +7,4 @@
 To sandbox an *arbitrary* program (e.g. `cargo`, which we do not control) we must
 apply the kernel sandbox to that program's process. macOS `sandbox_init` is
 **per-process and irreversible**; Linux Landlock is per-thread but inherited
+across `execve`; Windows AppContainer can only be applied at process creation.

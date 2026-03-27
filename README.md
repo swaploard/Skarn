@@ -65,3 +65,9 @@ skarn doctor
 
 # 3. Point your agent at the gateway (Claude Code / Cursor / Windsurf):
 #    add to your MCP config:
+#    { "mcpServers": { "skarn": { "command": "skarn", "args": ["serve"] } } }
+
+# 4. (Optional) try a Code Mode script against your configured servers:
+skarn exec --code 'return (await skarn.listTools()).length'
+
+# 5. (Optional) compress + sandbox the agent's shell commands directly:

@@ -196,3 +196,30 @@ fn dedupe(lines: Vec<String>) -> Vec<String> {
 }
 
 #[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::rules::Rules;
+
+    fn profile(rules: Rules) -> CompiledProfile {
+        CompiledProfile::compile(&rules).0
+    }
+
+    #[test]
+    fn strips_ansi() {
+        let p = profile(Rules::default());
+        let out = p.run(b"\x1b[31mred\x1b[0m\nplain\n");
+        assert_eq!(out.text, "red\nplain");
+    }
+
+    #[test]
+    fn collapses_carriage_returns() {
+        let p = profile(Rules::default());
+        let out = p.run(b"10%\r50%\r100% done\n");
+        assert_eq!(out.text, "100% done");
+    }
+
+    #[test]
+    fn dedupes_adjacent_lines() {
+        let p = profile(Rules::default());
+        let out = p.run(b"same\nsame\nsame\nother\n");
+        assert_eq!(out.text, "same  (×3)\nother");

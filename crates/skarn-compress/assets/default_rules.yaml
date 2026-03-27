@@ -98,3 +98,12 @@ profiles:
       - '^\s*idealTree:'
       - '^npm http (fetch|cache)'
       - '^\s*$'
+      - '[⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏]'
+    keep:
+      - 'npm error'
+      - 'npm ERR!'
+      - '(?i)\berror\b'
+
+  pnpm:
+    max_lines: 120
+    drop:

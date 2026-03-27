@@ -1,0 +1,3 @@
+[package]
+name = "skarn-codemode"
+description = "Hermetic Code Mode engine: run sandboxed JS/TS that bridges to MCP tools, with oxc static validation."
