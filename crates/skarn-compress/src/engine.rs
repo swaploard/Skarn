@@ -235,3 +235,5 @@ mod tests {
         let p = profile(rules);
         let out = p.run(b"noise line\nnoise with error\nreal content\n");
         // The middle line matches both drop and keep; keep wins.
+        assert!(out.text.contains("noise with error"));
+        assert!(out.text.contains("real content"));

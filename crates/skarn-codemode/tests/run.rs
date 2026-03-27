@@ -17,3 +17,7 @@ fn math_bridge() -> Arc<dyn ToolBridge> {
                 Ok(serde_json::json!(a + b).to_string())
             })
             .with_tool("math", "double", "Double a number", |args| {
+                let v: serde_json::Value = serde_json::from_str(args).map_err(|e| e.to_string())?;
+                let n = v["n"].as_i64().unwrap_or(0);
+                Ok(serde_json::json!(n * 2).to_string())
+            }),

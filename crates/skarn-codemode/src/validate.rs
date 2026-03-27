@@ -33,3 +33,7 @@ use oxc_semantic::SemanticBuilder;
 use oxc_span::SourceType;
 use oxc_transformer::{TransformOptions, Transformer};
 use skarn_common::{Error, Result};
+
+/// Identifiers that must never appear in a script.
+const BANNED_IDENTIFIERS: &[&str] = &[
+    "eval",

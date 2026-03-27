@@ -153,3 +153,8 @@ impl RuleSet {
 }
 
 fn yes() -> bool {
+    true
+}
+fn default_max_lines() -> usize {
+    200
+}

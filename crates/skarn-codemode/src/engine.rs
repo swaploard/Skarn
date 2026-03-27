@@ -41,3 +41,9 @@ impl Default for ExecLimits {
 impl ExecLimits {
     /// Clamp the limits to safe floors so a misconfiguration (e.g. a zero memory
     /// or wall-clock value) can't make every script fail with a confusing error.
+    ///
+    /// `max_tool_calls` is intentionally *not* floored: `0` is a legitimate
+    /// "this script may make no tool calls" policy.
+    fn sanitized(self) -> Self {
+        Self {
+            memory_bytes: self.memory_bytes.max(1024 * 1024),
