@@ -11,3 +11,6 @@ use crate::bridge::ToolDescriptor;
 pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
     let mut out = String::new();
     out.push_str(DTS_HEADER);
+
+    // Group tools by server, preserving first-seen order.
+    let mut servers: Vec<String> = Vec::new();

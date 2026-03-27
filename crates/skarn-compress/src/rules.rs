@@ -146,3 +146,8 @@ impl RuleSet {
     /// scalar-wise but its profiles override/add to ours (user overrides win).
     pub fn merged_with(mut self, other: RuleSet) -> RuleSet {
         for (k, v) in other.profiles {
+            self.profiles.insert(k, v);
+        }
+        self
+    }
+}

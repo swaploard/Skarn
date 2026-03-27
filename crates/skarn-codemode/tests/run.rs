@@ -15,3 +15,4 @@ fn math_bridge() -> Arc<dyn ToolBridge> {
                 let a = v["a"].as_i64().unwrap_or(0);
                 let b = v["b"].as_i64().unwrap_or(0);
                 Ok(serde_json::json!(a + b).to_string())
+            })

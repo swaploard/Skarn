@@ -28,3 +28,5 @@ use oxc_ast_visit::walk::{
     walk_new_expression, walk_static_member_expression,
 };
 use oxc_codegen::Codegen;
+use oxc_parser::Parser;
+use oxc_semantic::SemanticBuilder;

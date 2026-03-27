@@ -32,3 +32,7 @@ impl Default for ExecLimits {
             memory_bytes: 64 * 1024 * 1024,
             max_stack_bytes: 1024 * 1024,
             wall_clock: Duration::from_secs(30),
+            max_tool_calls: 256,
+            max_output_bytes: 1024 * 1024,
+        }
+    }

@@ -228,3 +228,5 @@ mod tests {
     #[test]
     fn drops_noise_but_keeps_errors() {
         let rules = Rules {
+            drop: vec!["^noise".to_string()],
+            keep: vec!["error".to_string()],

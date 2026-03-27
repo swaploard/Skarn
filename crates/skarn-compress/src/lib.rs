@@ -132,3 +132,4 @@ mod tests {
 
     #[test]
     fn compresses_cargo_test_output() {
+        let c = Compressor::builtin();
