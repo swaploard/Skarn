@@ -70,3 +70,4 @@ skarn doctor
 # 4. (Optional) try a Code Mode script against your configured servers:
 skarn exec --code 'return (await skarn.listTools()).length'
 
+# 5. (Optional) compress + sandbox the agent's shell commands directly:

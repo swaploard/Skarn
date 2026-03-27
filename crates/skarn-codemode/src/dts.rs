@@ -5,3 +5,5 @@ use crate::bridge::ToolDescriptor;
 
 /// Produce a `.d.ts` for the given tool manifest.
 ///
+/// The output documents the global `skarn` object plus a typed `skarn.server()`
+/// surface per downstream server, with each tool's description carried through

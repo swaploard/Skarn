@@ -214,3 +214,8 @@ mod tests {
     #[test]
     fn collapses_carriage_returns() {
         let p = profile(Rules::default());
+        let out = p.run(b"10%\r50%\r100% done\n");
+        assert_eq!(out.text, "100% done");
+    }
+
+    #[test]

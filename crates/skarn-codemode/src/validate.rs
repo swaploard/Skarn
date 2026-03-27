@@ -17,3 +17,6 @@
 //!
 //! If validation passes, the TypeScript types are stripped and the result is
 //! emitted as plain JavaScript for QuickJS.
+
+use std::path::Path;
+

@@ -121,3 +121,8 @@ impl Compressor {
             savings,
             original_lines: out.original_lines + err.original_lines,
             kept_lines: out.kept_lines + err.kept_lines,
+            profile: profile_name,
+        }
+    }
+}
+

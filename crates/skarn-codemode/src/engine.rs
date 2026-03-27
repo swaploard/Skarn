@@ -17,3 +17,7 @@ pub struct ExecLimits {
     /// QuickJS heap limit in bytes.
     pub memory_bytes: usize,
     /// Maximum native stack in bytes.
+    pub max_stack_bytes: usize,
+    /// Wall-clock deadline for the whole run.
+    pub wall_clock: Duration,
+    /// Maximum number of host tool calls a script may make.
