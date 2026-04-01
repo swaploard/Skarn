@@ -2,3 +2,4 @@
 //! tools without their (often huge) intermediate payloads ever touching the
 //! model's context window.
 //!
+//! The flow:

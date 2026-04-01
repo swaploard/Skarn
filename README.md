@@ -74,3 +74,4 @@ skarn exec --code 'return (await skarn.listTools()).length'
 skarn run --net deny -- cargo test
 ```
 
+Downstream servers can be local (`transport = "stdio"`) or remote

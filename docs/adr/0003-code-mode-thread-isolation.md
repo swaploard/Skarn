@@ -11,3 +11,4 @@ calls `tokio::spawn`, which panics ("no reactor running") if it runs outside a
 runtime context.
 
 An early design ran everything single-threaded using `rmcp`'s `local` feature
+(relaxing `Send`) with the isolate inline. It worked for synchronous bridges but

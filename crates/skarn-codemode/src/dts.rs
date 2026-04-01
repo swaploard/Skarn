@@ -23,3 +23,4 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
     for server in &servers {
         let iface = server_interface_name(server);
         out.push_str(&format!(
+            "\n/** Tools exposed by the `{server}` server. */\n"

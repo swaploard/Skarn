@@ -28,3 +28,6 @@ fn math_bridge() -> Arc<dyn ToolBridge> {
 async fn runs_a_pure_script() {
     let engine = Engine::with_defaults();
     let bridge: Arc<dyn ToolBridge> = Arc::new(InProcessBridge::new());
+    let out = engine
+        .run("const x = 20; return x + 22;", bridge)
+        .await

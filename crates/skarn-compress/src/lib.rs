@@ -142,3 +142,6 @@ mod tests {
             stdout.push_str(&format!("test module::case{i} ... ok\n"));
         }
         stdout.push_str("test result: ok. 200 passed; 0 failed\n");
+        let stderr = b"error[E0277]: the trait bound is not satisfied\n  --> src/lib.rs:10:5\n";
+
+        let out = c.compress(&spec, stdout.as_bytes(), stderr);

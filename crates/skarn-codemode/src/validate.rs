@@ -54,3 +54,7 @@ const BANNED_IDENTIFIERS: &[&str] = &[
     "__filename",
     // Reflection / shared-memory primitives: `Reflect.get(x, "constructor")` is a
     // string-keyed hop around the property ban, and Atomics/SharedArrayBuffer are
+    // timing/side-channel primitives a Code Mode script never needs.
+    "Reflect",
+    "Atomics",
+    "SharedArrayBuffer",

@@ -251,3 +251,6 @@ mod tests {
 
     #[test]
     fn invalid_utf8_does_not_panic() {
+        let p = profile(Rules::default());
+        // Lone continuation bytes are replaced with U+FFFD rather than panicking.
+        let out = p.run(b"ok line\n\xff\xfe bad bytes\nmore\n");

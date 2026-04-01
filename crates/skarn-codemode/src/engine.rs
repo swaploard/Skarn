@@ -55,3 +55,6 @@ impl ExecLimits {
     }
 }
 
+/// The result of running a Code Mode script.
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct Outcome {

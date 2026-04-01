@@ -43,3 +43,4 @@ jobs:
           } >> "$GITHUB_ENV"
       - name: Build
         run: cargo build --release --target ${{ matrix.target }} -p skarn
+      - name: Package
