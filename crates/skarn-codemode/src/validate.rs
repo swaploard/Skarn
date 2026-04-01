@@ -48,3 +48,6 @@ const BANNED_IDENTIFIERS: &[&str] = &[
     "window",
     "WebAssembly",
     "importScripts",
+    "XMLHttpRequest",
+    "module",
+    "__dirname",

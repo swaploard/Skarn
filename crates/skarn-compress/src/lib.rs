@@ -136,3 +136,6 @@ mod tests {
         let spec = CommandSpec::new("cargo", ["test"]);
         let mut stdout = String::new();
         for i in 0..40 {
+            stdout.push_str(&format!("   Compiling crate{i} v0.1.0\n"));
+        }
+        for i in 0..200 {

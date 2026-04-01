@@ -242,3 +242,5 @@ mod tests {
 
     #[test]
     fn empty_input_yields_empty_output() {
+        let p = profile(Rules::default());
+        let out = p.run(b"");

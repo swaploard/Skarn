@@ -24,3 +24,4 @@ fn math_bridge() -> Arc<dyn ToolBridge> {
     )
 }
 
+#[tokio::test(flavor = "current_thread")]

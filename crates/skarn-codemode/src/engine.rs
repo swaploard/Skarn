@@ -52,3 +52,6 @@ impl ExecLimits {
             max_tool_calls: self.max_tool_calls,
             max_output_bytes: self.max_output_bytes.max(1024),
         }
+    }
+}
+

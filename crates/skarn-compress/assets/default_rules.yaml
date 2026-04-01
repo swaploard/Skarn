@@ -122,3 +122,5 @@ profiles:
   git:
     max_lines: 300
     dedupe_consecutive: false
+    keep:
+      - '^diff '

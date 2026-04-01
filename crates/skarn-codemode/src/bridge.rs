@@ -17,3 +17,6 @@ pub struct ToolDescriptor {
     pub server: String,
     /// The (un-namespaced) tool name on that server.
     pub name: String,
+    /// Human-readable description (often used as a JSDoc comment in `.d.ts`).
+    #[serde(default)]
+    pub description: String,

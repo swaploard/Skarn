@@ -18,3 +18,6 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
         if !servers.contains(&t.server) {
             servers.push(t.server.clone());
         }
+    }
+
+    for server in &servers {
