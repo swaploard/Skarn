@@ -84,3 +84,5 @@ impl Engine {
         Self::new(ExecLimits::default())
     }
 
+    /// Validate, transpile, and run `source` against `bridge`.
+    pub async fn run(&self, source: &str, bridge: Arc<dyn ToolBridge>) -> Result<Outcome> {

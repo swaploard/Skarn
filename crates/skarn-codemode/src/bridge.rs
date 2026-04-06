@@ -31,3 +31,5 @@ pub struct ToolDescriptor {
 /// `serde`↔JS value conversion is needed across the FFI boundary — the injected
 /// `skarn` JS shim does `JSON.parse`/`JSON.stringify`.
 ///
+/// The trait is `?Send`: the QuickJS isolate is single-threaded, and the
+/// production bridge wraps a (single-threaded) local MCP client, so requiring

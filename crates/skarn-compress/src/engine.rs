@@ -287,3 +287,6 @@ mod tests {
     #[test]
     fn truncates_and_rescues_important_lines() {
         let rules = Rules {
+            max_lines: 10,
+            head_lines: 2,
+            tail_lines: 2,

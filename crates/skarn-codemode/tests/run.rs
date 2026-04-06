@@ -46,3 +46,5 @@ async fn calls_tools_and_aggregates_locally() {
         skarn.log("intermediate", a, b);
         return { a, b, total: a + b };
     "#;
+    let out = engine.run(src, math_bridge()).await.unwrap();
+    assert!(out.ok, "error: {:?}", out.error);

@@ -78,3 +78,4 @@ Downstream servers can be local (`transport = "stdio"`) or remote
 (`transport = "http"`, Streamable HTTP with optional bearer auth) — see
 [`skarn.example.toml`](skarn.example.toml).
 
+## What you get

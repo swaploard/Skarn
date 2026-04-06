@@ -160,3 +160,4 @@ mod tests {
     fn unknown_tool_uses_default_profile() {
         let c = Compressor::builtin();
         let spec = CommandSpec::new("weirdtool", ["--x"]);
+        let out = c.compress(&spec, b"hello\nworld\n", b"");

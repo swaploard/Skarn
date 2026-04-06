@@ -182,3 +182,7 @@ mod tests {
         assert!(rs.profiles.contains_key("cargo"));
         assert!(rs.profiles.contains_key("pytest"));
         assert!(rs.profiles.contains_key("npm"));
+    }
+
+    #[test]
+    fn resolve_layers_patch_over_default() {

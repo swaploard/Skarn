@@ -87,3 +87,9 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
                 "parse failed".into()
             } else {
                 msg
+            }
+        )));
+    }
+
+    // Security walk.
+    let mut validator = Validator {
