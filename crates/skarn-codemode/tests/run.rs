@@ -42,3 +42,4 @@ async fn calls_tools_and_aggregates_locally() {
     let engine = Engine::with_defaults();
     let src = r#"
         const a = await skarn.callTool("math", "add", { a: 2, b: 3 });   // 5
+        const b = await skarn.server("math").double({ n: a });           // 10

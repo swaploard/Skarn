@@ -83,3 +83,5 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
             .join("; ");
         return Err(Error::CodeModeRejected(format!(
             "syntax error: {}",
+            if msg.is_empty() {
+                "parse failed".into()

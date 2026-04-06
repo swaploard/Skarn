@@ -12,3 +12,4 @@ hypothetical isolate escape would then land in a kernel-confined process rather
 than the gateway itself. The `ToolBridge` trait was always the seam for this —
 its docs anticipated bridge calls being "forwarded over a pipe to the parent."
 
+## Decision

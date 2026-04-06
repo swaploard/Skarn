@@ -177,3 +177,7 @@ mod tests {
     use super::*;
 
     #[test]
+    fn builtin_parses_and_has_profiles() {
+        let rs = RuleSet::builtin();
+        assert!(rs.profiles.contains_key("cargo"));
+        assert!(rs.profiles.contains_key("pytest"));

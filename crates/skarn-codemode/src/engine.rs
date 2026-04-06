@@ -78,3 +78,5 @@ pub struct Engine {
 impl Engine {
     pub fn new(limits: ExecLimits) -> Self {
         Self { limits }
+    }
+

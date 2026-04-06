@@ -277,3 +277,9 @@ mod tests {
         let p = profile(rules);
         let out = p.run(input.as_bytes());
         assert!(
+            !out.text.contains("lines hidden"),
+            "must not claim hidden lines when elided == 0: {}",
+            out.text
+        );
+        assert!(out.text.contains("kept important lines"));
+    }

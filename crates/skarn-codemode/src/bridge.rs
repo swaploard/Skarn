@@ -27,3 +27,6 @@ pub struct ToolDescriptor {
 
 /// The host operations a Code Mode script can invoke.
 ///
+/// All methods return JSON-encoded strings (or an error string) so that no
+/// `serde`↔JS value conversion is needed across the FFI boundary — the injected
+/// `skarn` JS shim does `JSON.parse`/`JSON.stringify`.

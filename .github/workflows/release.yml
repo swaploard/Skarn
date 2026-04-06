@@ -47,3 +47,4 @@ jobs:
         shell: bash
         run: |
           BIN=skarn
+          DIR="skarn-${{ matrix.target }}"
