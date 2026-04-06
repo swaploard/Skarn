@@ -67,3 +67,23 @@ const BANNED_PROPERTIES: &[&str] = &["constructor", "__proto__", "prototype"];
 ///
 /// The source is wrapped in an `async function __skarn_main()` *before* parsing
 /// so that a top-level `return value;` in the user's script is legal.
+pub fn validate_and_transpile(source: &str) -> Result<String> {
+    let wrapped = format!("async function __skarn_main() {{\n{source}\n}}");
+
+    let allocator = Allocator::default();
+    let source_type = SourceType::ts();
+    let parsed = Parser::new(&allocator, &wrapped, source_type).parse();
+
+    if parsed.panicked || !parsed.errors.is_empty() {
+        let msg = parsed
+            .errors
+            .iter()
+            .map(|d| d.to_string())
+            .collect::<Vec<_>>()
+            .join("; ");
+        return Err(Error::CodeModeRejected(format!(
+            "syntax error: {}",
+            if msg.is_empty() {
+                "parse failed".into()
+            } else {
+                msg

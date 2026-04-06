@@ -149,3 +149,14 @@ mod tests {
         assert!(!out.text.contains("Compiling"), "compile spam dropped");
         assert!(!out.text.contains("... ok"), "passing tests dropped");
         // Should be a large reduction.
+        assert!(
+            out.savings.percent() >= 70,
+            "got only {}%",
+            out.savings.percent()
+        );
+    }
+
+    #[test]
+    fn unknown_tool_uses_default_profile() {
+        let c = Compressor::builtin();
+        let spec = CommandSpec::new("weirdtool", ["--x"]);

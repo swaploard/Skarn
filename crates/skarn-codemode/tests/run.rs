@@ -34,3 +34,15 @@ async fn runs_a_pure_script() {
         .unwrap();
     assert!(out.ok, "error: {:?}", out.error);
     assert_eq!(out.value, serde_json::json!(42));
+    assert_eq!(out.tool_calls, 0);
+}
+
+#[tokio::test(flavor = "current_thread")]
+async fn calls_tools_and_aggregates_locally() {
+    let engine = Engine::with_defaults();
+    let src = r#"
+        const a = await skarn.callTool("math", "add", { a: 2, b: 3 });   // 5
+        const b = await skarn.server("math").double({ n: a });           // 10
+        skarn.log("intermediate", a, b);
+        return { a, b, total: a + b };
+    "#;

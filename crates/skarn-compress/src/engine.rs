@@ -262,3 +262,28 @@ mod tests {
     fn no_hidden_banner_when_nothing_is_elided() {
         // 12 lines > max_lines(10), but every middle line is important and fits
         // under the rescue cap, so nothing is actually hidden.
+        let rules = Rules {
+            max_lines: 10,
+            head_lines: 2,
+            tail_lines: 2,
+            max_rescued_lines: 40,
+            keep: vec!["KEEP".to_string()],
+            ..Rules::default()
+        };
+        let mut input = String::new();
+        for i in 0..12 {
+            input.push_str(&format!("KEEP line {i}\n"));
+        }
+        let p = profile(rules);
+        let out = p.run(input.as_bytes());
+        assert!(
+            !out.text.contains("lines hidden"),
+            "must not claim hidden lines when elided == 0: {}",
+            out.text
+        );
+        assert!(out.text.contains("kept important lines"));
+    }
+
+    #[test]
+    fn truncates_and_rescues_important_lines() {
+        let rules = Rules {

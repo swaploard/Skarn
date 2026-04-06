@@ -64,3 +64,23 @@ pub struct Outcome {
     pub value: serde_json::Value,
     /// The error message + stack if the script threw.
     pub error: Option<String>,
+    /// Lines emitted via `skarn.log(...)`.
+    pub logs: Vec<String>,
+    /// How many tool calls the script made.
+    pub tool_calls: usize,
+}
+
+/// The Code Mode engine. Cheap to construct; one is reused per worker.
+pub struct Engine {
+    limits: ExecLimits,
+}
+
+impl Engine {
+    pub fn new(limits: ExecLimits) -> Self {
+        Self { limits }
+    }
+
+    pub fn with_defaults() -> Self {
+        Self::new(ExecLimits::default())
+    }
+

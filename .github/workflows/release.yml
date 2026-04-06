@@ -45,3 +45,6 @@ jobs:
         run: cargo build --release --target ${{ matrix.target }} -p skarn
       - name: Package
         shell: bash
+        run: |
+          BIN=skarn
+          DIR="skarn-${{ matrix.target }}"

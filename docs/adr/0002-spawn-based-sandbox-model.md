@@ -11,3 +11,4 @@ across `execve`; Windows AppContainer can only be applied at process creation.
 
 A second hazard: applying a non-async-signal-safe function (like `sandbox_init`,
 which allocates) in a `pre_exec` hook after `fork()` in a *multi-threaded* parent
+can deadlock on the allocator lock held by another thread at fork time.
