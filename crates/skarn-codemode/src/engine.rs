@@ -68,3 +68,8 @@ pub struct Outcome {
     pub logs: Vec<String>,
     /// How many tool calls the script made.
     pub tool_calls: usize,
+}
+
+/// The Code Mode engine. Cheap to construct; one is reused per worker.
+pub struct Engine {
+    limits: ExecLimits,

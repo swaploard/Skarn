@@ -31,3 +31,4 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
                 out.push_str(&format!("  /** {} */\n", t.description.replace('\n', " ")));
             }
             out.push_str(&format!(
+                "  {}(args?: Record<string, unknown>): Promise<unknown>;\n",

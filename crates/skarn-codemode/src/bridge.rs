@@ -25,3 +25,5 @@ pub struct ToolDescriptor {
     pub input_schema: serde_json::Value,
 }
 
+/// The host operations a Code Mode script can invoke.
+///

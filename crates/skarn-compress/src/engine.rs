@@ -270,3 +270,4 @@ mod tests {
             keep: vec!["KEEP".to_string()],
             ..Rules::default()
         };
+        let mut input = String::new();

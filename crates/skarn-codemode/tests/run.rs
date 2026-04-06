@@ -38,3 +38,5 @@ async fn runs_a_pure_script() {
 }
 
 #[tokio::test(flavor = "current_thread")]
+async fn calls_tools_and_aggregates_locally() {
+    let engine = Engine::with_defaults();

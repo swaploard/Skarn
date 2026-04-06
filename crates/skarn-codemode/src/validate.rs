@@ -74,3 +74,7 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
     let source_type = SourceType::ts();
     let parsed = Parser::new(&allocator, &wrapped, source_type).parse();
 
+    if parsed.panicked || !parsed.errors.is_empty() {
+        let msg = parsed
+            .errors
+            .iter()

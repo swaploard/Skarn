@@ -174,3 +174,4 @@ pub const BUILTIN_RULES_YAML: &str = include_str!("../assets/default_rules.yaml"
 
 #[cfg(test)]
 mod tests {
+    use super::*;

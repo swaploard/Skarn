@@ -153,3 +153,6 @@ mod tests {
             out.savings.percent() >= 70,
             "got only {}%",
             out.savings.percent()
+        );
+    }
+
