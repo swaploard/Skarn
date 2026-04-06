@@ -158,3 +158,5 @@ mod tests {
 
     #[test]
     fn unknown_tool_uses_default_profile() {
+        let c = Compressor::builtin();
+        let spec = CommandSpec::new("weirdtool", ["--x"]);

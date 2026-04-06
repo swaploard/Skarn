@@ -283,3 +283,7 @@ mod tests {
         );
         assert!(out.text.contains("kept important lines"));
     }
+
+    #[test]
+    fn truncates_and_rescues_important_lines() {
+        let rules = Rules {

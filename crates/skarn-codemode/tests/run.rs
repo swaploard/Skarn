@@ -43,3 +43,6 @@ async fn calls_tools_and_aggregates_locally() {
     let src = r#"
         const a = await skarn.callTool("math", "add", { a: 2, b: 3 });   // 5
         const b = await skarn.server("math").double({ n: a });           // 10
+        skarn.log("intermediate", a, b);
+        return { a, b, total: a + b };
+    "#;

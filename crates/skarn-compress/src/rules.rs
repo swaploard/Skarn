@@ -181,3 +181,4 @@ mod tests {
         let rs = RuleSet::builtin();
         assert!(rs.profiles.contains_key("cargo"));
         assert!(rs.profiles.contains_key("pytest"));
+        assert!(rs.profiles.contains_key("npm"));

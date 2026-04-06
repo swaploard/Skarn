@@ -80,3 +80,7 @@ impl Engine {
         Self { limits }
     }
 
+    pub fn with_defaults() -> Self {
+        Self::new(ExecLimits::default())
+    }
+

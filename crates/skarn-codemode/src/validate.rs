@@ -85,3 +85,5 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
             "syntax error: {}",
             if msg.is_empty() {
                 "parse failed".into()
+            } else {
+                msg

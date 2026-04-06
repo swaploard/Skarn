@@ -139,3 +139,4 @@ profiles:
     max_lines: 80
     head_lines: 40
     tail_lines: 20
+    keep: []
