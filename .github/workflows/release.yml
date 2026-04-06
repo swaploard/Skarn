@@ -46,3 +46,4 @@ jobs:
       - name: Package
         shell: bash
         run: |
+          BIN=skarn

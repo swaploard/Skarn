@@ -65,3 +65,6 @@ pub struct Outcome {
     /// The error message + stack if the script threw.
     pub error: Option<String>,
     /// Lines emitted via `skarn.log(...)`.
+    pub logs: Vec<String>,
+    /// How many tool calls the script made.
+    pub tool_calls: usize,

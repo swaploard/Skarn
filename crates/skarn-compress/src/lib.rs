@@ -150,3 +150,6 @@ mod tests {
         assert!(!out.text.contains("... ok"), "passing tests dropped");
         // Should be a large reduction.
         assert!(
+            out.savings.percent() >= 70,
+            "got only {}%",
+            out.savings.percent()

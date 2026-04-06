@@ -29,3 +29,5 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
         for t in tools.iter().filter(|t| &t.server == server) {
             if !t.description.is_empty() {
                 out.push_str(&format!("  /** {} */\n", t.description.replace('\n', " ")));
+            }
+            out.push_str(&format!(

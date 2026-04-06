@@ -171,3 +171,6 @@ fn default_max_rescued() -> usize {
 /// The built-in rules. Authored to hit the 70–90% reductions documented in the
 /// README on typical `cargo`, `pytest`, `npm`, and listing/search output.
 pub const BUILTIN_RULES_YAML: &str = include_str!("../assets/default_rules.yaml");
+
+#[cfg(test)]
+mod tests {

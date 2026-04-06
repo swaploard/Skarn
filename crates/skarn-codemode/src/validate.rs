@@ -70,3 +70,7 @@ const BANNED_PROPERTIES: &[&str] = &["constructor", "__proto__", "prototype"];
 pub fn validate_and_transpile(source: &str) -> Result<String> {
     let wrapped = format!("async function __skarn_main() {{\n{source}\n}}");
 
+    let allocator = Allocator::default();
+    let source_type = SourceType::ts();
+    let parsed = Parser::new(&allocator, &wrapped, source_type).parse();
+

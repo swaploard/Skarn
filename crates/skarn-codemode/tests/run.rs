@@ -36,3 +36,5 @@ async fn runs_a_pure_script() {
     assert_eq!(out.value, serde_json::json!(42));
     assert_eq!(out.tool_calls, 0);
 }
+
+#[tokio::test(flavor = "current_thread")]

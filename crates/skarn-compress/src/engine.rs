@@ -267,3 +267,6 @@ mod tests {
             head_lines: 2,
             tail_lines: 2,
             max_rescued_lines: 40,
+            keep: vec!["KEEP".to_string()],
+            ..Rules::default()
+        };
