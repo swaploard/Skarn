@@ -39,3 +39,6 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
     }
 
     out.push_str("\ninterface SkarnServers {\n");
+    for server in &servers {
+        out.push_str(&format!(
+            "  {}: {};\n",

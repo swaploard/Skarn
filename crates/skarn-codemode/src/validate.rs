@@ -99,3 +99,7 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
     if !validator.violations.is_empty() {
         // De-duplicate while preserving order.
         let mut seen = std::collections::HashSet::new();
+        let unique: Vec<String> = validator
+            .violations
+            .into_iter()
+            .filter(|v| seen.insert(v.clone()))

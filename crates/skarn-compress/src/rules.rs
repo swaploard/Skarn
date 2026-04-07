@@ -196,3 +196,4 @@ mod tests {
     #[test]
     fn unknown_tool_falls_back_to_default() {
         let rs = RuleSet::builtin();
+        let r = rs.resolve("some-unknown-tool");

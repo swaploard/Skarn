@@ -166,3 +166,7 @@ mod tests {
     }
 
     #[test]
+    fn no_warnings_from_builtin_rules() {
+        let c = Compressor::builtin();
+        assert!(
+            c.warnings.is_empty(),

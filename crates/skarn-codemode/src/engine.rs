@@ -98,3 +98,7 @@ impl Engine {
         bridge: Arc<dyn ToolBridge>,
     ) -> Result<Outcome> {
         let limits = self.limits.sanitized();
+        let counter = Arc::new(AtomicUsize::new(0));
+
+        let runtime = AsyncRuntime::new().map_err(|e| Error::CodeMode(e.to_string()))?;
+        runtime.set_memory_limit(limits.memory_bytes).await;

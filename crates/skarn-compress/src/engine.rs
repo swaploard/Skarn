@@ -300,3 +300,5 @@ mod tests {
             } else {
                 input.push_str(&format!("line {i}\n"));
             }
+        }
+        let p = profile(rules);

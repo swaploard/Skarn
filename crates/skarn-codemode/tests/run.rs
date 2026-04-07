@@ -55,3 +55,4 @@ async fn calls_tools_and_aggregates_locally() {
     assert_eq!(out.tool_calls, 2, "two downstream calls were made");
     assert!(out.logs.iter().any(|l| l.contains("intermediate 5 10")));
 }
+
