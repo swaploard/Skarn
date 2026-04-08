@@ -173,3 +173,5 @@ mod tests {
             "builtin rules compile cleanly: {:?}",
             c.warnings
         );
+    }
+}

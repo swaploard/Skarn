@@ -307,3 +307,5 @@ mod tests {
         assert!(
             out.text.contains("BOOM an error here"),
             "important line rescued"
+        );
+        assert!(out.text.lines().count() < 50);

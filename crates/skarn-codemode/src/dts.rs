@@ -46,3 +46,4 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
             server_interface_name(server)
         ));
     }
+    out.push_str("}\n");

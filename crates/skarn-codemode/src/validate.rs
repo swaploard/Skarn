@@ -113,3 +113,8 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
         .build(&program)
         .semantic
         .into_scoping();
+    let options = TransformOptions::default();
+    let result = Transformer::new(&allocator, Path::new("script.ts"), &options)
+        .build_with_scoping(scoping, &mut program);
+    if !result.errors.is_empty() {
+        let msg = result

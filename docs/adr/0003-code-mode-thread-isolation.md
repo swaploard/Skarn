@@ -14,3 +14,4 @@ An early design ran everything single-threaded using `rmcp`'s `local` feature
 (relaxing `Send`) with the isolate inline. It worked for synchronous bridges but
 **deadlocked / panicked** once the bridge performed real async MCP I/O: the
 QuickJS executor would drive host futures (and later drop MCP clients) in a
+context detached from the Tokio reactor.

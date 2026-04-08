@@ -59,3 +59,5 @@ async fn calls_tools_and_aggregates_locally() {
 #[tokio::test(flavor = "current_thread")]
 async fn parallel_helper_runs_calls() {
     let engine = Engine::with_defaults();
+    let src = r#"
+        const results = await skarn.parallel(

@@ -112,3 +112,9 @@ impl Engine {
             .await
             .map_err(|e| Error::CodeMode(e.to_string()))?;
 
+        let setup_source = format!("{PRELUDE_JS}\n{prepared_js}\n{RUNNER_JS}");
+
+        // Phase 1: install host functions and kick off the async script.
+        let bridge_for_js = bridge.clone();
+        let counter_for_js = counter.clone();
+        let max_calls = limits.max_tool_calls;
