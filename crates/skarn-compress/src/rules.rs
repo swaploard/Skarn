@@ -198,3 +198,5 @@ mod tests {
         let rs = RuleSet::builtin();
         let r = rs.resolve("some-unknown-tool");
         assert_eq!(r.max_lines, rs.default.max_lines);
+    }
+}

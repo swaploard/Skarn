@@ -305,3 +305,5 @@ mod tests {
         let out = p.run(input.as_bytes());
         assert!(out.text.contains("lines hidden"));
         assert!(
+            out.text.contains("BOOM an error here"),
+            "important line rescued"

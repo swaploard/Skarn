@@ -108,3 +108,8 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
     }
 
     // Strip TypeScript types -> JavaScript.
+    let mut program = parsed.program;
+    let scoping = SemanticBuilder::new()
+        .build(&program)
+        .semantic
+        .into_scoping();

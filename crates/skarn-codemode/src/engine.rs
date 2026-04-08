@@ -108,3 +108,7 @@ impl Engine {
             .set_interrupt_handler(Some(Box::new(move || Instant::now() >= deadline)))
             .await;
 
+        let context = AsyncContext::full(&runtime)
+            .await
+            .map_err(|e| Error::CodeMode(e.to_string()))?;
+

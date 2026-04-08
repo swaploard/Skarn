@@ -56,3 +56,6 @@ async fn calls_tools_and_aggregates_locally() {
     assert!(out.logs.iter().any(|l| l.contains("intermediate 5 10")));
 }
 
+#[tokio::test(flavor = "current_thread")]
+async fn parallel_helper_runs_calls() {
+    let engine = Engine::with_defaults();

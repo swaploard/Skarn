@@ -44,3 +44,5 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
             "  {}: {};\n",
             json_key(server),
             server_interface_name(server)
+        ));
+    }

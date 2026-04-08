@@ -172,3 +172,4 @@ mod tests {
             c.warnings.is_empty(),
             "builtin rules compile cleanly: {:?}",
             c.warnings
+        );

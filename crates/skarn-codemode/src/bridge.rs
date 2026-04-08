@@ -37,3 +37,5 @@ pub struct ToolDescriptor {
 #[async_trait(?Send)]
 pub trait ToolBridge {
     /// Call `tool` on `server` with `args_json` (a JSON object). Returns the
+    /// tool result as a JSON string, or an error message.
+    async fn call_tool(
