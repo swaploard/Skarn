@@ -11,3 +11,5 @@ response and an SSE stream for server-initiated messages); `rmcp` 1.8 implements
 the client side as `StreamableHttpClientTransport` and consumes the SSE stream
 internally. There is no separate "SSE client" transport in `rmcp` 1.8 — the
 Streamable HTTP transport is the one client surface.
+
+## Decision

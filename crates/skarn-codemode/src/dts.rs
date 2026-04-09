@@ -49,3 +49,6 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
     out.push_str("}\n");
 
     out.push_str("\ndeclare const skarn: SkarnApi<SkarnServers>;\n");
+    out
+}
+

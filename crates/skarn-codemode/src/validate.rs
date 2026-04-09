@@ -133,3 +133,8 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
 struct Validator {
     violations: Vec<String>,
 }
+
+impl Validator {
+    fn flag(&mut self, msg: impl Into<String>) {
+        self.violations.push(msg.into());
+    }

@@ -42,3 +42,6 @@ pub trait ToolBridge {
         &self,
         server: &str,
         tool: &str,
+        args_json: &str,
+    ) -> std::result::Result<String, String>;
+
