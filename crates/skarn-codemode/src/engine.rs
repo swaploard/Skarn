@@ -124,3 +124,7 @@ impl Engine {
             ctx.eval::<(), _>(setup_source)
                 .catch(&ctx)
                 .map_err(|e| e.to_string())?;
+            Ok(())
+        })
+        .await;
+        setup.map_err(Error::CodeMode)?;

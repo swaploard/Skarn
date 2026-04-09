@@ -124,3 +124,12 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
             .collect::<Vec<_>>()
             .join("; ");
         return Err(Error::CodeModeRejected(format!("transform error: {msg}")));
+    }
+
+    let js = Codegen::new().build(&program).code;
+    Ok(js)
+}
+
+struct Validator {
+    violations: Vec<String>,
+}

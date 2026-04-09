@@ -51,3 +51,5 @@ jobs:
           mkdir "$DIR"
           if [ "${{ runner.os }}" = "Windows" ]; then
             cp "target/${{ matrix.target }}/release/$BIN.exe" "$DIR/"
+          else
+            cp "target/${{ matrix.target }}/release/$BIN" "$DIR/"

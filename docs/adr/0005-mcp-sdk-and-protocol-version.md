@@ -10,3 +10,4 @@ SDK, `rmcp`, provides both a server (`ServerHandler`) and a client
 At the time of writing, `rmcp` (1.8) negotiates protocol revision `2025-06-18`
 while the published spec has advanced to `2025-11-25`.
 
+## Decision

@@ -64,3 +64,7 @@ async fn parallel_helper_runs_calls() {
             [1, 2, 3, 4].map((n) => () => skarn.server("math").double({ n })),
             { concurrency: 2 }
         );
+        return results;
+    "#;
+    let out = engine.run(src, math_bridge()).await.unwrap();
+    assert!(out.ok, "error: {:?}", out.error);

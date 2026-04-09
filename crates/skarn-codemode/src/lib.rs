@@ -7,3 +7,4 @@
 //!    that could escape the isolate (`import`/`eval`/`process`/`.constructor`…),
 //!    and strips TypeScript types.
 //! 2. [`Engine::run`] executes the result inside a QuickJS isolate (via
+//!    `rquickjs`) whose only egress is a [`ToolBridge`]. Memory, stack, wall

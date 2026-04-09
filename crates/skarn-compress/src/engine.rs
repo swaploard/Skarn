@@ -310,3 +310,4 @@ mod tests {
         );
         assert!(out.text.lines().count() < 50);
     }
+}
