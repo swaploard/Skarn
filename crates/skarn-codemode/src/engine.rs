@@ -132,3 +132,9 @@ impl Engine {
         // Phase 2: drive the runtime to completion (host calls + microtasks),
         // bounded by a wall-clock backstop in case a host call hangs.
         let grace = limits.wall_clock + Duration::from_secs(5);
+        tokio::time::timeout(grace, runtime.idle())
+            .await
+            .map_err(|_| Error::CodeMode("execution timed out".to_string()))?;
+
+        // Phase 3: read the JSON result the runner stored on the global object.
+        let result_json: Option<String> = async_with!(context => |ctx| {

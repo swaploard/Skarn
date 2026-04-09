@@ -71,3 +71,6 @@ async fn parallel_helper_runs_calls() {
     assert_eq!(out.value, serde_json::json!([2, 4, 6, 8]));
     assert_eq!(out.tool_calls, 4);
 }
+
+#[tokio::test(flavor = "current_thread")]
+async fn thrown_errors_are_reported_not_panicked() {

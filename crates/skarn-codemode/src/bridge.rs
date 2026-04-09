@@ -45,3 +45,7 @@ pub trait ToolBridge {
         args_json: &str,
     ) -> std::result::Result<String, String>;
 
+    /// Read a resource by URI from `server`. Returns the contents as a JSON
+    /// string, or an error message.
+    async fn read_resource(&self, server: &str, uri: &str) -> std::result::Result<String, String> {
+        let _ = (server, uri);

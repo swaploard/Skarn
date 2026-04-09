@@ -52,3 +52,5 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
     out
 }
 
+fn server_interface_name(server: &str) -> String {
+    let mut s = String::from("Server_");

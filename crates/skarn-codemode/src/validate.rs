@@ -138,3 +138,9 @@ impl Validator {
     fn flag(&mut self, msg: impl Into<String>) {
         self.violations.push(msg.into());
     }
+}
+
+/// Extract a statically-known string from a computed-member key expression: a
+/// string literal (`"x"`) or a no-substitution template (`` `x` ``). Returns
+/// `None` for dynamic keys, which cannot be reasoned about statically.
+fn static_string_key<'b, 'a>(expr: &'b Expression<'a>) -> Option<&'b str> {
