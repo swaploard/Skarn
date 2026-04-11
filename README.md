@@ -88,3 +88,4 @@ Instead of injecting every tool's schema, the gateway exposes three meta-tools. 
 // The model writes this; Skarn runs it in a hermetic, OS-sandboxed isolate.
 const issues = await skarn.server("github").search_issues({ q: "is:open label:bug" });
 const stale  = issues.filter(i => daysSince(i.updated_at) > 90);   // filtering happens HERE
+await skarn.server("slack").post_message({ channel: "#triage", text: summarize(stale) });

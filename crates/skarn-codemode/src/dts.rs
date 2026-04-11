@@ -66,3 +66,6 @@ fn server_interface_name(server: &str) -> String {
 
 fn js_ident(name: &str) -> String {
     // If the tool name is a valid JS identifier, emit it bare; otherwise quote.
+    let valid = !name.is_empty()
+        && name.chars().enumerate().all(|(i, c)| {
+            c == '_' || c == '$' || c.is_ascii_alphabetic() || (i > 0 && c.is_ascii_digit())

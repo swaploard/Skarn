@@ -10,3 +10,4 @@
 //!    `rquickjs`) whose only egress is a [`ToolBridge`]. Memory, stack, wall
 //!    clock, tool-call count, and output size are all bounded.
 //! 3. The script returns a small value (and `skarn.log` lines); everything else
+//!    stays in the sandbox.

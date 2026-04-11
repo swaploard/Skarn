@@ -165,3 +165,9 @@ impl Engine {
         })
     }
 }
+
+#[derive(Deserialize)]
+struct RawOutcome {
+    ok: bool,
+    #[serde(default)]
+    value: serde_json::Value,

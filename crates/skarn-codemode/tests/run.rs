@@ -89,3 +89,6 @@ async fn tool_errors_surface_in_the_script() {
     let src = r#"
         try {
             await skarn.callTool("math", "nonexistent", {});
+            return "should not reach";
+        } catch (e) {
+            return "caught: " + e.message;

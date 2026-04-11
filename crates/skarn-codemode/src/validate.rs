@@ -161,3 +161,11 @@ impl<'a> Visit<'a> for Validator {
         walk_identifier_reference(self, it);
     }
 
+    fn visit_static_member_expression(&mut self, it: &StaticMemberExpression<'a>) {
+        if BANNED_PROPERTIES.contains(&it.property.name.as_str()) {
+            self.flag(format!(
+                "access to forbidden property `.{}`",
+                it.property.name
+            ));
+        }
+        walk_static_member_expression(self, it);
