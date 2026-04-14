@@ -200,3 +200,7 @@ fn install_host(
                     // never exceeds `max_calls`.
                     if counter.fetch_add(1, Ordering::SeqCst) >= max_calls {
                         counter.fetch_sub(1, Ordering::SeqCst);
+                        return error_envelope(&format!(
+                            "tool-call budget of {max_calls} exceeded"
+                        ));
+                    }

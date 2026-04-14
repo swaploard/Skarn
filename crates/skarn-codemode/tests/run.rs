@@ -109,3 +109,5 @@ async fn infinite_loops_are_interrupted() {
     let result = engine
         .run("while (true) {}", Arc::new(InProcessBridge::new()))
         .await;
+    // The interrupt handler aborts the run; we surface it as an error.
+    assert!(

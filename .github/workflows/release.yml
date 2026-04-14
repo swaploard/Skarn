@@ -55,3 +55,4 @@ jobs:
             cp "target/${{ matrix.target }}/release/$BIN" "$DIR/"
           fi
           cp README.md LICENSE-MIT LICENSE-APACHE "$DIR/"
+          tar czf "$DIR.tar.gz" "$DIR"

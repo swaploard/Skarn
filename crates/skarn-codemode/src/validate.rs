@@ -199,3 +199,8 @@ impl<'a> Visit<'a> for Validator {
     fn visit_export_all_declaration(&mut self, _it: &ExportAllDeclaration<'a>) {
         self.flag("`export` is not allowed in Code Mode scripts");
     }
+
+    fn visit_new_expression(&mut self, it: &NewExpression<'a>) {
+        if let Expression::Identifier(id) = &it.callee
+            && id.name.as_str() == "Function"
+        {

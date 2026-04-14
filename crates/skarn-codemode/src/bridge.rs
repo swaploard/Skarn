@@ -71,3 +71,6 @@ impl Default for InProcessBridge {
     fn default() -> Self {
         Self::new()
     }
+}
+
+impl InProcessBridge {

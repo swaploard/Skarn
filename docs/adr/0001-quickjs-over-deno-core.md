@@ -15,3 +15,5 @@ toolchain** — so embedding cost matters as much as raw throughput.
 
 Use **`rquickjs`** with the `futures` + `macro` features.
 
+## Rationale
+

@@ -91,3 +91,5 @@ const stale  = issues.filter(i => daysSince(i.updated_at) > 90);   // filtering 
 await skarn.server("slack").post_message({ channel: "#triage", text: summarize(stale) });
 return { staleCount: stale.length };                                // only this returns to the model
 ```
+
+The 1,000-row intermediate result never touches the context window.

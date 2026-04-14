@@ -82,3 +82,5 @@ fn json_key(name: &str) -> String {
         name.to_string()
     } else {
         format!("\"{}\"", name.replace('"', "\\\""))
+    }
+}
