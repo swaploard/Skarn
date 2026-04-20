@@ -14,3 +14,4 @@ Streamable HTTP transport is the one client surface.
 
 ## Decision
 
+- **Add one `TransportConfig::Http` variant** (serde tag `"http"`) alongside

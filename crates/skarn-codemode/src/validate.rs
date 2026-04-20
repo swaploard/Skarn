@@ -207,3 +207,9 @@ impl<'a> Visit<'a> for Validator {
             self.flag("`new Function(...)` is not allowed");
         }
         walk_new_expression(self, it);
+    }
+
+    fn visit_meta_property(&mut self, it: &MetaProperty<'a>) {
+        self.flag(format!(
+            "meta property `{}.{}` is not allowed",
+            it.meta.name, it.property.name

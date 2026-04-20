@@ -76,3 +76,5 @@ impl Default for InProcessBridge {
 impl InProcessBridge {
     pub fn new() -> Self {
         Self {
+            tools: Vec::new(),
+            handlers: std::collections::HashMap::new(),

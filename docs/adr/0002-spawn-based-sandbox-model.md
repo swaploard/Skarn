@@ -17,3 +17,4 @@ can deadlock on the allocator lock held by another thread at fork time.
 
 - **Unix (`skarn run`):** spawn the target with `std::process::Command` and a
   `pre_exec` closure that calls `Policy::apply_to_current_process()` — Seatbelt on
+  macOS, Landlock + seccomp on Linux. The confinement persists across `execve`.

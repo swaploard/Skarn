@@ -116,3 +116,6 @@ async fn infinite_loops_are_interrupted() {
     );
 }
 
+#[tokio::test(flavor = "current_thread")]
+async fn tool_call_budget_is_enforced() {
+    let limits = ExecLimits {

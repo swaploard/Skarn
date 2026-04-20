@@ -211,3 +211,8 @@ fn install_host(
                 }
             })),
         )?;
+    }
+
+    {
+        let bridge = bridge.clone();
+        globals.set(

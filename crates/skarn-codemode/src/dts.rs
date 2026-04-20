@@ -85,3 +85,5 @@ fn json_key(name: &str) -> String {
     }
 }
 
+const DTS_HEADER: &str = r#"// Skarn Code Mode — ambient type declarations (auto-generated).
+//
