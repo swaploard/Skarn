@@ -56,3 +56,5 @@ jobs:
           fi
           cp README.md LICENSE-MIT LICENSE-APACHE "$DIR/"
           tar czf "$DIR.tar.gz" "$DIR"
+          # Portable SHA-256: sha256sum on Linux/Windows-bash, shasum on macOS.
+          if command -v sha256sum >/dev/null 2>&1; then

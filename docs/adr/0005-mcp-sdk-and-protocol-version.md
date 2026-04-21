@@ -13,3 +13,4 @@ while the published spec has advanced to `2025-11-25`.
 ## Decision
 
 - **Build on `rmcp`.** Reusing the maintained SDK reduces protocol-drift risk and
+  gives us both transports for free. We implement `ServerHandler` by hand (rather

@@ -213,3 +213,5 @@ impl<'a> Visit<'a> for Validator {
         self.flag(format!(
             "meta property `{}.{}` is not allowed",
             it.meta.name, it.property.name
+        ));
+    }

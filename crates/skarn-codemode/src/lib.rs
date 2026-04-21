@@ -16,3 +16,4 @@
 //! `skarn-sandbox`) for defense in depth, and the [`ToolBridge`] forwards calls
 //! over a pipe to the parent gateway.
 
+mod bridge;

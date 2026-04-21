@@ -216,3 +216,6 @@ fn install_host(
     {
         let bridge = bridge.clone();
         globals.set(
+            "__skarn_read_resource",
+            Func::from(Async(move |server: String, uri: String| {
+                let bridge = bridge.clone();
