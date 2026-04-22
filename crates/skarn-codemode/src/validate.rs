@@ -218,3 +218,7 @@ impl<'a> Visit<'a> for Validator {
 }
 
 #[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn rejected(src: &str) -> String {

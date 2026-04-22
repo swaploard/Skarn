@@ -2,3 +2,6 @@
 
 use serde::Serialize;
 use skarn_codemode::ToolDescriptor;
+
+/// One downstream tool, with its gateway-facing namespaced name.
+#[derive(Clone, Debug)]

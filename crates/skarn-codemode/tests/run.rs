@@ -123,3 +123,4 @@ async fn tool_call_budget_is_enforced() {
         ..ExecLimits::default()
     };
     let engine = Engine::new(limits);
+    let src = r#"

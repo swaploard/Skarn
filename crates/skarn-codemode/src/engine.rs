@@ -223,3 +223,6 @@ fn install_host(
                     match bridge.read_resource(&server, &uri).await {
                         Ok(result) => ok_envelope(&result),
                         Err(e) => error_envelope(&e),
+                    }
+                }
+            })),

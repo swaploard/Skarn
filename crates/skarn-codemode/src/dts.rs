@@ -91,3 +91,6 @@ const DTS_HEADER: &str = r#"// Skarn Code Mode — ambient type declarations (au
 // model; only what you return (or `skarn.log`) leaves the sandbox. Intermediate
 // data stays local — fetch, filter, and summarize here.
 
+interface SkarnApi<Servers> {
+  /** Call a downstream tool. Throws if the tool errors. */
+  callTool(server: keyof Servers & string, tool: string, args?: Record<string, unknown>): Promise<unknown>;

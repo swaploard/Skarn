@@ -79,3 +79,5 @@ impl InProcessBridge {
             tools: Vec::new(),
             handlers: std::collections::HashMap::new(),
         }
+    }
+
