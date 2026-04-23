@@ -231,3 +231,8 @@ fn install_host(
 
     {
         let bridge = bridge.clone();
+        globals.set(
+            "__skarn_list_tools",
+            Func::from(Async(move || {
+                let bridge = bridge.clone();
+                async move {

@@ -15,3 +15,8 @@
 //!   (newline-delimited JSON, see [`crate::worker_proto`]). A hypothetical
 //!   isolate escape lands in a kernel-confined process with no network and no
 //!   workspace writes.
+//!
+//! [`execute_code`] picks between them based on [`Isolation`] and whether an OS
+//! sandbox backend is available.
+
+use std::sync::Arc;

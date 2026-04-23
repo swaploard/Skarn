@@ -96,3 +96,4 @@ interface SkarnApi<Servers> {
   callTool(server: keyof Servers & string, tool: string, args?: Record<string, unknown>): Promise<unknown>;
   /** Read a resource by URI from a downstream server. */
   readResource(server: keyof Servers & string, uri: string): Promise<unknown>;
+  /** List every available tool as `{ server, name, description }[]`. */

@@ -96,3 +96,4 @@ The 1,000-row intermediate result never touches the context window.
 
 | Scenario | Classic MCP (input tokens) | Skarn Code Mode | Reduction |
 |---|---:|---:|---:|
+| 16 servers / 508 tools, multi-step task | ~150,000 | ~2,000 | **~99%** |

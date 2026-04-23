@@ -9,3 +9,7 @@ use rmcp::model::{
     CallToolRequestParams, CallToolResult, ReadResourceRequestParams, ResourceContents, Tool,
 };
 use rmcp::service::RunningService;
+use rmcp::transport::StreamableHttpClientTransport;
+use rmcp::transport::TokioChildProcess;
+use rmcp::{RoleClient, ServiceExt};
+use skarn_codemode::{ToolBridge, ToolDescriptor};
