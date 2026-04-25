@@ -2,3 +2,4 @@
 //! worker (child).
 //!
 //! Framing is newline-delimited JSON. The parent writes a single [`JobMsg`] to
+//! the worker's stdin, then services [`WorkerMsg::Request`] messages from the

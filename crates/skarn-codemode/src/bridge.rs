@@ -87,3 +87,7 @@ impl InProcessBridge {
         mut self,
         server: &str,
         name: &str,
+        description: &str,
+        handler: impl Fn(&str) -> std::result::Result<String, String> + Send + Sync + 'static,
+    ) -> Self {
+        self.tools.push(ToolDescriptor {

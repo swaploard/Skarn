@@ -136,3 +136,5 @@ async fn tool_call_budget_is_enforced() {
     // The 4th call trips the budget.
     let stopped = out.value["stopped"].as_str().unwrap_or("");
     assert!(
+        stopped.contains("budget"),
+        "expected budget error, got {:?}",

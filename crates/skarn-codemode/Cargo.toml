@@ -23,3 +23,4 @@ futures = { workspace = true }
 rquickjs = { version = "0.9", features = ["futures", "macro"] }
 oxc_allocator = "0.95"
 oxc_parser = "0.95"
+oxc_ast = "0.95"

@@ -7,3 +7,5 @@ use skarn_codemode::ToolDescriptor;
 #[derive(Clone, Debug)]
 pub struct NamespacedTool {
     /// Downstream server alias.
+    pub server: String,
+    /// Original tool name on that server.

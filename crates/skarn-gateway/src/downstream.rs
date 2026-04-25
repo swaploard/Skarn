@@ -22,3 +22,7 @@ type JsonObject = serde_json::Map<String, serde_json::Value>;
 type Client = RunningService<RoleClient, ()>;
 
 /// Holds one MCP client per downstream server plus the namespaced registry.
+pub struct DownstreamManager {
+    clients: HashMap<String, Client>,
+    registry: ArcSwap<Registry>,
+    separator: String,

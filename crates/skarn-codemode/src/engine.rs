@@ -244,3 +244,5 @@ fn install_host(
             })),
         )?;
     }
+
+    Ok(())
