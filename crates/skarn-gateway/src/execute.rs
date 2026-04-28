@@ -55,3 +55,7 @@ pub async fn execute_code(
             true
         }
         Isolation::Auto => worker_available(),
+    };
+
+    #[cfg(unix)]
+    if use_worker {

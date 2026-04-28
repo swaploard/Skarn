@@ -262,3 +262,4 @@ mod tests {
             rejected("const p = [].constructor.constructor; p('return 1')();")
                 .contains("constructor")
         );
+    }

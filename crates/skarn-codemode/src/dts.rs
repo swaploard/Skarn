@@ -107,3 +107,4 @@ interface SkarnApi<Servers> {
   /** A typed proxy for a server's tools: `skarn.server("db").query({...})`. */
   server<K extends keyof Servers & string>(name: K): Servers[K];
 }
+"#;

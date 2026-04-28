@@ -16,3 +16,4 @@ Streamable HTTP transport is the one client surface.
 
 - **Add one `TransportConfig::Http` variant** (serde tag `"http"`) alongside
   `Stdio`, with `url`, `auth_bearer`, `auth_bearer_env`, and `headers`. Tokens are
+  preferentially read from an environment variable (`auth_bearer_env`) so secrets

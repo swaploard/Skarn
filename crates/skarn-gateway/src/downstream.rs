@@ -34,3 +34,4 @@ impl DownstreamManager {
     /// not abort the others.
     pub async fn connect(config: &GatewayConfig) -> Result<Self> {
         let separator = config.gateway.namespace_separator.clone();
+        let mut clients = HashMap::new();

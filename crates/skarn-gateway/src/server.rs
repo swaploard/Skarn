@@ -21,3 +21,5 @@ use crate::execute::execute_code;
 /// The gateway's upstream MCP server handler.
 pub struct GatewayServer {
     manager: Arc<DownstreamManager>,
+    limits: ExecLimits,
+    passthrough: bool,

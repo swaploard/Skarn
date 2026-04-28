@@ -257,3 +257,4 @@ fn ok_envelope(result_json: &str) -> String {
 
 fn error_envelope(msg: &str) -> String {
     serde_json::json!({ "ok": false, "error": msg }).to_string()
+}

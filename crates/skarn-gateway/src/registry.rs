@@ -15,3 +15,5 @@ pub struct NamespacedTool {
     /// Description (may be empty).
     pub description: String,
     /// JSON Schema of the tool's arguments.
+    pub input_schema: serde_json::Value,
+}
