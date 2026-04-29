@@ -35,3 +35,6 @@ impl DownstreamManager {
     pub async fn connect(config: &GatewayConfig) -> Result<Self> {
         let separator = config.gateway.namespace_separator.clone();
         let mut clients = HashMap::new();
+        let mut per_server: Vec<(String, Vec<ToolDescriptor>)> = Vec::new();
+
+        for (alias, server) in config.enabled_servers() {

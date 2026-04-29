@@ -258,3 +258,5 @@ fn ok_envelope(result_json: &str) -> String {
 fn error_envelope(msg: &str) -> String {
     serde_json::json!({ "ok": false, "error": msg }).to_string()
 }
+
+/// The JS shim that exposes the friendly `skarn` API on top of the raw host

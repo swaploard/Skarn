@@ -23,3 +23,6 @@ pub struct GatewayServer {
     manager: Arc<DownstreamManager>,
     limits: ExecLimits,
     passthrough: bool,
+    isolation: Isolation,
+    instructions: String,
+}

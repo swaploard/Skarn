@@ -263,3 +263,5 @@ mod tests {
                 .contains("constructor")
         );
     }
+
+    #[test]

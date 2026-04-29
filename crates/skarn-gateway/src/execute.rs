@@ -59,3 +59,7 @@ pub async fn execute_code(
 
     #[cfg(unix)]
     if use_worker {
+        return execute_worker(manager, limits, code).await;
+    }
+    #[cfg(not(unix))]
+    let _ = use_worker;

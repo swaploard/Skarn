@@ -10,3 +10,4 @@
 //! let server = build_server(&config, ExecLimits::default()).await?;
 //! serve_stdio(server).await?;
 //! # Ok(()) }
+//! ```

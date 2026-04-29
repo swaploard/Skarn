@@ -17,3 +17,6 @@ pub struct NamespacedTool {
     /// JSON Schema of the tool's arguments.
     pub input_schema: serde_json::Value,
 }
+
+impl NamespacedTool {
+    pub fn descriptor(&self) -> ToolDescriptor {

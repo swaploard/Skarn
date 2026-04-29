@@ -23,3 +23,5 @@ pub struct GatewaySettings {
     /// Also expose the namespaced downstream tools directly (in addition to the
     /// `search`/`execute` meta-tools), for clients that don't use Code Mode.
     pub passthrough: bool,
+    /// The character sequence joining `server` and `tool` into a namespaced
+    /// name (e.g. `github__search`). Must match `[A-Za-z0-9_.-]`.

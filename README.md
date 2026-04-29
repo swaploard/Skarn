@@ -100,3 +100,4 @@ The 1,000-row intermediate result never touches the context window.
 | Single 3-tool workflow | ~20,700 | ~1,100 | **~95%** |
 
 *(Figures from the published Code Mode literature — see [docs/adr/0001](docs/adr/0001-quickjs-over-deno-core.md). Your mileage varies with catalog size.)*
+
