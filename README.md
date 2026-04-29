@@ -101,3 +101,4 @@ The 1,000-row intermediate result never touches the context window.
 
 *(Figures from the published Code Mode literature — see [docs/adr/0001](docs/adr/0001-quickjs-over-deno-core.md). Your mileage varies with catalog size.)*
 
+### 2. Token compression for raw shell output

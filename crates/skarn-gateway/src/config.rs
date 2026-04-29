@@ -25,3 +25,6 @@ pub struct GatewaySettings {
     pub passthrough: bool,
     /// The character sequence joining `server` and `tool` into a namespaced
     /// name (e.g. `github__search`). Must match `[A-Za-z0-9_.-]`.
+    pub namespace_separator: String,
+    /// How `execute` scripts are isolated. See [`Isolation`].
+    pub isolation: Isolation,

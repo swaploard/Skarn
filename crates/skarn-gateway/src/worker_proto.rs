@@ -6,3 +6,4 @@
 //! worker's stdout by writing a [`ReplyMsg`] back to stdin for each, until the
 //! worker emits a terminal [`WorkerMsg::Result`] or [`WorkerMsg::Failed`]. The
 //! worker's stderr is left for human-readable logs.
+

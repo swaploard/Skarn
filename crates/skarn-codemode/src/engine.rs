@@ -260,3 +260,7 @@ fn error_envelope(msg: &str) -> String {
 }
 
 /// The JS shim that exposes the friendly `skarn` API on top of the raw host
+/// functions. Injected before every script.
+const PRELUDE_JS: &str = r#"
+globalThis.__skarn_logs = [];
+const skarn = {

@@ -63,3 +63,8 @@ pub async fn execute_code(
     }
     #[cfg(not(unix))]
     let _ = use_worker;
+
+    execute_in_process(manager, limits, code).await
+}
+
+/// Whether the cross-process OS-sandboxed worker can run here. It is Unix-only

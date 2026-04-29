@@ -265,3 +265,5 @@ mod tests {
     }
 
     #[test]
+    fn rejects_computed_property_hop() {
+        // Bracket access with a string/template key must be caught like dot access.

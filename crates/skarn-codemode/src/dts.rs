@@ -108,3 +108,4 @@ interface SkarnApi<Servers> {
   server<K extends keyof Servers & string>(name: K): Servers[K];
 }
 "#;
+

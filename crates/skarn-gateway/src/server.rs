@@ -26,3 +26,7 @@ pub struct GatewayServer {
     isolation: Isolation,
     instructions: String,
 }
+
+impl GatewayServer {
+    pub fn new(
+        manager: Arc<DownstreamManager>,

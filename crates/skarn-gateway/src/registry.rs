@@ -20,3 +20,6 @@ pub struct NamespacedTool {
 
 impl NamespacedTool {
     pub fn descriptor(&self) -> ToolDescriptor {
+        ToolDescriptor {
+            server: self.server.clone(),
+            name: self.tool.clone(),
