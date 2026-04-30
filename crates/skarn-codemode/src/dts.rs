@@ -116,3 +116,5 @@ mod tests {
     fn tool(server: &str, name: &str, desc: &str) -> ToolDescriptor {
         ToolDescriptor {
             server: server.to_string(),
+            name: name.to_string(),
+            description: desc.to_string(),

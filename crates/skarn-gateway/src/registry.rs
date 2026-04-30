@@ -28,3 +28,7 @@ impl NamespacedTool {
         }
     }
 }
+
+/// An immutable snapshot of all downstream tools, with a reverse-routing map.
+#[derive(Clone, Debug, Default)]
+pub struct Registry {

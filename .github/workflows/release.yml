@@ -63,3 +63,4 @@ jobs:
             shasum -a 256 "$DIR.tar.gz" > "$DIR.tar.gz.sha256"
           fi
       - uses: actions/upload-artifact@v4
+        with:

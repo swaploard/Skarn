@@ -85,3 +85,7 @@ struct BridgeRequest {
 }
 
 enum BridgeOp {
+    CallTool {
+        server: String,
+        tool: String,
+        args: String,

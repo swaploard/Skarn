@@ -35,3 +35,6 @@ impl Default for GatewaySettings {
         Self {
             passthrough: false,
             namespace_separator: "__".to_string(),
+            isolation: Isolation::default(),
+        }
+    }

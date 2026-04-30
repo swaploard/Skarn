@@ -37,3 +37,5 @@ impl GatewayServer {
     ) -> Self {
         Self {
             manager,
+            limits,
+            passthrough,

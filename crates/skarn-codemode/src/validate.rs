@@ -272,3 +272,5 @@ mod tests {
         assert!(rejected(r#"const p = {} ["__proto__"]; p;"#).contains("__proto__"));
         // The classic full bypass chain.
         assert!(
+            rejected(r#"[]["constructor"]["constructor"]("return process")();"#)
+                .contains("constructor")

@@ -280,3 +280,6 @@ const skarn = {
     const raw = await __skarn_list_tools();
     const r = JSON.parse(raw);
     if (!r.ok) throw new Error(r.error || "list error");
+    return r.result;
+  },
+  log(...args) {
