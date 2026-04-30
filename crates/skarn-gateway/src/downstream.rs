@@ -38,3 +38,8 @@ impl DownstreamManager {
         let mut per_server: Vec<(String, Vec<ToolDescriptor>)> = Vec::new();
 
         for (alias, server) in config.enabled_servers() {
+            match Self::connect_one(alias, &server.transport).await {
+                Ok((client, descriptors)) => {
+                    tracing::info!(
+                        server = alias,
+                        tools = descriptors.len(),

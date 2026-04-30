@@ -149,3 +149,4 @@ async fn tool_call_budget_is_enforced() {
 
 #[tokio::test(flavor = "current_thread")]
 async fn output_cap_is_enforced() {
+    let limits = ExecLimits {

@@ -30,3 +30,6 @@ pub struct GatewayServer {
 impl GatewayServer {
     pub fn new(
         manager: Arc<DownstreamManager>,
+        limits: ExecLimits,
+        passthrough: bool,
+        isolation: Isolation,

@@ -28,3 +28,5 @@ pub struct GatewaySettings {
     pub namespace_separator: String,
     /// How `execute` scripts are isolated. See [`Isolation`].
     pub isolation: Isolation,
+}
+

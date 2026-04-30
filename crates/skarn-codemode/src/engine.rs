@@ -264,3 +264,9 @@ fn error_envelope(msg: &str) -> String {
 const PRELUDE_JS: &str = r#"
 globalThis.__skarn_logs = [];
 const skarn = {
+  async callTool(server, tool, args) {
+    const raw = await __skarn_call_tool(String(server), String(tool), JSON.stringify(args ?? {}));
+    const r = JSON.parse(raw);
+    if (!r.ok) throw new Error(r.error || "tool error");
+    return r.result;
+  },

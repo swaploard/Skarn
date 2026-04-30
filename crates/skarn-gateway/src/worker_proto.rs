@@ -7,3 +7,4 @@
 //! worker emits a terminal [`WorkerMsg::Result`] or [`WorkerMsg::Failed`]. The
 //! worker's stderr is left for human-readable logs.
 
+use serde::{Deserialize, Serialize};

@@ -68,3 +68,4 @@ pub async fn execute_code(
 }
 
 /// Whether the cross-process OS-sandboxed worker can run here. It is Unix-only
+/// (the worker self-applies the sandbox; on Windows a process cannot move itself

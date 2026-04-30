@@ -61,3 +61,4 @@ jobs:
             sha256sum "$DIR.tar.gz" > "$DIR.tar.gz.sha256"
           else
             shasum -a 256 "$DIR.tar.gz" > "$DIR.tar.gz.sha256"
+          fi

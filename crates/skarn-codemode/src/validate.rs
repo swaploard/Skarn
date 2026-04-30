@@ -267,3 +267,4 @@ mod tests {
     #[test]
     fn rejects_computed_property_hop() {
         // Bracket access with a string/template key must be caught like dot access.
+        assert!(rejected(r#"const c = [] ["constructor"]; c;"#).contains("constructor"));
