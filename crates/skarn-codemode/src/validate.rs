@@ -290,3 +290,6 @@ mod tests {
         let js =
             validate_and_transpile(r#"const o = { a: 1 }; const k = "a"; return o[k];"#).unwrap();
         assert!(js.contains("__skarn_main"));
+        let js2 = validate_and_transpile(r#"const xs = [1,2,3]; return xs["length"];"#).unwrap();
+        assert!(js2.contains("length"));
+    }

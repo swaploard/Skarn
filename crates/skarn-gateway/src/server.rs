@@ -43,3 +43,6 @@ impl GatewayServer {
             instructions,
         }
     }
+
+    /// The fixed meta-tools, always exposed.
+    fn meta_tools() -> Vec<Tool> {

@@ -105,3 +105,5 @@ struct ChannelBridge {
 
 #[async_trait(?Send)]
 impl ToolBridge for ChannelBridge {
+    async fn call_tool(
+        &self,

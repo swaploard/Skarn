@@ -289,3 +289,7 @@ const skarn = {
   },
   async parallel(calls, opts) {
     const concurrency = Math.max(1, (opts && opts.concurrency) || 8);
+    const results = new Array(calls.length);
+    let next = 0;
+    async function worker() {
+      while (next < calls.length) {

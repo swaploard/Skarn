@@ -104,3 +104,5 @@ impl InProcessBridge {
 
 #[async_trait(?Send)]
 impl ToolBridge for InProcessBridge {
+    async fn call_tool(
+        &self,

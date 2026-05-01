@@ -62,3 +62,6 @@ impl DownstreamManager {
         })
     }
 
+    async fn connect_one(
+        alias: &str,
+        transport: &TransportConfig,
