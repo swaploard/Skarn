@@ -100,3 +100,4 @@ impl InProcessBridge {
             .insert(format!("{server}/{name}"), Box::new(handler));
         self
     }
+}

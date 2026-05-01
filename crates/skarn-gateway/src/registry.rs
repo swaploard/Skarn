@@ -35,3 +35,4 @@ pub struct Registry {
     tools: Vec<NamespacedTool>,
 }
 
+impl Registry {

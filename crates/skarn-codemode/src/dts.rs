@@ -118,3 +118,5 @@ mod tests {
             server: server.to_string(),
             name: name.to_string(),
             description: desc.to_string(),
+            input_schema: serde_json::json!({"type": "object"}),
+        }

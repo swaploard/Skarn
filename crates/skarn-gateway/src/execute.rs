@@ -94,3 +94,7 @@ enum BridgeOp {
         server: String,
         uri: String,
     },
+    ListTools,
+}
+
+/// A [`ToolBridge`] that forwards every call over an mpsc channel to a servicer

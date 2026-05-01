@@ -41,3 +41,5 @@ impl GatewayServer {
             passthrough,
             isolation,
             instructions,
+        }
+    }

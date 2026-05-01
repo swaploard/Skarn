@@ -50,3 +50,8 @@ impl DownstreamManager {
                 }
                 Err(e) => {
                     tracing::error!(server = alias, error = %e, "failed to connect downstream MCP server");
+                }
+            }
+        }
+
+        let registry = Registry::build(&separator, per_server);

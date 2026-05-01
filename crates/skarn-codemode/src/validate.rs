@@ -278,3 +278,7 @@ mod tests {
     }
 
     #[test]
+    fn rejects_reflection_primitives() {
+        assert!(rejected(r#"Reflect.get([], "constructor");"#).contains("Reflect"));
+        assert!(rejected("const a = Atomics; a;").contains("Atomics"));
+        assert!(rejected("new SharedArrayBuffer(8);").contains("SharedArrayBuffer"));
