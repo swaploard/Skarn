@@ -155,3 +155,5 @@ async fn output_cap_is_enforced() {
     };
     let engine = Engine::new(limits);
     let result = engine
+        .run("return 'x'.repeat(5000);", Arc::new(InProcessBridge::new()))
+        .await;

@@ -89,3 +89,8 @@ enum BridgeOp {
         server: String,
         tool: String,
         args: String,
+    },
+    ReadResource {
+        server: String,
+        uri: String,
+    },

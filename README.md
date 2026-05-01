@@ -103,3 +103,4 @@ The 1,000-row intermediate result never touches the context window.
 
 ### 2. Token compression for raw shell output
 
+```bash

@@ -274,3 +274,7 @@ mod tests {
         assert!(
             rejected(r#"[]["constructor"]["constructor"]("return process")();"#)
                 .contains("constructor")
+        );
+    }
+
+    #[test]

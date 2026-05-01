@@ -49,3 +49,4 @@ impl DownstreamManager {
                     clients.insert(alias.clone(), client);
                 }
                 Err(e) => {
+                    tracing::error!(server = alias, error = %e, "failed to connect downstream MCP server");

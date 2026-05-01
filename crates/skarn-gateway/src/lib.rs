@@ -14,3 +14,6 @@
 //!
 //! Runs on a normal multi-threaded Tokio runtime. The `!Send` QuickJS isolate is
 //! confined to a dedicated thread (see [`execute`]) and bridged back over
+//! channels, so the MCP clients keep a stable reactor for their whole lifetime.
+
+mod config;

@@ -39,3 +39,5 @@ impl GatewayServer {
             manager,
             limits,
             passthrough,
+            isolation,
+            instructions,
