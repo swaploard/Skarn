@@ -55,3 +55,6 @@ impl DownstreamManager {
         }
 
         let registry = Registry::build(&separator, per_server);
+        Ok(Self {
+            clients,
+            registry: ArcSwap::from_pointee(registry),

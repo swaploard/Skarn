@@ -101,3 +101,5 @@ impl InProcessBridge {
         self
     }
 }
+
+#[async_trait(?Send)]

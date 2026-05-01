@@ -286,3 +286,4 @@ const skarn = {
     globalThis.__skarn_logs.push(
       args.map((a) => (typeof a === "string" ? a : JSON.stringify(a))).join(" ")
     );
+  },

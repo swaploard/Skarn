@@ -98,3 +98,7 @@ enum BridgeOp {
 }
 
 /// A [`ToolBridge`] that forwards every call over an mpsc channel to a servicer
+/// running on the main runtime. Lives on the dedicated isolate thread.
+struct ChannelBridge {
+    tx: mpsc::UnboundedSender<BridgeRequest>,
+}

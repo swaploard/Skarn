@@ -36,3 +36,8 @@ pub struct Registry {
 }
 
 impl Registry {
+    /// Build a registry from per-server tool lists, namespacing each tool.
+    pub fn build(separator: &str, per_server: Vec<(String, Vec<ToolDescriptor>)>) -> Registry {
+        let mut tools = Vec::new();
+        for (server, descriptors) in per_server {
+            for d in descriptors {

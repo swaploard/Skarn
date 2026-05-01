@@ -159,3 +159,6 @@ async fn output_cap_is_enforced() {
         .await;
     let err = result.expect_err("oversized output must be rejected");
     assert!(err.to_string().contains("byte limit"), "got: {err}");
+}
+
+#[tokio::test(flavor = "current_thread")]

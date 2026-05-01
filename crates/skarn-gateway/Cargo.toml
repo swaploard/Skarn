@@ -7,3 +7,4 @@ rust-version.workspace = true
 license.workspace = true
 repository.workspace = true
 homepage.workspace = true
+authors.workspace = true
