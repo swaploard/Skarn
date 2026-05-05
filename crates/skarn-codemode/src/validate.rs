@@ -296,3 +296,6 @@ mod tests {
 
     #[test]
     fn rejects_process_and_deno() {
+        assert!(rejected("process.exit(1)").contains("process"));
+        assert!(rejected("Deno.readFile('/etc/passwd')").contains("Deno"));
+    }

@@ -295,3 +295,6 @@ const skarn = {
       while (next < calls.length) {
         const idx = next++;
         results[idx] = await calls[idx]();
+      }
+    }
+    const n = Math.min(concurrency, calls.length);

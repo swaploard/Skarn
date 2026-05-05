@@ -107,3 +107,4 @@ impl ToolBridge for InProcessBridge {
     async fn call_tool(
         &self,
         server: &str,
+        tool: &str,

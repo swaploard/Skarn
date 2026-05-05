@@ -44,3 +44,7 @@ impl Default for GatewaySettings {
 ///
 /// Both modes run the script inside the hermetic QuickJS isolate (no filesystem,
 /// network, or `fetch`). The worker adds a second layer: the isolate runs in a
+/// dedicated child process that confines *itself* with the OS-native sandbox
+/// before touching the script, so a hypothetical isolate escape still lands in a
+/// kernel-confined process with no network and no workspace writes.
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]

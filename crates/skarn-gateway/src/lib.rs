@@ -20,3 +20,4 @@ mod config;
 mod downstream;
 mod execute;
 mod registry;
+mod server;

@@ -44,3 +44,5 @@ impl Registry {
                 let namespaced = format!("{server}{separator}{}", d.name);
                 tools.push(NamespacedTool {
                     server: server.clone(),
+                    tool: d.name,
+                    namespaced,
