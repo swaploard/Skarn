@@ -46,3 +46,7 @@ impl Registry {
                     server: server.clone(),
                     tool: d.name,
                     namespaced,
+                    description: d.description,
+                    input_schema: d.input_schema,
+                });
+            }

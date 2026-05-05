@@ -298,3 +298,6 @@ const skarn = {
       }
     }
     const n = Math.min(concurrency, calls.length);
+    await Promise.all(Array.from({ length: n }, () => worker()));
+    return results;
+  },

@@ -299,3 +299,4 @@ mod tests {
         assert!(rejected("process.exit(1)").contains("process"));
         assert!(rejected("Deno.readFile('/etc/passwd')").contains("Deno"));
     }
+

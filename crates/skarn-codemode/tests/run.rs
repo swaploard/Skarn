@@ -168,3 +168,4 @@ async fn zero_wall_clock_is_clamped_not_instant_fail() {
     let limits = ExecLimits {
         wall_clock: Duration::ZERO,
         ..ExecLimits::default()
+    };

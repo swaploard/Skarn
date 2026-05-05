@@ -113,3 +113,6 @@ impl ToolBridge for ChannelBridge {
     ) -> std::result::Result<String, String> {
         self.send(BridgeOp::CallTool {
             server: server.to_string(),
+            tool: tool.to_string(),
+            args: args_json.to_string(),
+        })
