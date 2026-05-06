@@ -11,3 +11,4 @@ use serde::{Deserialize, Serialize};
 use skarn_codemode::{ExecLimits, Outcome};
 use skarn_sandbox::Policy;
 
+/// The job the parent hands the worker: the OS-sandbox policy the worker applies

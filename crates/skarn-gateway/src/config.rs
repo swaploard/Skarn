@@ -51,3 +51,5 @@ impl Default for GatewaySettings {
 #[serde(rename_all = "snake_case")]
 pub enum Isolation {
     /// Use the cross-process OS-sandboxed worker when a sandbox backend is
+    /// available on this platform; otherwise fall back to in-process.
+    #[default]

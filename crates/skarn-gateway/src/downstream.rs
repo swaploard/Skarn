@@ -79,3 +79,5 @@ impl DownstreamManager {
                 cmd.args(args);
                 for (k, v) in env {
                     cmd.env(k, v);
+                }
+                if let Some(dir) = cwd {

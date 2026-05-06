@@ -25,3 +25,4 @@ pub mod worker_proto;
 
 use std::sync::Arc;
 
+use rmcp::ServiceExt;

@@ -306,3 +306,5 @@ const skarn = {
     return {
       put: (k, v) => { m.set(String(k), v); },
       get: (k) => (m.has(String(k)) ? m.get(String(k)) : null),
+      keys: () => Array.from(m.keys()),
+    };

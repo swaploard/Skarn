@@ -15,3 +15,4 @@ upstream also reintroduces exactly the context bloat we set out to remove.
    (default separator `__`, configurable; both `__` and `.` are legal in the MCP
    name charset). A reverse map (`Registry::resolve`) restores `(server, tool)`
    for routing. Names stay within the 128-char limit.
+2. **Constant upstream surface.** Regardless of catalog size, the gateway exposes

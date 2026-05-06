@@ -170,3 +170,4 @@ async fn zero_wall_clock_is_clamped_not_instant_fail() {
         ..ExecLimits::default()
     };
     let engine = Engine::new(limits);
+    let out = engine

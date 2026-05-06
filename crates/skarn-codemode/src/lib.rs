@@ -23,3 +23,4 @@ mod validate;
 
 pub use bridge::{InProcessBridge, ToolBridge, ToolDescriptor};
 pub use dts::generate_dts;
+pub use engine::{Engine, ExecLimits, Outcome};

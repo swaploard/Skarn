@@ -124,3 +124,5 @@ mod tests {
 
     #[test]
     fn generates_typed_surface() {
+        let tools = vec![
+            tool("db", "query", "Run a SQL query"),

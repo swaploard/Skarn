@@ -125,3 +125,7 @@ impl ToolBridge for ChannelBridge {
             uri: uri.to_string(),
         })
         .await
+    }
+
+    async fn list_tools(&self) -> std::result::Result<String, String> {
+        self.send(BridgeOp::ListTools).await

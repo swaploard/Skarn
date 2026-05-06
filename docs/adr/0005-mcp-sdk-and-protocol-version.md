@@ -16,3 +16,4 @@ while the published spec has advanced to `2025-11-25`.
   gives us both transports for free. We implement `ServerHandler` by hand (rather
   than via the attribute macros) for full control over the small meta-tool set.
 - **Track the SDK's negotiated revision** rather than hand-rolling a newer one.
+  Whatever revision `rmcp` advertises is what Skarn advertises; when `rmcp`
