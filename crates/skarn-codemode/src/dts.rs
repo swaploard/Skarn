@@ -123,3 +123,4 @@ mod tests {
     }
 
     #[test]
+    fn generates_typed_surface() {

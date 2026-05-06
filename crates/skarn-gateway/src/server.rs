@@ -55,3 +55,5 @@ impl GatewayServer {
                     "type": "object",
                     "properties": {
                         "query": { "type": "string", "description": "What you want to do" },
+                        "limit": { "type": "integer", "description": "Max results (default 15)" }
+                    },

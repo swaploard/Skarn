@@ -75,3 +75,7 @@ impl DownstreamManager {
                 env,
                 cwd,
             } => {
+                let mut cmd = tokio::process::Command::new(command);
+                cmd.args(args);
+                for (k, v) in env {
+                    cmd.env(k, v);

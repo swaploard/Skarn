@@ -120,3 +120,8 @@ impl ToolBridge for ChannelBridge {
     }
 
     async fn read_resource(&self, server: &str, uri: &str) -> std::result::Result<String, String> {
+        self.send(BridgeOp::ReadResource {
+            server: server.to_string(),
+            uri: uri.to_string(),
+        })
+        .await

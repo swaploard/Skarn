@@ -66,3 +66,4 @@ jobs:
         with:
           name: skarn-${{ matrix.target }}
           path: |
+            skarn-${{ matrix.target }}.tar.gz

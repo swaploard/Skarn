@@ -50,3 +50,4 @@ impl Registry {
                     input_schema: d.input_schema,
                 });
             }
+        }

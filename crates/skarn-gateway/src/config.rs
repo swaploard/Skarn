@@ -50,3 +50,4 @@ impl Default for GatewaySettings {
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub enum Isolation {
+    /// Use the cross-process OS-sandboxed worker when a sandbox backend is

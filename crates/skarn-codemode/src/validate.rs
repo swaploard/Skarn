@@ -301,3 +301,6 @@ mod tests {
     }
 
     #[test]
+    fn rejects_imports_and_requires() {
+        assert!(
+            rejected("import fs from 'fs';")

@@ -303,3 +303,6 @@ const skarn = {
   },
   stash: (() => {
     const m = new Map();
+    return {
+      put: (k, v) => { m.set(String(k), v); },
+      get: (k) => (m.has(String(k)) ? m.get(String(k)) : null),
