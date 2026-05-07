@@ -113,3 +113,4 @@ impl ToolBridge for InProcessBridge {
         match self.handlers.get(&format!("{server}/{tool}")) {
             Some(h) => h(args_json),
             None => Err(format!("unknown tool {server}/{tool}")),
+        }

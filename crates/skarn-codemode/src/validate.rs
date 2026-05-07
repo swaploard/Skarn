@@ -314,3 +314,6 @@ mod tests {
                 .contains("import")
         );
     }
+
+    #[test]
+    fn rejects_globalthis_escape() {

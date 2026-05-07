@@ -56,3 +56,4 @@ impl Registry {
 
     pub fn tools(&self) -> &[NamespacedTool] {
         &self.tools
+    }

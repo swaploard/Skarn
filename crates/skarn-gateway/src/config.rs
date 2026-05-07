@@ -57,3 +57,5 @@ pub enum Isolation {
     /// Always use the cross-process OS-sandboxed worker. Errors if no sandbox
     /// backend is available (fail closed).
     Worker,
+    /// Always run in-process (hermetic QuickJS isolate only, no OS sandbox).
+    InProcess,

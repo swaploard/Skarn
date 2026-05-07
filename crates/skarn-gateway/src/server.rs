@@ -61,3 +61,5 @@ impl GatewayServer {
                 })),
             ),
             Tool::new(
+                "read_tool_docs",
+                "Get the full JSON Schema and server for a namespaced tool \

@@ -143,3 +143,4 @@ impl ChannelBridge {
     }
 }
 
+/// Validate, transpile, and run `code` in-process against the downstream servers

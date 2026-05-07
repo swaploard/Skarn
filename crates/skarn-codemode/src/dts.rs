@@ -129,3 +129,5 @@ mod tests {
             tool("db", "insert", "Insert a row"),
             tool("slack", "post-message", "Post to a channel"),
         ];
+        let dts = generate_dts(&tools);
+        assert!(dts.contains("interface Server_db"));

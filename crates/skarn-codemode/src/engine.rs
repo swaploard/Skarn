@@ -316,3 +316,8 @@ const skarn = {
 globalThis.skarn = skarn;
 "#;
 
+/// The runner that invokes the user's `__skarn_main` and records the result.
+const RUNNER_JS: &str = r#"
+;(async () => {
+  try {
+    const value = await __skarn_main();
