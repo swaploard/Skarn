@@ -19,3 +19,4 @@ Use **`rquickjs`** with the `futures` + `macro` features.
 
 - **Binary size & build:** QuickJS adds ~1 MB and bundles its C source compiled
   via `cc` (no libclang/bindgen needed on common targets). `deno_core` pulls in
+  the `v8` crate, producing 50–90 MB binaries with a heavy, cross-compile-hostile

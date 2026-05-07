@@ -83,3 +83,5 @@ impl DownstreamManager {
                 if let Some(dir) = cwd {
                     cmd.current_dir(dir);
                 }
+                let transport = TokioChildProcess::new(cmd)
+                    .map_err(|e| Error::Mcp(format!("spawning `{command}` for `{alias}`: {e}")))?;

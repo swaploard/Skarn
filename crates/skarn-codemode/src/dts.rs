@@ -128,3 +128,4 @@ mod tests {
             tool("db", "query", "Run a SQL query"),
             tool("db", "insert", "Insert a row"),
             tool("slack", "post-message", "Post to a channel"),
+        ];

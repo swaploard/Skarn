@@ -56,3 +56,4 @@ pub enum Isolation {
     Auto,
     /// Always use the cross-process OS-sandboxed worker. Errors if no sandbox
     /// backend is available (fail closed).
+    Worker,

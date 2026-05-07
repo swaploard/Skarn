@@ -137,3 +137,9 @@ impl ChannelBridge {
         let (reply, rx) = oneshot::channel();
         self.tx
             .send(BridgeRequest { op, reply })
+            .map_err(|_| "gateway bridge closed".to_string())?;
+        rx.await
+            .map_err(|_| "gateway bridge dropped the request".to_string())?
+    }
+}
+

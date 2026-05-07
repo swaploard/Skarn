@@ -174,3 +174,4 @@ async fn zero_wall_clock_is_clamped_not_instant_fail() {
         .run("return 1 + 1;", Arc::new(InProcessBridge::new()))
         .await
         .expect("clamped limits should still run a trivial script");
+    assert_eq!(out.value, serde_json::json!(2));

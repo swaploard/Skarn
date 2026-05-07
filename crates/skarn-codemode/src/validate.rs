@@ -311,3 +311,6 @@ mod tests {
         assert!(
             rejected("const m = await import('fs');")
                 .to_lowercase()
+                .contains("import")
+        );
+    }

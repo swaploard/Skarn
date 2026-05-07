@@ -112,3 +112,4 @@ impl ToolBridge for InProcessBridge {
     ) -> std::result::Result<String, String> {
         match self.handlers.get(&format!("{server}/{tool}")) {
             Some(h) => h(args_json),
+            None => Err(format!("unknown tool {server}/{tool}")),
