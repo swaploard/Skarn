@@ -90,3 +90,7 @@ impl DownstreamManager {
                     .map_err(|e| Error::Mcp(format!("initializing `{alias}`: {e}")))?
             }
             TransportConfig::Http {
+                url,
+                auth_bearer,
+                auth_bearer_env,
+                headers,

@@ -31,3 +31,4 @@ oxc_transformer = "0.95"
 oxc_semantic = "0.95"
 
 [dev-dependencies]
+tokio = { workspace = true }

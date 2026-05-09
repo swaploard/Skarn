@@ -62,3 +62,4 @@ pub enum Isolation {
 }
 
 /// A single downstream MCP server.
+#[derive(Clone, Debug, Serialize, Deserialize)]

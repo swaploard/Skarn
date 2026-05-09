@@ -17,3 +17,4 @@ use skarn_sandbox::Policy;
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct JobMsg {
     /// The OS-sandbox policy confining the isolate.
+    pub policy: Policy,

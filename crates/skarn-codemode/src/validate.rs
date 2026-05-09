@@ -322,3 +322,5 @@ mod tests {
 
     #[test]
     fn accepts_legitimate_tool_calls() {
+        let src = r#"
+            const rows = await skarn.callTool("db", "query", { sql: "select 1" });

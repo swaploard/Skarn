@@ -323,3 +323,5 @@ const RUNNER_JS: &str = r#"
     const value = await __skarn_main();
     globalThis.__skarn_result = JSON.stringify({
       ok: true,
+      value: value === undefined ? null : value,
+      logs: globalThis.__skarn_logs,

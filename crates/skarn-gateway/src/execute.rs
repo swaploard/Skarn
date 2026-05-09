@@ -150,3 +150,10 @@ pub async fn execute_in_process(
     limits: ExecLimits,
     code: String,
 ) -> Result<Outcome> {
+    let (tx, mut rx) = mpsc::unbounded_channel::<BridgeRequest>();
+
+    // Servicer: fulfils bridge requests on the main runtime, where the MCP
+    // clients live. Calls go directly to the manager (Send futures), never
+    // through a `!Send` bridge.
+    let servicer_manager = manager.clone();
+    let servicer = tokio::spawn(async move {

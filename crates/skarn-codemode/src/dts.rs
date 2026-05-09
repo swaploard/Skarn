@@ -134,3 +134,4 @@ mod tests {
         assert!(dts.contains("query(args?:"));
         assert!(dts.contains("Run a SQL query"));
         // A non-identifier tool name must be quoted.
+        assert!(dts.contains("[\"post-message\"]"));
