@@ -61,3 +61,4 @@ pub enum Isolation {
     InProcess,
 }
 
+/// A single downstream MCP server.

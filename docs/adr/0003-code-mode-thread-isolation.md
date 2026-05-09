@@ -25,3 +25,4 @@ on a **dedicated thread** with its own current-thread runtime (via
 over an `mpsc` + `oneshot` channel pair:
 
 ```
+main runtime                          dedicated isolate thread

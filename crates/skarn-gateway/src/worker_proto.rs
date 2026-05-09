@@ -16,3 +16,4 @@ use skarn_sandbox::Policy;
 /// AppContainer), the execution limits, and the script source.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct JobMsg {
+    /// The OS-sandbox policy confining the isolate.

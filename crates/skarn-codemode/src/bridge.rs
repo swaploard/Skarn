@@ -115,3 +115,5 @@ impl ToolBridge for InProcessBridge {
             None => Err(format!("unknown tool {server}/{tool}")),
         }
     }
+
+    async fn list_tools(&self) -> std::result::Result<String, String> {

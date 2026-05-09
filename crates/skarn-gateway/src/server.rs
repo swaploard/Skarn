@@ -66,3 +66,5 @@ impl GatewayServer {
                  (e.g. `github__search_issues`), for authoring an `execute` script.",
                 schema(serde_json::json!({
                     "type": "object",
+                    "properties": {
+                        "name": { "type": "string", "description": "Namespaced tool name" }

@@ -320,3 +320,5 @@ mod tests {
         assert!(rejected("globalThis.foo = 1;").contains("globalThis"));
     }
 
+    #[test]
+    fn accepts_legitimate_tool_calls() {

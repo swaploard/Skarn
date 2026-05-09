@@ -321,3 +321,5 @@ const RUNNER_JS: &str = r#"
 ;(async () => {
   try {
     const value = await __skarn_main();
+    globalThis.__skarn_result = JSON.stringify({
+      ok: true,

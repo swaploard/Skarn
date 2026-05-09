@@ -87,3 +87,6 @@ impl DownstreamManager {
                     .map_err(|e| Error::Mcp(format!("spawning `{command}` for `{alias}`: {e}")))?;
                 ().serve(transport)
                     .await
+                    .map_err(|e| Error::Mcp(format!("initializing `{alias}`: {e}")))?
+            }
+            TransportConfig::Http {

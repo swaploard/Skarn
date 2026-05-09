@@ -132,3 +132,5 @@ mod tests {
         let dts = generate_dts(&tools);
         assert!(dts.contains("interface Server_db"));
         assert!(dts.contains("query(args?:"));
+        assert!(dts.contains("Run a SQL query"));
+        // A non-identifier tool name must be quoted.

@@ -147,3 +147,6 @@ impl ChannelBridge {
 /// in `manager`, returning the script's outcome.
 pub async fn execute_in_process(
     manager: Arc<DownstreamManager>,
+    limits: ExecLimits,
+    code: String,
+) -> Result<Outcome> {
