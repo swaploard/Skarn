@@ -109,3 +109,7 @@ impl DownstreamManager {
         let tools = client
             .list_all_tools()
             .await
+            .map_err(|e| Error::Mcp(format!("listing tools for `{alias}`: {e}")))?;
+        let descriptors = tools
+            .into_iter()
+            .map(|t| tool_to_descriptor(alias, t))

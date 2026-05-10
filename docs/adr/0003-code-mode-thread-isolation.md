@@ -26,3 +26,4 @@ over an `mpsc` + `oneshot` channel pair:
 
 ```
 main runtime                          dedicated isolate thread
+────────────                          ────────────────────────

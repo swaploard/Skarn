@@ -72,3 +72,6 @@ impl Registry {
         for t in &self.tools {
             if !names.contains(&t.server) {
                 names.push(t.server.clone());
+            }
+        }
+        names

@@ -4,3 +4,4 @@
 # launches each downstream server, and aggregates them behind the Code Mode
 # meta-tools (search / read_tool_docs / execute).
 
+[gateway]

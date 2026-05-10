@@ -185,3 +185,4 @@ async fn rejects_dangerous_scripts_before_running() {
         .await
         .unwrap_err();
     assert!(err.to_string().contains("eval"), "got: {err}");
+}

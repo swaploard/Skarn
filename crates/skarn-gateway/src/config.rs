@@ -75,3 +75,5 @@ pub struct ServerConfig {
 /// The transport for a downstream server.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(tag = "transport", rename_all = "snake_case")]
+pub enum TransportConfig {
+    /// Launch a child process and speak MCP over its stdio.

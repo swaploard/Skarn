@@ -183,3 +183,7 @@ pub async fn execute_in_process(
             .build()
             .map_err(|e| Error::CodeMode(format!("isolate runtime: {e}")))?;
         let bridge: Arc<dyn ToolBridge> = Arc::new(ChannelBridge { tx });
+        runtime.block_on(Engine::new(limits).run(&code, bridge))
+    })
+    .await;
+

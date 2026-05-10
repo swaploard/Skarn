@@ -76,3 +76,7 @@ impl GatewayServer {
                 "execute",
                 "Run a sandboxed JavaScript/TypeScript orchestration script. Use \
                  `await skarn.callTool(server, tool, args)` or `skarn.server(name).tool(args)` to \
+                 call downstream tools, process results locally, and `return` a small summary. \
+                 Only the returned value and skarn.log() lines come back — large intermediate \
+                 data never enters your context.",
+                schema(serde_json::json!({
