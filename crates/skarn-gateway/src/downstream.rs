@@ -103,3 +103,4 @@ impl DownstreamManager {
                 ().serve(transport)
                     .await
                     .map_err(|e| Error::Mcp(format!("initializing `{alias}` over HTTP: {e}")))?
+            }

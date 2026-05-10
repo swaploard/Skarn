@@ -65,3 +65,9 @@ impl Registry {
     pub fn is_empty(&self) -> bool {
         self.tools.is_empty()
     }
+
+    /// The distinct downstream server names, first-seen order.
+    pub fn server_names(&self) -> Vec<String> {
+        let mut names = Vec::new();
+        for t in &self.tools {
+            if !names.contains(&t.server) {

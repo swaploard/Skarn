@@ -65,3 +65,7 @@ pub enum Isolation {
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct ServerConfig {
     /// Whether this server is connected on startup.
+    #[serde(default = "default_true")]
+    pub enabled: bool,
+    /// How to reach the server.
+    #[serde(flatten)]

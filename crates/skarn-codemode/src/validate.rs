@@ -327,3 +327,4 @@ mod tests {
             const summary = rows.filter(r => r.active).map(r => r.id);
             skarn.log("done", summary.length);
             return summary;
+        "#;

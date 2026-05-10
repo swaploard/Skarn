@@ -19,3 +19,4 @@ pub struct JobMsg {
     /// The OS-sandbox policy confining the isolate.
     pub policy: Policy,
     /// Resource limits for the run.
+    pub limits: ExecLimits,

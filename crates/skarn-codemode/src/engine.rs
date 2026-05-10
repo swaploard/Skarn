@@ -327,3 +327,4 @@ const RUNNER_JS: &str = r#"
       logs: globalThis.__skarn_logs,
     });
   } catch (e) {
+    let msg = String(e && e.message !== undefined ? e.message : e);

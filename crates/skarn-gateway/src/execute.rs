@@ -170,3 +170,8 @@ pub async fn execute_in_process(
                 BridgeOp::ListTools => {
                     serde_json::to_string(&servicer_manager.registry().descriptors())
                         .map_err(|e| e.to_string())
+                }
+            };
+            let _ = req.reply.send(result);
+        }
+    });
