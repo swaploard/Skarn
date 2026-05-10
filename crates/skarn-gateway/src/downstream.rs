@@ -113,3 +113,5 @@ impl DownstreamManager {
         let descriptors = tools
             .into_iter()
             .map(|t| tool_to_descriptor(alias, t))
+            .collect();
+        Ok((client, descriptors))

@@ -187,3 +187,9 @@ pub async fn execute_in_process(
     })
     .await;
 
+    servicer.abort();
+
+    match join {
+        Ok(result) => result,
+        Err(e) => Err(Error::CodeMode(format!("isolate thread failed: {e}"))),
+    }

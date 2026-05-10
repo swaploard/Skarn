@@ -75,3 +75,7 @@ impl Registry {
             }
         }
         names
+    }
+
+    /// Resolve a namespaced name back to `(server, tool)`.
+    pub fn resolve(&self, namespaced: &str) -> Option<(&str, &str)> {

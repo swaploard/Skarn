@@ -77,3 +77,4 @@ pub struct ServerConfig {
 #[serde(tag = "transport", rename_all = "snake_case")]
 pub enum TransportConfig {
     /// Launch a child process and speak MCP over its stdio.
+    Stdio {

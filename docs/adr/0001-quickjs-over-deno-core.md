@@ -21,3 +21,4 @@ Use **`rquickjs`** with the `futures` + `macro` features.
   via `cc` (no libclang/bindgen needed on common targets). `deno_core` pulls in
   the `v8` crate, producing 50–90 MB binaries with a heavy, cross-compile-hostile
   build — directly at odds with the project's goals.
+- **Async bridging is first-class:** `AsyncRuntime`/`AsyncContext` plus the

@@ -70,3 +70,4 @@ jobs:
             skarn-${{ matrix.target }}.tar.gz.sha256
 
   release:
+    needs: build

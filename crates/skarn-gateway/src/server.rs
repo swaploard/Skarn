@@ -80,3 +80,7 @@ impl GatewayServer {
                  Only the returned value and skarn.log() lines come back — large intermediate \
                  data never enters your context.",
                 schema(serde_json::json!({
+                    "type": "object",
+                    "properties": {
+                        "code": { "type": "string", "description": "The script body (async; use `return`)" },
+                        "language": { "type": "string", "enum": ["js", "ts"], "description": "Defaults to ts" }
