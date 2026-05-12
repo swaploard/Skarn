@@ -115,3 +115,4 @@ skarn run --stats -- cargo test
 | `ls` / `tree` | ~2,000 | ~400 | **~80%** |
 
 Errors, warnings, and failures are *always* kept — even rescued out of a truncated middle.
+

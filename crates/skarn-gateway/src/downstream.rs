@@ -124,3 +124,9 @@ impl DownstreamManager {
 
     /// The namespace separator in use.
     pub fn separator(&self) -> &str {
+        &self.separator
+    }
+
+    /// Re-list every server's tools and atomically swap in a fresh registry.
+    pub async fn refresh(&self) -> Result<()> {
+        let mut per_server = Vec::new();

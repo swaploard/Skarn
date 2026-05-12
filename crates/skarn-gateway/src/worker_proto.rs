@@ -23,3 +23,4 @@ pub struct JobMsg {
     /// The Code Mode script source (pre-validation).
     pub code: String,
 }
+

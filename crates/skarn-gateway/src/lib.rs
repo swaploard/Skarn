@@ -39,3 +39,4 @@ pub use server::GatewayServer;
 /// gateway handler.
 pub async fn build_server(config: &GatewayConfig, limits: ExecLimits) -> Result<GatewayServer> {
     let manager = Arc::new(DownstreamManager::connect(config).await?);
+    let descriptors = manager.registry().descriptors();

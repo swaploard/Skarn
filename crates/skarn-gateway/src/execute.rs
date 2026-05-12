@@ -213,3 +213,8 @@ fn isolate_policy() -> skarn_sandbox::Policy {
 /// Locate the worker binary: an explicit override (used by tests) or this very
 /// executable, which carries the hidden `__worker` subcommand.
 #[cfg(unix)]
+fn worker_binary() -> Result<std::path::PathBuf> {
+    if let Some(path) = std::env::var_os("SKARN_WORKER_BIN") {
+        return Ok(path.into());
+    }
+    std::env::current_exe().map_err(|e| Error::CodeMode(format!("locating worker binary: {e}")))

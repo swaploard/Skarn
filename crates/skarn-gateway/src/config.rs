@@ -85,3 +85,6 @@ pub enum TransportConfig {
         args: Vec<String>,
         /// Extra environment variables.
         #[serde(default)]
+        env: BTreeMap<String, String>,
+        /// Working directory.
+        #[serde(default)]

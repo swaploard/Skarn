@@ -89,3 +89,6 @@ impl GatewayServer {
                 })),
             ),
         ]
+    }
+
+    async fn handle_search(&self, args: &serde_json::Value) -> CallToolResult {

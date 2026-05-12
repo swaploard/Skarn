@@ -71,3 +71,4 @@ jobs:
 
   release:
     needs: build
+    runs-on: ubuntu-latest

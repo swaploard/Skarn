@@ -90,3 +90,4 @@ impl Registry {
         self.tools.iter().map(|t| t.descriptor()).collect()
     }
 
+    /// Rank tools by relevance to `query`. Returns up to `limit` matches.
