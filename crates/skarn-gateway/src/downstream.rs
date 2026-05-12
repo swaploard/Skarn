@@ -119,3 +119,4 @@ impl DownstreamManager {
 
     /// A lock-free snapshot of the current registry.
     pub fn registry(&self) -> Arc<Registry> {
+        self.registry.load_full()

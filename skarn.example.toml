@@ -5,3 +5,4 @@
 # meta-tools (search / read_tool_docs / execute).
 
 [gateway]
+# Also expose the namespaced downstream tools directly (e.g. `fs__read_file`)

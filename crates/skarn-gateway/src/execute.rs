@@ -198,3 +198,13 @@ pub async fn execute_in_process(
 // ---------------------------------------------------------------------------
 // Cross-process worker execution (parent side, Unix only)
 // ---------------------------------------------------------------------------
+
+/// The OS-sandbox policy the worker confines itself with: deny network, no
+/// writable workspace (the isolate needs neither), system reads allowed so a
+/// dynamically-linked binary can run, and known secret stores denied.
+#[cfg(unix)]
+fn isolate_policy() -> skarn_sandbox::Policy {
+    skarn_sandbox::Policy {
+        fs_deny_read: skarn_sandbox::default_secret_paths(),
+        ..skarn_sandbox::Policy::default()
+    }

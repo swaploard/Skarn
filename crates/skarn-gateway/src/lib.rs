@@ -35,3 +35,6 @@ pub use execute::run_worker_job;
 pub use registry::{NamespacedTool, Registry, SearchHit};
 pub use server::GatewayServer;
 
+/// Connect to the configured downstream servers and build a ready-to-serve
+/// gateway handler.
+pub async fn build_server(config: &GatewayConfig, limits: ExecLimits) -> Result<GatewayServer> {

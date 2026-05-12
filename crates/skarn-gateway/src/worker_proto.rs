@@ -21,3 +21,4 @@ pub struct JobMsg {
     /// Resource limits for the run.
     pub limits: ExecLimits,
     /// The Code Mode script source (pre-validation).
+    pub code: String,

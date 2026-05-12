@@ -83,3 +83,4 @@ pub enum TransportConfig {
         /// Arguments.
         #[serde(default)]
         args: Vec<String>,
+        /// Extra environment variables.

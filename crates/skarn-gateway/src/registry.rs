@@ -84,3 +84,6 @@ impl Registry {
             .find(|t| t.namespaced == namespaced)
             .map(|t| (t.server.as_str(), t.tool.as_str()))
     }
+
+    /// Convert to Code Mode tool descriptors (for `.d.ts` + `listTools`).
+    pub fn descriptors(&self) -> Vec<ToolDescriptor> {
