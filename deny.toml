@@ -7,3 +7,5 @@ version = 2
 yanked = "deny"
 ignore = []
 
+[licenses]
+version = 2

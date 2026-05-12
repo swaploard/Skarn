@@ -87,3 +87,6 @@ impl Registry {
 
     /// Convert to Code Mode tool descriptors (for `.d.ts` + `listTools`).
     pub fn descriptors(&self) -> Vec<ToolDescriptor> {
+        self.tools.iter().map(|t| t.descriptor()).collect()
+    }
+

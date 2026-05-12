@@ -208,3 +208,8 @@ fn isolate_policy() -> skarn_sandbox::Policy {
         fs_deny_read: skarn_sandbox::default_secret_paths(),
         ..skarn_sandbox::Policy::default()
     }
+}
+
+/// Locate the worker binary: an explicit override (used by tests) or this very
+/// executable, which carries the hidden `__worker` subcommand.
+#[cfg(unix)]

@@ -114,3 +114,4 @@ skarn run --stats -- cargo test
 | `git diff` | ~10,000 | ~2,500 | **~75%** |
 | `ls` / `tree` | ~2,000 | ~400 | **~80%** |
 
+Errors, warnings, and failures are *always* kept — even rescued out of a truncated middle.

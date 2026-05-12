@@ -87,3 +87,5 @@ impl GatewayServer {
                     },
                     "required": ["code"]
                 })),
+            ),
+        ]

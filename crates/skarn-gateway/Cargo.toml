@@ -16,3 +16,4 @@ skarn-common = { workspace = true }
 skarn-codemode = { workspace = true }
 skarn-sandbox = { workspace = true }
 serde = { workspace = true }
+serde_json = { workspace = true }

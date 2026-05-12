@@ -120,3 +120,7 @@ impl DownstreamManager {
     /// A lock-free snapshot of the current registry.
     pub fn registry(&self) -> Arc<Registry> {
         self.registry.load_full()
+    }
+
+    /// The namespace separator in use.
+    pub fn separator(&self) -> &str {

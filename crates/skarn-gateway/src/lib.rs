@@ -38,3 +38,4 @@ pub use server::GatewayServer;
 /// Connect to the configured downstream servers and build a ready-to-serve
 /// gateway handler.
 pub async fn build_server(config: &GatewayConfig, limits: ExecLimits) -> Result<GatewayServer> {
+    let manager = Arc::new(DownstreamManager::connect(config).await?);
