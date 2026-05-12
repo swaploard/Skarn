@@ -91,3 +91,4 @@ impl Registry {
     }
 
     /// Rank tools by relevance to `query`. Returns up to `limit` matches.
+    pub fn search(&self, query: &str, limit: usize) -> Vec<SearchHit> {

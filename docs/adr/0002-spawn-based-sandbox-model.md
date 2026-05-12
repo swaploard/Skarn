@@ -23,3 +23,4 @@ can deadlock on the allocator lock held by another thread at fork time.
 - **Windows:** the parent launches the child directly into an AppContainer via
   `CreateProcessW` (a process cannot move itself into one).
 - The same `Policy::apply_to_current_process()` is exercised directly by the
+  `skarn-sandbox-probe` test binary, which self-applies in a fresh, single-

@@ -40,3 +40,4 @@ pub use server::GatewayServer;
 pub async fn build_server(config: &GatewayConfig, limits: ExecLimits) -> Result<GatewayServer> {
     let manager = Arc::new(DownstreamManager::connect(config).await?);
     let descriptors = manager.registry().descriptors();
+    let dts = skarn_codemode::generate_dts(&descriptors);

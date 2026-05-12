@@ -218,3 +218,7 @@ fn worker_binary() -> Result<std::path::PathBuf> {
         return Ok(path.into());
     }
     std::env::current_exe().map_err(|e| Error::CodeMode(format!("locating worker binary: {e}")))
+}
+
+#[cfg(unix)]
+fn to_reply(result: Result<String>) -> (bool, String) {

@@ -130,3 +130,9 @@ impl DownstreamManager {
     /// Re-list every server's tools and atomically swap in a fresh registry.
     pub async fn refresh(&self) -> Result<()> {
         let mut per_server = Vec::new();
+        for (alias, client) in &self.clients {
+            if let Ok(tools) = client.list_all_tools().await {
+                let descriptors = tools
+                    .into_iter()
+                    .map(|t| tool_to_descriptor(alias, t))
+                    .collect();

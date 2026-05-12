@@ -88,3 +88,6 @@ pub enum TransportConfig {
         env: BTreeMap<String, String>,
         /// Working directory.
         #[serde(default)]
+        cwd: Option<PathBuf>,
+    },
+    /// Speak MCP over Streamable HTTP (the SSE response stream is handled

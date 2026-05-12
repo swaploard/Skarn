@@ -92,3 +92,8 @@ impl GatewayServer {
     }
 
     async fn handle_search(&self, args: &serde_json::Value) -> CallToolResult {
+        let query = args.get("query").and_then(|v| v.as_str()).unwrap_or("");
+        let limit = args
+            .get("limit")
+            .and_then(|v| v.as_u64())
+            .unwrap_or(15)
