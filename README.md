@@ -116,3 +116,4 @@ skarn run --stats -- cargo test
 
 Errors, warnings, and failures are *always* kept — even rescued out of a truncated middle.
 
+### 3. OS-native sandboxing — no Docker required

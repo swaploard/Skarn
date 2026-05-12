@@ -97,3 +97,7 @@ impl GatewayServer {
             .get("limit")
             .and_then(|v| v.as_u64())
             .unwrap_or(15)
+            .clamp(1, 100) as usize;
+        let hits = self.manager.registry().search(query, limit);
+        let body = serde_json::json!({
+            "query": query,

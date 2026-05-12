@@ -91,3 +91,7 @@ pub enum TransportConfig {
         cwd: Option<PathBuf>,
     },
     /// Speak MCP over Streamable HTTP (the SSE response stream is handled
+    /// internally by the transport).
+    Http {
+        /// The MCP endpoint URL, e.g. `https://api.example.com/mcp`.
+        url: String,

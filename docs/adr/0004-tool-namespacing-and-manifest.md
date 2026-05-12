@@ -19,3 +19,4 @@ upstream also reintroduces exactly the context bloat we set out to remove.
    exactly three meta-tools — `search`, `read_tool_docs`, `execute` — plus, only
    if `passthrough = true`, the namespaced tools directly. This keeps the
    per-turn schema footprint ~constant.
+3. **Progressive disclosure.** The full tool catalog is reachable via `search`

@@ -222,3 +222,9 @@ fn worker_binary() -> Result<std::path::PathBuf> {
 
 #[cfg(unix)]
 fn to_reply(result: Result<String>) -> (bool, String) {
+    match result {
+        Ok(payload) => (true, payload),
+        Err(e) => (false, e.to_string()),
+    }
+}
+

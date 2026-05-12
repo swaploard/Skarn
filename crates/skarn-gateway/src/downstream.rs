@@ -136,3 +136,6 @@ impl DownstreamManager {
                     .into_iter()
                     .map(|t| tool_to_descriptor(alias, t))
                     .collect();
+                per_server.push((alias.clone(), descriptors));
+            }
+        }
