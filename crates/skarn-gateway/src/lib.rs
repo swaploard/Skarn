@@ -46,3 +46,4 @@ pub async fn build_server(config: &GatewayConfig, limits: ExecLimits) -> Result<
     Ok(GatewayServer::new(
         manager,
         limits,
+        config.gateway.passthrough,

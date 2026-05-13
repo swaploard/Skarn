@@ -269,3 +269,9 @@ async fn execute_worker(
         code,
     };
     write_json_line(&mut stdin, &job).await?;
+
+    // Service the worker until it produces a terminal message, bounded by a
+    // wall-clock backstop in case it hangs.
+    let deadline =
+        tokio::time::Instant::now() + limits.wall_clock + std::time::Duration::from_secs(5);
+    let max_line = limits.max_output_bytes.saturating_add(64 * 1024);

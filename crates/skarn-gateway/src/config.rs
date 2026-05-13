@@ -106,3 +106,6 @@ pub enum TransportConfig {
         /// Extra static HTTP headers to send with every request.
         #[serde(default)]
         headers: BTreeMap<String, String>,
+    },
+}
+

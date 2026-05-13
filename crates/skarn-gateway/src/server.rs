@@ -119,3 +119,6 @@ impl GatewayServer {
                     "description": t.description,
                     "inputSchema": t.input_schema,
                 });
+                CallToolResult::success(vec![Content::text(body.to_string())])
+            }
+            None => CallToolResult::error(vec![Content::text(format!(

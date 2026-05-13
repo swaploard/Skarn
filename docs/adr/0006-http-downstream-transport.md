@@ -22,3 +22,4 @@ Streamable HTTP transport is the one client surface.
   `RunningService<RoleClient, ()>`, so only `connect_one` branches; aggregation,
   search, `call`, and resource reads are unchanged.
 - **Use reqwest + rustls with the `ring` provider** (not aws-lc-rs): a smaller,
+  more cross-compile-friendly crypto backend with no cmake/C build, keeping the

@@ -106,3 +106,5 @@ impl Registry {
                 if score > 0 { Some((score, t)) } else { None }
             })
             .collect();
+
+        // Highest score first; stable by namespaced name for determinism.

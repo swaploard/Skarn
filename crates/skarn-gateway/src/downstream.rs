@@ -159,3 +159,7 @@ impl DownstreamManager {
             .call_tool(params)
             .await
             .map_err(|e| Error::Mcp(format!("calling `{server}/{tool}`: {e}")))?;
+
+        if result.is_error == Some(true) {
+            return Err(Error::Mcp(format!(
+                "tool `{server}/{tool}` reported an error: {}",
