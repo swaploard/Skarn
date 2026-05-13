@@ -101,3 +101,15 @@ impl GatewayServer {
         let hits = self.manager.registry().search(query, limit);
         let body = serde_json::json!({
             "query": query,
+            "matches": hits,
+            "hint": "Call these with skarn.callTool(server, tool, args) inside an `execute` script.",
+        });
+        CallToolResult::success(vec![Content::text(body.to_string())])
+    }
+
+    fn handle_read_tool_docs(&self, args: &serde_json::Value) -> CallToolResult {
+        let name = args.get("name").and_then(|v| v.as_str()).unwrap_or("");
+        let registry = self.manager.registry();
+        match registry.tools().iter().find(|t| t.namespaced == name) {
+            Some(t) => {
+                let body = serde_json::json!({

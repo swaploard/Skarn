@@ -139,3 +139,12 @@ impl DownstreamManager {
                 per_server.push((alias.clone(), descriptors));
             }
         }
+        let registry = Registry::build(&self.separator, per_server);
+        self.registry.store(Arc::new(registry));
+        Ok(())
+    }
+
+    /// Call `tool` on `server`, returning the result as a JSON string.
+    pub async fn call(&self, server: &str, tool: &str, args_json: &str) -> Result<String> {
+        let client = self
+            .clients

@@ -8,3 +8,4 @@
 # Also expose the namespaced downstream tools directly (e.g. `fs__read_file`)
 # alongside the Code Mode meta-tools. Leave false for maximum token savings.
 passthrough = false
+

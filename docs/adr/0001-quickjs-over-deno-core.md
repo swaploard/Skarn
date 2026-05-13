@@ -23,3 +23,4 @@ Use **`rquickjs`** with the `futures` + `macro` features.
   build — directly at odds with the project's goals.
 - **Async bridging is first-class:** `AsyncRuntime`/`AsyncContext` plus the
   `Async`/`Promised` adapters convert Rust futures to JS promises and back, which
+  is exactly the `skarn.callTool(...)` pattern we need.

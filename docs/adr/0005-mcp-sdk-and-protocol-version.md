@@ -17,3 +17,4 @@ while the published spec has advanced to `2025-11-25`.
   than via the attribute macros) for full control over the small meta-tool set.
 - **Track the SDK's negotiated revision** rather than hand-rolling a newer one.
   Whatever revision `rmcp` advertises is what Skarn advertises; when `rmcp`
+  adds `2025-11-25`, we get it on upgrade. We do not forge a protocol version the

@@ -23,3 +23,4 @@ its docs anticipated bridge calls being "forwarded over a pipe to the parent."
   the dedicated-thread boundary of ADR 0003.
 - **Gate selection on an `isolation` setting** (`auto` | `worker` | `in_process`,
   default `auto`). `auto` uses the worker when an OS sandbox backend is available.
+- **Scope the worker to Unix for 1.0.** The worker self-applies the sandbox,

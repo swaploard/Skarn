@@ -95,3 +95,8 @@ pub enum TransportConfig {
     Http {
         /// The MCP endpoint URL, e.g. `https://api.example.com/mcp`.
         url: String,
+        /// Bearer token, sent as `Authorization: Bearer <token>`. Prefer
+        /// `auth_bearer_env` to keep secrets out of `skarn.toml`.
+        #[serde(default)]
+        auth_bearer: Option<String>,
+        /// Name of an environment variable to read the bearer token from at

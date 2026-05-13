@@ -9,3 +9,4 @@ ignore = []
 
 [licenses]
 version = 2
+# Permissive licenses only. Skarn itself is MIT OR Apache-2.0, and we keep the

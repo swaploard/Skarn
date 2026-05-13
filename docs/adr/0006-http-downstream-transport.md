@@ -20,3 +20,5 @@ Streamable HTTP transport is the one client surface.
   stay out of `skarn.toml`.
 - **Keep the rest of the manager transport-agnostic.** Both transports erase to
   `RunningService<RoleClient, ()>`, so only `connect_one` branches; aggregation,
+  search, `call`, and resource reads are unchanged.
+- **Use reqwest + rustls with the `ring` provider** (not aws-lc-rs): a smaller,

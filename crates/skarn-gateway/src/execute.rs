@@ -228,3 +228,38 @@ fn to_reply(result: Result<String>) -> (bool, String) {
     }
 }
 
+/// Spawn the OS-sandboxed worker, hand it the job, and service its tool calls
+/// over its stdio pipes until it returns a result.
+#[cfg(unix)]
+async fn execute_worker(
+    manager: Arc<DownstreamManager>,
+    limits: ExecLimits,
+    code: String,
+) -> Result<Outcome> {
+    use std::process::Stdio;
+    use tokio::io::{AsyncBufReadExt, BufReader};
+
+    use crate::worker_proto::{BridgeOpWire, JobMsg, ReplyMsg, WorkerMsg};
+
+    let bin = worker_binary()?;
+    let mut child = tokio::process::Command::new(&bin)
+        .arg("__worker")
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .stderr(Stdio::inherit())
+        .spawn()
+        .map_err(|e| {
+            Error::CodeMode(format!("spawning Code Mode worker {}: {e}", bin.display()))
+        })?;
+
+    let mut stdin = child
+        .stdin
+        .take()
+        .ok_or_else(|| Error::CodeMode("worker stdin unavailable".to_string()))?;
+    let stdout = child
+        .stdout
+        .take()
+        .ok_or_else(|| Error::CodeMode("worker stdout unavailable".to_string()))?;
+    let mut lines = BufReader::new(stdout).lines();
+
+    // Hand over the job.
