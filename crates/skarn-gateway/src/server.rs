@@ -113,3 +113,6 @@ impl GatewayServer {
         match registry.tools().iter().find(|t| t.namespaced == name) {
             Some(t) => {
                 let body = serde_json::json!({
+                    "namespaced": t.namespaced,
+                    "server": t.server,
+                    "tool": t.tool,

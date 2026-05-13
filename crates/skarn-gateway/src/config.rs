@@ -100,3 +100,6 @@ pub enum TransportConfig {
         #[serde(default)]
         auth_bearer: Option<String>,
         /// Name of an environment variable to read the bearer token from at
+        /// connect time. Takes precedence over `auth_bearer` when set and present.
+        #[serde(default)]
+        auth_bearer_env: Option<String>,

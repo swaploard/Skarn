@@ -101,3 +101,5 @@ impl Registry {
         let mut scored: Vec<(i32, &NamespacedTool)> = self
             .tools
             .iter()
+            .filter_map(|t| {
+                let score = score_tool(t, &terms);

@@ -119,3 +119,4 @@ Errors, warnings, and failures are *always* kept — even rescued out of a trunc
 ### 3. OS-native sandboxing — no Docker required
 
 `skarn run -- <cmd>` confines the command to your project directory and denies network egress, enforced by the kernel:
+

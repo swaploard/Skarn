@@ -263,3 +263,6 @@ async fn execute_worker(
     let mut lines = BufReader::new(stdout).lines();
 
     // Hand over the job.
+    let job = JobMsg {
+        policy: isolate_policy(),
+        limits,

@@ -148,3 +148,9 @@ impl DownstreamManager {
     pub async fn call(&self, server: &str, tool: &str, args_json: &str) -> Result<String> {
         let client = self
             .clients
+            .get(server)
+            .ok_or_else(|| Error::UnknownTool(format!("{server}/{tool}")))?;
+
+        let mut params = CallToolRequestParams::new(tool.to_string());
+        if let Some(arguments) = parse_args(args_json)? {
+            params = params.with_arguments(arguments);
