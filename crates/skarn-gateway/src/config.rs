@@ -103,3 +103,6 @@ pub enum TransportConfig {
         /// connect time. Takes precedence over `auth_bearer` when set and present.
         #[serde(default)]
         auth_bearer_env: Option<String>,
+        /// Extra static HTTP headers to send with every request.
+        #[serde(default)]
+        headers: BTreeMap<String, String>,

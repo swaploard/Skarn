@@ -9,3 +9,5 @@
 # alongside the Code Mode meta-tools. Leave false for maximum token savings.
 passthrough = false
 
+# The separator joining <server> and <tool> into a namespaced name. Must match
+# the MCP tool-name charset [A-Za-z0-9_.-].

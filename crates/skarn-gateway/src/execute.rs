@@ -266,3 +266,6 @@ async fn execute_worker(
     let job = JobMsg {
         policy: isolate_policy(),
         limits,
+        code,
+    };
+    write_json_line(&mut stdin, &job).await?;

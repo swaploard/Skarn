@@ -103,3 +103,6 @@ impl Registry {
             .iter()
             .filter_map(|t| {
                 let score = score_tool(t, &terms);
+                if score > 0 { Some((score, t)) } else { None }
+            })
+            .collect();

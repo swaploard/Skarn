@@ -120,3 +120,5 @@ Errors, warnings, and failures are *always* kept — even rescued out of a trunc
 
 `skarn run -- <cmd>` confines the command to your project directory and denies network egress, enforced by the kernel:
 
+| Platform | Mechanism | Cold start |
+|---|---|---|

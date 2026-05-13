@@ -154,3 +154,8 @@ impl DownstreamManager {
         let mut params = CallToolRequestParams::new(tool.to_string());
         if let Some(arguments) = parse_args(args_json)? {
             params = params.with_arguments(arguments);
+        }
+        let result = client
+            .call_tool(params)
+            .await
+            .map_err(|e| Error::Mcp(format!("calling `{server}/{tool}`: {e}")))?;

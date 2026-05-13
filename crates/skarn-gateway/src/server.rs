@@ -116,3 +116,6 @@ impl GatewayServer {
                     "namespaced": t.namespaced,
                     "server": t.server,
                     "tool": t.tool,
+                    "description": t.description,
+                    "inputSchema": t.input_schema,
+                });

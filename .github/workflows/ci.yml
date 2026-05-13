@@ -34,3 +34,4 @@ jobs:
 
   deny:
     name: cargo-deny (licenses & advisories)
+    runs-on: ubuntu-latest
