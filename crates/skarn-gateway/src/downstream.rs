@@ -143,3 +143,5 @@ impl DownstreamManager {
         self.registry.store(Arc::new(registry));
         Ok(())
     }
+
+    /// Call `tool` on `server`, returning the result as a JSON string.

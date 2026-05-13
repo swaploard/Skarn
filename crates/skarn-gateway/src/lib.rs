@@ -42,3 +42,4 @@ pub async fn build_server(config: &GatewayConfig, limits: ExecLimits) -> Result<
     let descriptors = manager.registry().descriptors();
     let dts = skarn_codemode::generate_dts(&descriptors);
     let instructions = build_instructions(&dts, &manager);
+

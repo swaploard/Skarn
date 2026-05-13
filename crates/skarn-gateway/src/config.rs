@@ -95,3 +95,4 @@ pub enum TransportConfig {
     Http {
         /// The MCP endpoint URL, e.g. `https://api.example.com/mcp`.
         url: String,
+        /// Bearer token, sent as `Authorization: Bearer <token>`. Prefer

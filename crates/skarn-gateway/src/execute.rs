@@ -239,3 +239,11 @@ async fn execute_worker(
     use std::process::Stdio;
     use tokio::io::{AsyncBufReadExt, BufReader};
 
+    use crate::worker_proto::{BridgeOpWire, JobMsg, ReplyMsg, WorkerMsg};
+
+    let bin = worker_binary()?;
+    let mut child = tokio::process::Command::new(&bin)
+        .arg("__worker")
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .stderr(Stdio::inherit())

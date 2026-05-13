@@ -94,3 +94,4 @@ impl Registry {
     pub fn search(&self, query: &str, limit: usize) -> Vec<SearchHit> {
         let terms: Vec<String> = query
             .split(|c: char| !c.is_alphanumeric())
+            .filter(|t| !t.is_empty())

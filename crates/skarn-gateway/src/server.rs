@@ -103,3 +103,7 @@ impl GatewayServer {
             "query": query,
             "matches": hits,
             "hint": "Call these with skarn.callTool(server, tool, args) inside an `execute` script.",
+        });
+        CallToolResult::success(vec![Content::text(body.to_string())])
+    }
+
