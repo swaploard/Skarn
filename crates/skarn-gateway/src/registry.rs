@@ -108,3 +108,5 @@ impl Registry {
             .collect();
 
         // Highest score first; stable by namespaced name for determinism.
+        scored.sort_by(|a, b| {
+            b.0.cmp(&a.0)

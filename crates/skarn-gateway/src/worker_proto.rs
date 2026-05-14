@@ -29,3 +29,4 @@ pub struct JobMsg {
 #[serde(tag = "op", rename_all = "snake_case")]
 pub enum BridgeOpWire {
     /// Call a downstream tool.
+    CallTool {

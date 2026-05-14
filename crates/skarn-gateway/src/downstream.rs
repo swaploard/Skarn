@@ -163,3 +163,7 @@ impl DownstreamManager {
         if result.is_error == Some(true) {
             return Err(Error::Mcp(format!(
                 "tool `{server}/{tool}` reported an error: {}",
+                extract_text(&result)
+            )));
+        }
+        Ok(result_to_json(result).to_string())

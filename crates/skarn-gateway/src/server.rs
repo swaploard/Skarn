@@ -122,3 +122,7 @@ impl GatewayServer {
                 CallToolResult::success(vec![Content::text(body.to_string())])
             }
             None => CallToolResult::error(vec![Content::text(format!(
+                "no tool named `{name}`. Use `search` to discover tool names."
+            ))]),
+        }
+    }

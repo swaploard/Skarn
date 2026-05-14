@@ -47,3 +47,6 @@ pub async fn build_server(config: &GatewayConfig, limits: ExecLimits) -> Result<
         manager,
         limits,
         config.gateway.passthrough,
+        config.gateway.isolation,
+        instructions,
+    ))

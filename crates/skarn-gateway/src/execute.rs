@@ -275,3 +275,8 @@ async fn execute_worker(
     let deadline =
         tokio::time::Instant::now() + limits.wall_clock + std::time::Duration::from_secs(5);
     let max_line = limits.max_output_bytes.saturating_add(64 * 1024);
+
+    let outcome = loop {
+        let next = tokio::select! {
+            line = lines.next_line() => line,
+            _ = tokio::time::sleep_until(deadline) => {
