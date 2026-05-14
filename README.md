@@ -123,3 +123,4 @@ Errors, warnings, and failures are *always* kept — even rescued out of a trunc
 | Platform | Mechanism | Cold start |
 |---|---|---|
 | macOS | Seatbelt (`sandbox_init`) | < 5 ms |
+| Linux | Landlock LSM + seccomp-bpf | < 5 ms |

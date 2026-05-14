@@ -167,3 +167,6 @@ impl DownstreamManager {
             )));
         }
         Ok(result_to_json(result).to_string())
+    }
+
+    /// Read a resource by URI from `server`.

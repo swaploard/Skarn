@@ -280,3 +280,11 @@ async fn execute_worker(
         let next = tokio::select! {
             line = lines.next_line() => line,
             _ = tokio::time::sleep_until(deadline) => {
+                let _ = child.start_kill();
+                return Err(Error::CodeMode(
+                    "Code Mode worker exceeded its wall-clock deadline".to_string(),
+                ));
+            }
+        };
+
+        let line = match next {

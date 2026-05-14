@@ -110,3 +110,6 @@ impl Registry {
         // Highest score first; stable by namespaced name for determinism.
         scored.sort_by(|a, b| {
             b.0.cmp(&a.0)
+                .then_with(|| a.1.namespaced.cmp(&b.1.namespaced))
+        });
+        scored

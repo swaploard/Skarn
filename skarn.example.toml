@@ -13,3 +13,4 @@ passthrough = false
 # the MCP tool-name charset [A-Za-z0-9_.-].
 namespace_separator = "__"
 
+# How `execute` scripts are isolated:

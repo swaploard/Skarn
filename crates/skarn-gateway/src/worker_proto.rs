@@ -30,3 +30,4 @@ pub struct JobMsg {
 pub enum BridgeOpWire {
     /// Call a downstream tool.
     CallTool {
+        server: String,

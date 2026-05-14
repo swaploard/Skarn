@@ -109,3 +109,6 @@ pub enum TransportConfig {
     },
 }
 
+fn default_true() -> bool {
+    true
+}

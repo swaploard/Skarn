@@ -50,3 +50,5 @@ pub async fn build_server(config: &GatewayConfig, limits: ExecLimits) -> Result<
         config.gateway.isolation,
         instructions,
     ))
+}
+
