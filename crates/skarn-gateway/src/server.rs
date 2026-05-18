@@ -132,3 +132,5 @@ impl GatewayServer {
             Some(c) => c,
             None => {
                 return CallToolResult::error(vec![Content::text("missing `code` argument")]);
+            }
+        };

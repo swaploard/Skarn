@@ -12,3 +12,4 @@ Edit `~/.cursor/mcp.json` (global) or `.cursor/mcp.json` (per-project):
   "mcpServers": {
     "skarn": {
       "command": "skarn",
+      "args": ["serve"]

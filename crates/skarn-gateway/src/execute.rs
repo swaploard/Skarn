@@ -300,3 +300,4 @@ async fn execute_worker(
 
         if line.len() > max_line {
             let _ = child.start_kill();
+            return Err(Error::CodeMode(

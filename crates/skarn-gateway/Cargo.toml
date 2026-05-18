@@ -27,3 +27,4 @@ toml = "0.8"
 http = "1"
 rmcp = { version = "1.8.0", features = [
     "server",
+    "client",

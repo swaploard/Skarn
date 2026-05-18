@@ -129,3 +129,6 @@ impl GatewayConfig {
         // tool-name charset, or downstream clients will reject them.
         if sep.is_empty()
             || !sep
+                .chars()
+                .all(|c| c.is_ascii_alphanumeric() || matches!(c, '_' | '.' | '-'))
+        {

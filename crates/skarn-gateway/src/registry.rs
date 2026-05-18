@@ -121,3 +121,5 @@ impl Registry {
                 namespaced: t.namespaced.clone(),
                 description: t.description.clone(),
                 score,
+            })
+            .collect()

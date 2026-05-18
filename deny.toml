@@ -11,3 +11,5 @@ ignore = []
 version = 2
 # Permissive licenses only. Skarn itself is MIT OR Apache-2.0, and we keep the
 # dependency tree free of copyleft so the single binary can be vendored anywhere.
+allow = [
+    "MIT",

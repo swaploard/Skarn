@@ -181,3 +181,9 @@ impl DownstreamManager {
             .map_err(|e| Error::Mcp(format!("reading `{uri}` from `{server}`: {e}")))?;
 
         let parts: Vec<serde_json::Value> = result
+            .contents
+            .into_iter()
+            .map(|c| match c {
+                ResourceContents::TextResourceContents { text, .. } => {
+                    serde_json::from_str(&text).unwrap_or(serde_json::Value::String(text))
+                }
