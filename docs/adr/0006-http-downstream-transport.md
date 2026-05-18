@@ -23,3 +23,4 @@ Streamable HTTP transport is the one client surface.
   search, `call`, and resource reads are unchanged.
 - **Use reqwest + rustls with the `ring` provider** (not aws-lc-rs): a smaller,
   more cross-compile-friendly crypto backend with no cmake/C build, keeping the
+  single-binary goal and a permissive license tree. The provider is installed as

@@ -123,3 +123,7 @@ impl Registry {
                 score,
             })
             .collect()
+    }
+}
+
+/// A search result.

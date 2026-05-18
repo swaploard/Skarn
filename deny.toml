@@ -13,3 +13,4 @@ version = 2
 # dependency tree free of copyleft so the single binary can be vendored anywhere.
 allow = [
     "MIT",
+    "Apache-2.0",

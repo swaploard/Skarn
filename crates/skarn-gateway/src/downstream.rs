@@ -187,3 +187,9 @@ impl DownstreamManager {
                 ResourceContents::TextResourceContents { text, .. } => {
                     serde_json::from_str(&text).unwrap_or(serde_json::Value::String(text))
                 }
+                ResourceContents::BlobResourceContents { blob, .. } => {
+                    serde_json::json!({ "blob": blob })
+                }
+            })
+            .collect();
+        Ok(serde_json::Value::Array(parts).to_string())

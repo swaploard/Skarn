@@ -301,3 +301,10 @@ async fn execute_worker(
         if line.len() > max_line {
             let _ = child.start_kill();
             return Err(Error::CodeMode(
+                "Code Mode worker produced an oversized message".to_string(),
+            ));
+        }
+
+        match serde_json::from_str::<WorkerMsg>(&line)
+            .map_err(|e| Error::CodeMode(format!("malformed worker message: {e}")))?
+        {

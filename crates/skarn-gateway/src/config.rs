@@ -132,3 +132,5 @@ impl GatewayConfig {
                 .chars()
                 .all(|c| c.is_ascii_alphanumeric() || matches!(c, '_' | '.' | '-'))
         {
+            return Err(Error::config(format!(
+                "namespace_separator {sep:?} must be non-empty and match [A-Za-z0-9_.-]"

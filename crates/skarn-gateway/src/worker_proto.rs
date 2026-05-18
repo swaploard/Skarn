@@ -33,3 +33,4 @@ pub enum BridgeOpWire {
         server: String,
         tool: String,
         args: String,
+    },

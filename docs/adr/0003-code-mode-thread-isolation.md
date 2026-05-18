@@ -30,3 +30,4 @@ main runtime                          dedicated isolate thread
 servicer task  ◀── mpsc(request) ───  ChannelBridge (ToolBridge)
   manager.call(...)  (rmcp, Send)       │  awaits oneshot
   reply ── oneshot ──────────────────▶  │
+                                        QuickJS isolate (!Send)

@@ -134,3 +134,4 @@ impl GatewayServer {
                 return CallToolResult::error(vec![Content::text("missing `code` argument")]);
             }
         };
+        match execute_code(
