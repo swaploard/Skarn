@@ -133,3 +133,4 @@ pub struct SearchHit {
     pub tool: String,
     pub namespaced: String,
     pub description: String,
+    pub score: i32,

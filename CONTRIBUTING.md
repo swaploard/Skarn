@@ -5,3 +5,4 @@ untrusted code, so we hold a high bar for correctness and clarity.
 
 ## Getting started
 
+```bash

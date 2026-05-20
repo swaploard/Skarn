@@ -26,3 +26,5 @@ can deadlock on the allocator lock held by another thread at fork time.
   `skarn-sandbox-probe` test binary, which self-applies in a fresh, single-
   threaded process.
 
+## macOS read-confinement caveat
+

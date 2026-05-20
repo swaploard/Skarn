@@ -204,3 +204,8 @@ fn ensure_crypto_provider() {
     static ONCE: Once = Once::new();
     ONCE.call_once(|| {
         // Ignore the error if another component already installed a default.
+        let _ = rustls::crypto::ring::default_provider().install_default();
+    });
+}
+
+/// Build a Streamable HTTP client config from an `Http` transport entry,

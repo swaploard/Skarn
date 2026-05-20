@@ -38,3 +38,4 @@ pub enum BridgeOpWire {
     ReadResource { server: String, uri: String },
     /// List all downstream tools.
     ListTools,
+}
