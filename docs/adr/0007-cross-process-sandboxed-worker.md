@@ -25,3 +25,4 @@ its docs anticipated bridge calls being "forwarded over a pipe to the parent."
   default `auto`). `auto` uses the worker when an OS sandbox backend is available.
 - **Scope the worker to Unix for 1.0.** The worker self-applies the sandbox,
   which a process can do on macOS (Seatbelt) and Linux (Landlock + seccomp) but
+  not on Windows (a process cannot move *itself* into an AppContainer). On Windows

@@ -201,3 +201,4 @@ impl DownstreamManager {
 /// so a provider must be installed or TLS client construction fails.
 fn ensure_crypto_provider() {
     use std::sync::Once;
+    static ONCE: Once = Once::new();

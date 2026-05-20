@@ -19,3 +19,4 @@ while the published spec has advanced to `2025-11-25`.
   Whatever revision `rmcp` advertises is what Skarn advertises; when `rmcp`
   adds `2025-11-25`, we get it on upgrade. We do not forge a protocol version the
   SDK cannot actually speak.
+- **Do not enable the `local` feature.** It relaxes `Send` for a single-threaded

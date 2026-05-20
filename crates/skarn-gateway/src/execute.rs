@@ -327,3 +327,8 @@ async fn execute_worker(
             WorkerMsg::Failed { error } => return Err(Error::CodeMode(error)),
         }
     };
+
+    // Drain the child so it is reaped, but don't block the result on it.
+    let _ = child.wait().await;
+    Ok(outcome)
+}

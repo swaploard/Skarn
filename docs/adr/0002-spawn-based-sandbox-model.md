@@ -25,3 +25,4 @@ can deadlock on the allocator lock held by another thread at fork time.
 - The same `Policy::apply_to_current_process()` is exercised directly by the
   `skarn-sandbox-probe` test binary, which self-applies in a fresh, single-
   threaded process.
+

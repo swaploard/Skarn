@@ -56,3 +56,5 @@ pub async fn build_server(config: &GatewayConfig, limits: ExecLimits) -> Result<
 /// script against them, returning its outcome. Used by `skarn exec`.
 pub async fn run_script(
     config: &GatewayConfig,
+    limits: ExecLimits,
+    code: &str,

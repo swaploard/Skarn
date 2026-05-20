@@ -139,3 +139,6 @@ impl GatewayServer {
             self.limits,
             code.to_string(),
             self.isolation,
+        )
+        .await
+        {

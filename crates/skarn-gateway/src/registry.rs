@@ -131,3 +131,5 @@ impl Registry {
 pub struct SearchHit {
     pub server: String,
     pub tool: String,
+    pub namespaced: String,
+    pub description: String,

@@ -35,3 +35,4 @@ pub enum BridgeOpWire {
         args: String,
     },
     /// Read a downstream resource by URI.
+    ReadResource { server: String, uri: String },
