@@ -137,3 +137,5 @@ impl GatewayServer {
         match execute_code(
             self.manager.clone(),
             self.limits,
+            code.to_string(),
+            self.isolation,

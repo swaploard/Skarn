@@ -196,3 +196,8 @@ impl DownstreamManager {
     }
 }
 
+/// Install the rustls **ring** crypto provider as the process default, once,
+/// before the first HTTPS request. reqwest is built with `rustls-no-provider`,
+/// so a provider must be installed or TLS client construction fails.
+fn ensure_crypto_provider() {
+    use std::sync::Once;

@@ -320,3 +320,10 @@ async fn execute_worker(
                         serde_json::to_string(&manager.registry().descriptors())
                             .map_err(|e| Error::Mcp(e.to_string())),
                     ),
+                };
+                write_json_line(&mut stdin, &ReplyMsg { id, ok, payload }).await?;
+            }
+            WorkerMsg::Result { outcome } => break outcome,
+            WorkerMsg::Failed { error } => return Err(Error::CodeMode(error)),
+        }
+    };

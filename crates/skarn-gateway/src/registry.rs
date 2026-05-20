@@ -129,3 +129,5 @@ impl Registry {
 /// A search result.
 #[derive(Clone, Debug, Serialize)]
 pub struct SearchHit {
+    pub server: String,
+    pub tool: String,
