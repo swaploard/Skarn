@@ -62,3 +62,4 @@ pub async fn run_script(
     let manager = Arc::new(DownstreamManager::connect(config).await?);
     execute::execute_code(manager, limits, code.to_string(), config.gateway.isolation).await
 }
+

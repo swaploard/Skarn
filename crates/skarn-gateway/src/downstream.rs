@@ -212,3 +212,5 @@ fn ensure_crypto_provider() {
 /// resolving the bearer token (env var takes precedence) and validating headers.
 fn http_client_config(
     alias: &str,
+    url: &str,
+    auth_bearer: &Option<String>,

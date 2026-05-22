@@ -150,3 +150,5 @@ impl GatewayServer {
                 });
                 CallToolResult::success(vec![Content::text(body.to_string())])
             }
+            Ok(outcome) => {
+                let mut msg = format!(

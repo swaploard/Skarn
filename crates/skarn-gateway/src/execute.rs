@@ -346,3 +346,10 @@ where
         .write_all(line.as_bytes())
         .await
         .map_err(|e| Error::CodeMode(format!("writing to worker: {e}")))?;
+    writer
+        .flush()
+        .await
+        .map_err(|e| Error::CodeMode(format!("flushing to worker: {e}")))?;
+    Ok(())
+}
+

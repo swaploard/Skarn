@@ -144,3 +144,4 @@ impl GatewayConfig {
         let text = std::fs::read_to_string(path.as_ref())
             .map_err(|e| Error::config(format!("reading {}: {e}", path.as_ref().display())))?;
         Self::from_toml(&text)
+    }

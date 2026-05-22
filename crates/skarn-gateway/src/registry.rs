@@ -138,3 +138,4 @@ pub struct SearchHit {
 
 fn score_tool(tool: &NamespacedTool, terms: &[String]) -> i32 {
     if terms.is_empty() {
+        return 1; // empty query matches everything weakly
