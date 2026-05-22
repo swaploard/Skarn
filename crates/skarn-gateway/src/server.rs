@@ -152,3 +152,7 @@ impl GatewayServer {
             }
             Ok(outcome) => {
                 let mut msg = format!(
+                    "Script error: {}",
+                    outcome.error.unwrap_or_else(|| "unknown".into())
+                );
+                if !outcome.logs.is_empty() {

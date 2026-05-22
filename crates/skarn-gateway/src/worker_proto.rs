@@ -40,3 +40,4 @@ pub enum BridgeOpWire {
     ListTools,
 }
 
+/// A message from the worker to the parent.

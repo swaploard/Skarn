@@ -214,3 +214,6 @@ fn http_client_config(
     alias: &str,
     url: &str,
     auth_bearer: &Option<String>,
+    auth_bearer_env: &Option<String>,
+    headers: &std::collections::BTreeMap<String, String>,
+) -> Result<rmcp::transport::streamable_http_client::StreamableHttpClientTransportConfig> {

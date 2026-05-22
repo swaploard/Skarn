@@ -20,3 +20,4 @@ while the published spec has advanced to `2025-11-25`.
   adds `2025-11-25`, we get it on upgrade. We do not forge a protocol version the
   SDK cannot actually speak.
 - **Do not enable the `local` feature.** It relaxes `Send` for a single-threaded
+  deployment, but it made running the `!Send` Code Mode isolate alongside live

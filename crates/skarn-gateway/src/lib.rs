@@ -63,3 +63,4 @@ pub async fn run_script(
     execute::execute_code(manager, limits, code.to_string(), config.gateway.isolation).await
 }
 
+/// Serve a gateway over stdio (the default transport for Claude Code / Cursor).

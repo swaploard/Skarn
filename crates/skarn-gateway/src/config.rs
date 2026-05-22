@@ -145,3 +145,4 @@ impl GatewayConfig {
             .map_err(|e| Error::config(format!("reading {}: {e}", path.as_ref().display())))?;
         Self::from_toml(&text)
     }
+
