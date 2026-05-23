@@ -363,3 +363,10 @@ where
 ///
 /// Returns `Ok(())` whenever a terminal message was emitted (including failures,
 /// which are reported as [`WorkerMsg::Failed`]); only an I/O failure writing that
+/// message produces an `Err`.
+pub fn run_worker_job() -> Result<()> {
+    #[cfg(unix)]
+    {
+        worker::run()
+    }
+    #[cfg(not(unix))]

@@ -221,3 +221,6 @@ fn http_client_config(
     use rmcp::transport::streamable_http_client::StreamableHttpClientTransportConfig;
 
     let token = match auth_bearer_env {
+        Some(var) => std::env::var(var).ok().or_else(|| auth_bearer.clone()),
+        None => auth_bearer.clone(),
+    };

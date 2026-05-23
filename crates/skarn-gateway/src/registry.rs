@@ -143,3 +143,6 @@ fn score_tool(tool: &NamespacedTool, terms: &[String]) -> i32 {
     let name = tool.tool.to_ascii_lowercase();
     let server = tool.server.to_ascii_lowercase();
     let desc = tool.description.to_ascii_lowercase();
+    let mut score = 0;
+    for term in terms {
+        if name == *term {

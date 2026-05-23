@@ -161,3 +161,6 @@ impl GatewayServer {
                 }
                 CallToolResult::error(vec![Content::text(msg)])
             }
+            Err(e) => CallToolResult::error(vec![Content::text(format!("Execution failed: {e}"))]),
+        }
+    }

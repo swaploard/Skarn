@@ -26,3 +26,6 @@ pub struct ServeArgs {
     #[command(flatten)]
     limits: LimitArgs,
 }
+
+#[derive(Args, Debug)]
+pub struct ExecArgs {
