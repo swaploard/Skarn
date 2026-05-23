@@ -41,3 +41,4 @@ pub enum BridgeOpWire {
 }
 
 /// A message from the worker to the parent.
+#[derive(Clone, Debug, Serialize, Deserialize)]

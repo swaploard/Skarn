@@ -146,3 +146,4 @@ impl GatewayConfig {
         Self::from_toml(&text)
     }
 
+    /// The enabled downstream servers.

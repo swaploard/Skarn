@@ -357,3 +357,6 @@ where
 // Cross-process worker execution (child side)
 // ---------------------------------------------------------------------------
 
+/// Entry point for the hidden `skarn __worker` subcommand: read the job from
+/// stdin, confine this process with the OS sandbox, run the isolate, and report
+/// the outcome on stdout. Always emits exactly one terminal message.

@@ -16,3 +16,9 @@ use skarn_sandbox::{NetPolicy, Policy};
 // ---------------------------------------------------------------------------
 
 #[derive(Args, Debug)]
+pub struct ServeArgs {
+    /// Path to the gateway config (default: ./skarn.toml if present).
+    #[arg(long, short)]
+    config: Option<PathBuf>,
+    /// Expose the namespaced downstream tools directly, in addition to the meta-tools.
+    #[arg(long)]

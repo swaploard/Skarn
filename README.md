@@ -129,3 +129,5 @@ Errors, warnings, and failures are *always* kept — even rescued out of a trunc
 Compare to Docker's 200 ms+ cold start, root daemon, and per-seat licensing.
 
 Code Mode `execute` gets the same protection: on macOS and Linux the gateway runs
+each script in a dedicated **worker process that sandboxes itself** (deny network,
+no workspace writes) before touching model-generated code, so an isolate escape

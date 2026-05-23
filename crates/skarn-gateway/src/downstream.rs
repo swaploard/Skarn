@@ -217,3 +217,7 @@ fn http_client_config(
     auth_bearer_env: &Option<String>,
     headers: &std::collections::BTreeMap<String, String>,
 ) -> Result<rmcp::transport::streamable_http_client::StreamableHttpClientTransportConfig> {
+    use http::{HeaderName, HeaderValue};
+    use rmcp::transport::streamable_http_client::StreamableHttpClientTransportConfig;
+
+    let token = match auth_bearer_env {
