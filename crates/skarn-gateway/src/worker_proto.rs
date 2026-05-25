@@ -44,3 +44,4 @@ pub enum BridgeOpWire {
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(tag = "kind", rename_all = "snake_case")]
 pub enum WorkerMsg {
+    /// A host operation, awaiting a [`ReplyMsg`] with the same `id`.

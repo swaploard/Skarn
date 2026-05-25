@@ -155,3 +155,5 @@ impl GatewayConfig {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]

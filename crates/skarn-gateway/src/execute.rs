@@ -386,3 +386,6 @@ mod worker {
     use std::sync::atomic::{AtomicU64, Ordering};
 
     use async_trait::async_trait;
+    use skarn_codemode::{Engine, ExecLimits, Outcome, ToolBridge};
+    use skarn_common::{Error, Result};
+    use tokio::sync::{mpsc, oneshot};

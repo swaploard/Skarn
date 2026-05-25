@@ -42,3 +42,12 @@ pub struct ExecArgs {
     limits: LimitArgs,
 }
 
+#[derive(Args, Debug)]
+pub struct RunArgs {
+    /// Network policy for the sandboxed command.
+    #[arg(long, value_enum, default_value_t = NetArg::Deny)]
+    net: NetArg,
+    /// The writable workspace directory (default: current directory).
+    #[arg(long)]
+    workspace: Option<PathBuf>,
+    /// Disable OS-native sandboxing (runs the command unconfined).

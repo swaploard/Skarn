@@ -150,3 +150,6 @@ fn score_tool(tool: &NamespacedTool, terms: &[String]) -> i32 {
         } else if name.contains(term) {
             score += 6;
         }
+        if server.contains(term) {
+            score += 3;
+        }
