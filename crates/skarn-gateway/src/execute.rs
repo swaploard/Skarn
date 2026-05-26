@@ -394,3 +394,7 @@ mod worker {
 
     pub fn run() -> Result<()> {
         let job = match read_job() {
+            Ok(job) => job,
+            Err(e) => {
+                return emit(&WorkerMsg::Failed {
+                    error: e.to_string(),

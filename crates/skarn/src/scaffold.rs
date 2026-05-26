@@ -13,3 +13,4 @@ pub const SKARN_TOML_TEMPLATE: &str = r#"# Skarn gateway configuration.
 # token-saving benefit of Code Mode.
 passthrough = false
 
+# ---------------------------------------------------------------------------

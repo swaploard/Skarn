@@ -162,3 +162,7 @@ mod tests {
             [gateway]
             passthrough = true
 
+            [servers.fs]
+            transport = "stdio"
+            command = "npx"
+            args = ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]

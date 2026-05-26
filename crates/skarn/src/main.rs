@@ -9,3 +9,4 @@
 //!     configured servers.
 
 mod commands;
+mod scaffold;

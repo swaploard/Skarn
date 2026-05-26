@@ -57,3 +57,8 @@ pub struct RunArgs {
     #[arg(long)]
     no_compress: bool,
     /// Print a one-line token-savings summary to stderr.
+    #[arg(long)]
+    stats: bool,
+    /// The command to run, after `--`.
+    #[arg(last = true, required = true)]
+    command: Vec<String>,

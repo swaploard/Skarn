@@ -20,3 +20,4 @@ Edit `~/.cursor/mcp.json` (global) or `.cursor/mcp.json` (per-project):
 
 ## Windsurf
 
+In Windsurf's MCP settings (`~/.codeium/windsurf/mcp_config.json`):

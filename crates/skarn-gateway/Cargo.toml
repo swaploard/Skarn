@@ -33,3 +33,5 @@ rmcp = { version = "1.8.0", features = [
     # Streamable HTTP downstream transport (handles the SSE response stream
     # internally). The reqwest client's TLS is configured below.
     "transport-streamable-http-client-reqwest",
+] }
+# Pin the reqwest TLS stack to rustls + ring (not aws-lc-rs): a smaller, more
