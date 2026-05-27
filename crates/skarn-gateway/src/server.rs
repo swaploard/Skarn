@@ -179,3 +179,6 @@ impl GatewayServer {
         }
     }
 }
+
+impl ServerHandler for GatewayServer {
+    fn get_info(&self) -> ServerInfo {

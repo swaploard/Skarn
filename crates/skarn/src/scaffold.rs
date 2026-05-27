@@ -15,3 +15,4 @@ passthrough = false
 
 # ---------------------------------------------------------------------------
 # Downstream MCP servers. Each [servers.<alias>] is launched as a child process
+# and aggregated. The alias becomes the namespace prefix (alias__tool).

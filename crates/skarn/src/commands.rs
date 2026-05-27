@@ -68,3 +68,8 @@ pub struct RunArgs {
 pub struct InitArgs {
     /// Overwrite an existing skarn.toml.
     #[arg(long)]
+    force: bool,
+}
+
+#[derive(Args, Debug)]
+struct LimitArgs {

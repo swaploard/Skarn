@@ -21,3 +21,4 @@ Add Skarn to your MCP config (e.g. `.mcp.json` or the Claude Code settings):
 Configure which downstream servers it aggregates in `skarn.toml` (run
 `skarn init` for a starter). The agent now sees `search`, `read_tool_docs`, and
 `execute` instead of every downstream schema, and orchestrates tools in a
+sandboxed isolate.

@@ -167,3 +167,4 @@ mod tests {
             command = "npx"
             args = ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]
 
+            [servers.disabled]
