@@ -22,3 +22,4 @@ upstream also reintroduces exactly the context bloat we set out to remove.
 3. **Progressive disclosure.** The full tool catalog is reachable via `search`
    (ranked) and `read_tool_docs` (exact schema on demand). A generated
    TypeScript `.d.ts` of all tools is embedded in the server `instructions` so
+   the model can author `execute` scripts against real types.

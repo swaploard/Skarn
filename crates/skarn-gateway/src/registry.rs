@@ -162,3 +162,4 @@ fn score_tool(tool: &NamespacedTool, terms: &[String]) -> i32 {
 
 #[cfg(test)]
 mod tests {
+    use super::*;

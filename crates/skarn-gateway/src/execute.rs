@@ -405,3 +405,7 @@ mod worker {
         // Confine ourselves before touching the (untrusted) script.
         if let Err(e) = job.policy.apply_to_current_process() {
             return emit(&WorkerMsg::Failed {
+                error: format!("applying sandbox: {e}"),
+            });
+        }
+

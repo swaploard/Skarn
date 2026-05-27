@@ -178,3 +178,4 @@ impl GatewayServer {
             None => CallToolResult::error(vec![Content::text(format!("unknown tool `{name}`"))]),
         }
     }
+}

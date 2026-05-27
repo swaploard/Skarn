@@ -14,3 +14,4 @@ pub const SKARN_TOML_TEMPLATE: &str = r#"# Skarn gateway configuration.
 passthrough = false
 
 # ---------------------------------------------------------------------------
+# Downstream MCP servers. Each [servers.<alias>] is launched as a child process

@@ -32,3 +32,4 @@ servicer task  ◀── mpsc(request) ───  ChannelBridge (ToolBridge)
   reply ── oneshot ──────────────────▶  │
                                         QuickJS isolate (!Send)
 ```
+

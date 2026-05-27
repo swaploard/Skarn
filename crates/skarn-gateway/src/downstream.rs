@@ -240,3 +240,8 @@ fn http_client_config(
     if let Some(t) = token {
         cfg = cfg.auth_header(t); // value WITHOUT the "Bearer " prefix
     }
+    Ok(cfg)
+}
+
+fn tool_to_descriptor(alias: &str, t: Tool) -> ToolDescriptor {
+    ToolDescriptor {

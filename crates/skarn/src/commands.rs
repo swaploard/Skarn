@@ -63,3 +63,8 @@ pub struct RunArgs {
     #[arg(last = true, required = true)]
     command: Vec<String>,
 }
+
+#[derive(Args, Debug)]
+pub struct InitArgs {
+    /// Overwrite an existing skarn.toml.
+    #[arg(long)]
