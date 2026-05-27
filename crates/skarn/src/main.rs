@@ -15,3 +15,7 @@ use clap::{Parser, Subcommand};
 
 /// Skarn: a fast, OS-sandboxed MCP gateway with Code Mode and token compression.
 #[derive(Parser, Debug)]
+#[command(name = "skarn", version, about, long_about = None)]
+struct Cli {
+    #[command(subcommand)]
+    command: Command,

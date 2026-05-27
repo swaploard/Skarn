@@ -176,3 +176,6 @@ mod tests {
         assert!(cfg.gateway.passthrough);
         assert_eq!(cfg.servers.len(), 2);
         assert_eq!(cfg.enabled_servers().count(), 1);
+
+        let fs = &cfg.servers["fs"];
+        match &fs.transport {

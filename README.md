@@ -138,3 +138,4 @@ still lands in a kernel-confined process. Configure it with `isolation` in
 
 - **Claude Code / Codex CLI** — run `skarn hook` for a PreToolUse hook that routes shell commands through `skarn run` (sandbox + compression, no prompt changes). See [docs/integrations/claude-code.md](docs/integrations/claude-code.md).
 - **Cursor / Windsurf** — set Skarn as an MCP server in the IDE config to get Code Mode + aggregation. See [docs/integrations/cursor-windsurf.md](docs/integrations/cursor-windsurf.md).
+

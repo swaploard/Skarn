@@ -189,3 +189,6 @@ impl ServerHandler for GatewayServer {
     }
 
     async fn list_tools(
+        &self,
+        _request: Option<PaginatedRequestParams>,
+        _context: RequestContext<RoleServer>,

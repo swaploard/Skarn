@@ -428,3 +428,7 @@ mod worker {
                 error: e.to_string(),
             }),
         }
+    }
+
+    /// Read the single job line. `std::io::Stdin` keeps one shared buffer, so the
+    /// reply-reader thread started later resumes cleanly after this line.

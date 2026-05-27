@@ -81,3 +81,6 @@ struct LimitArgs {
     timeout_secs: u64,
     /// Maximum downstream tool calls per `execute`.
     #[arg(long, default_value_t = 256)]
+    max_tool_calls: usize,
+}
+

@@ -257,3 +257,5 @@ fn parse_args(s: &str) -> Result<Option<JsonObject>> {
     if trimmed.is_empty() || trimmed == "null" {
         return Ok(None);
     }
+    let value: serde_json::Value = serde_json::from_str(trimmed)
+        .map_err(|e| Error::Mcp(format!("invalid tool arguments: {e}")))?;
