@@ -48,3 +48,4 @@ pub enum WorkerMsg {
     Request { id: u64, op: BridgeOpWire },
     /// The script finished; this is the final message.
     Result { outcome: Outcome },
+    /// The worker failed before producing a result (validation, sandbox apply,

@@ -15,3 +15,4 @@ cargo test --workspace
 Rust **1.95+** is required (pinned in `rust-toolchain.toml`).
 
 ## Before you open a PR
+

@@ -179,3 +179,4 @@ mod tests {
 
         let fs = &cfg.servers["fs"];
         match &fs.transport {
+            TransportConfig::Stdio { command, args, .. } => {

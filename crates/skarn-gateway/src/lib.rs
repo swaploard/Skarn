@@ -76,3 +76,5 @@ pub async fn serve_stdio(server: GatewayServer) -> Result<()> {
     Ok(())
 }
 
+/// Build the `instructions` string sent to the AI client during initialization.
+/// It teaches the client how to use Code Mode and embeds the generated `.d.ts`.

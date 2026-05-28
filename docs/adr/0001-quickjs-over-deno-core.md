@@ -27,3 +27,4 @@ Use **`rquickjs`** with the `futures` + `macro` features.
 - **Hard limits exist:** `set_memory_limit`, `set_max_stack_size`, and an
   interrupt handler (wall-clock deadline → uncatchable abort) cover the
   untrusted-execution requirements.
+- **Startup:** fresh contexts are cheap, which suits a per-execution isolate.

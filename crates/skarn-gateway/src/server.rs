@@ -192,3 +192,6 @@ impl ServerHandler for GatewayServer {
         &self,
         _request: Option<PaginatedRequestParams>,
         _context: RequestContext<RoleServer>,
+    ) -> Result<ListToolsResult, McpError> {
+        let mut tools = Self::meta_tools();
+        if self.passthrough {

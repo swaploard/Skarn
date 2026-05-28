@@ -84,3 +84,9 @@ struct LimitArgs {
     max_tool_calls: usize,
 }
 
+impl LimitArgs {
+    fn to_limits(&self) -> ExecLimits {
+        ExecLimits {
+            memory_bytes: self.mem_mb * 1024 * 1024,
+            wall_clock: Duration::from_secs(self.timeout_secs),
+            max_tool_calls: self.max_tool_calls,

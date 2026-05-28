@@ -432,3 +432,6 @@ mod worker {
 
     /// Read the single job line. `std::io::Stdin` keeps one shared buffer, so the
     /// reply-reader thread started later resumes cleanly after this line.
+    fn read_job() -> Result<JobMsg> {
+        let mut line = String::new();
+        std::io::stdin()
