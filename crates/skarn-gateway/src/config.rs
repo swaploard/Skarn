@@ -182,3 +182,4 @@ mod tests {
             TransportConfig::Stdio { command, args, .. } => {
                 assert_eq!(command, "npx");
                 assert_eq!(args.len(), 3);
+            }

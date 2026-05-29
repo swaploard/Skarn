@@ -198,3 +198,4 @@ impl ServerHandler for GatewayServer {
             for t in self.manager.registry().tools() {
                 let desc = if t.description.is_empty() {
                     format!("(via {})", t.server)
+                } else {

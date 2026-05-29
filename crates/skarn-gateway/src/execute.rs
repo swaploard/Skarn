@@ -445,3 +445,6 @@ mod worker {
     async fn run_isolate(limits: ExecLimits, code: &str) -> Result<Outcome> {
         let (reply_tx, mut reply_rx) = mpsc::unbounded_channel::<ReplyMsg>();
 
+        // Reader thread: forwards reply lines from the parent. Trusted code; on
+        // Unix it inherits this thread's Landlock domain (and seccomp via TSYNC).
+        std::thread::spawn(move || {

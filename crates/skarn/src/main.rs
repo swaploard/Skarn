@@ -20,3 +20,5 @@ struct Cli {
     #[command(subcommand)]
     command: Command,
 
+    /// Increase log verbosity (also honors `RUST_LOG`). Logs go to stderr.
+    #[arg(long, short, global = true)]

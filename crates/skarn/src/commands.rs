@@ -101,3 +101,8 @@ pub enum NetArg {
     Deny,
     /// Allow loopback only.
     Loopback,
+    /// Allow outbound connections.
+    Outbound,
+    /// Allow all network access.
+    All,
+}

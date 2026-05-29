@@ -84,3 +84,4 @@ jobs:
             *.tar.gz.sha256
 
   publish:
+    name: publish to crates.io

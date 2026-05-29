@@ -266,3 +266,4 @@ fn parse_args(s: &str) -> Result<Option<JsonObject>> {
             "tool arguments must be a JSON object, got: {other}"
         ))),
     }
+}

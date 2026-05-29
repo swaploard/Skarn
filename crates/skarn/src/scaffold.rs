@@ -27,3 +27,4 @@ passthrough = false
 # A GitHub server:
 # [servers.github]
 # transport = "stdio"
+# command = "npx"

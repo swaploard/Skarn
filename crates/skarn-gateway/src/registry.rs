@@ -174,3 +174,5 @@ mod tests {
     }
 
     fn registry() -> Registry {
+        Registry::build(
+            "__",

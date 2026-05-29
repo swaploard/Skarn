@@ -23,3 +23,5 @@ upstream also reintroduces exactly the context bloat we set out to remove.
    (ranked) and `read_tool_docs` (exact schema on demand). A generated
    TypeScript `.d.ts` of all tools is embedded in the server `instructions` so
    the model can author `execute` scripts against real types.
+4. **Lock-free reads.** The registry is held in an `arc-swap` cell so concurrent
+   reads never block and a refresh swaps a new snapshot atomically.

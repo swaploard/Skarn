@@ -24,3 +24,4 @@ In Windsurf's MCP settings (`~/.codeium/windsurf/mcp_config.json`):
 
 ```json
 {
+  "mcpServers": {
