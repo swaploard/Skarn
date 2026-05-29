@@ -21,3 +21,6 @@ passthrough = false
 # A local filesystem server (uncomment and adjust):
 # [servers.fs]
 # transport = "stdio"
+# command = "npx"
+# args = ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/project"]
+

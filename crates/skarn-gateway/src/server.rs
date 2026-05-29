@@ -195,3 +195,4 @@ impl ServerHandler for GatewayServer {
     ) -> Result<ListToolsResult, McpError> {
         let mut tools = Self::meta_tools();
         if self.passthrough {
+            for t in self.manager.registry().tools() {

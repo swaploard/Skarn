@@ -435,3 +435,6 @@ mod worker {
     fn read_job() -> Result<JobMsg> {
         let mut line = String::new();
         std::io::stdin()
+            .lock()
+            .read_line(&mut line)
+            .map_err(|e| Error::CodeMode(format!("reading job: {e}")))?;

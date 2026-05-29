@@ -49,3 +49,5 @@ pub enum WorkerMsg {
     /// The script finished; this is the final message.
     Result { outcome: Outcome },
     /// The worker failed before producing a result (validation, sandbox apply,
+    /// panic, …); this is the final message.
+    Failed { error: String },

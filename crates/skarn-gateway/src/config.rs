@@ -180,3 +180,5 @@ mod tests {
         let fs = &cfg.servers["fs"];
         match &fs.transport {
             TransportConfig::Stdio { command, args, .. } => {
+                assert_eq!(command, "npx");
+                assert_eq!(args.len(), 3);

@@ -90,3 +90,9 @@ impl LimitArgs {
             memory_bytes: self.mem_mb * 1024 * 1024,
             wall_clock: Duration::from_secs(self.timeout_secs),
             max_tool_calls: self.max_tool_calls,
+            ..ExecLimits::default()
+        }
+    }
+}
+
+#[derive(Clone, Copy, Debug, ValueEnum)]

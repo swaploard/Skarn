@@ -171,3 +171,5 @@ mod tests {
             description: description.to_string(),
             input_schema: serde_json::json!({"type": "object"}),
         }
+    }
+

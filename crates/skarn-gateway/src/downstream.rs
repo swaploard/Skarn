@@ -262,3 +262,5 @@ fn parse_args(s: &str) -> Result<Option<JsonObject>> {
     match value {
         serde_json::Value::Object(m) => Ok(Some(m)),
         serde_json::Value::Null => Ok(None),
+        other => Err(Error::Mcp(format!(
+            "tool arguments must be a JSON object, got: {other}"

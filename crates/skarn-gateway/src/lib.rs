@@ -78,3 +78,4 @@ pub async fn serve_stdio(server: GatewayServer) -> Result<()> {
 
 /// Build the `instructions` string sent to the AI client during initialization.
 /// It teaches the client how to use Code Mode and embeds the generated `.d.ts`.
+fn build_instructions(dts: &str, manager: &DownstreamManager) -> String {
