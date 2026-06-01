@@ -474,3 +474,6 @@ mod worker {
         let demux = pending.clone();
         let demux_task = tokio::spawn(async move {
             while let Some(reply) = reply_rx.recv().await {
+                if let Some(tx) = demux.lock().unwrap().remove(&reply.id) {
+                    let _ = tx.send(reply);
+                }

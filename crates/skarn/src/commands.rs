@@ -128,3 +128,7 @@ pub async fn serve(args: ServeArgs) -> anyhow::Result<()> {
         config.gateway.passthrough = true;
     }
     tracing::info!(
+        servers = config.enabled_servers().count(),
+        "starting Skarn gateway on stdio"
+    );
+    let server = skarn_gateway::build_server(&config, args.limits.to_limits())

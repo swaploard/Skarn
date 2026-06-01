@@ -52,3 +52,4 @@ pub enum WorkerMsg {
     /// panic, …); this is the final message.
     Failed { error: String },
 }
+

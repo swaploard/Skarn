@@ -203,3 +203,5 @@ impl ServerHandler for GatewayServer {
                 };
                 tools.push(Tool::new(
                     t.namespaced.clone(),
+                    desc,
+                    schema(t.input_schema.clone()),

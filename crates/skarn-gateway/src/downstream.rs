@@ -282,3 +282,4 @@ fn result_to_json(result: CallToolResult) -> serde_json::Value {
     match texts.len() {
         0 => serde_json::Value::Null,
         1 => serde_json::from_str(&texts[0])
+            .unwrap_or_else(|_| serde_json::Value::String(texts[0].clone())),

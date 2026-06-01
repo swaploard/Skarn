@@ -194,3 +194,7 @@ mod tests {
         assert_eq!(cfg.gateway.namespace_separator, "__");
     }
 
+    #[test]
+    fn parses_http_server() {
+        let toml = r#"
+            [servers.remote]

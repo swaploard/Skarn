@@ -19,3 +19,4 @@ Rust **1.95+** is required (pinned in `rust-toolchain.toml`).
 Run the same checks CI runs:
 
 ```bash
+cargo fmt --all --check

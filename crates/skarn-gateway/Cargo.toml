@@ -38,3 +38,5 @@ rmcp = { version = "1.8.0", features = [
 # cross-compile-friendly crypto backend that keeps the single-binary goal. The
 # ring provider is installed as the process default before the first HTTPS use.
 reqwest = { version = "0.13", default-features = false, features = [
+    "rustls-no-provider",
+    "http2",

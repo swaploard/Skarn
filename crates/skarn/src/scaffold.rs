@@ -31,3 +31,6 @@ passthrough = false
 # args = ["-y", "@modelcontextprotocol/server-github"]
 # env = { GITHUB_TOKEN = "ghp_..." }
 
+# A remote server over Streamable HTTP. Prefer `auth_bearer_env` so the token is
+# read from the environment at startup instead of being stored in this file:
+# [servers.remote]
