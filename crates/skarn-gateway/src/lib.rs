@@ -82,3 +82,4 @@ fn build_instructions(dts: &str, manager: &DownstreamManager) -> String {
     let registry = manager.registry();
     let servers = registry.server_names();
     let server_list = if servers.is_empty() {
+        "(none connected)".to_string()

@@ -26,3 +26,4 @@ sandboxed isolate.
 ## 2. Shell hook (sandbox + compression)
 
 Route the agent's shell commands through `skarn run` so they are confined to the
+project directory, denied network access, and have their output compressed

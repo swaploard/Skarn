@@ -30,3 +30,4 @@ passthrough = false
 # command = "npx"
 # args = ["-y", "@modelcontextprotocol/server-github"]
 # env = { GITHUB_TOKEN = "ghp_..." }
+

@@ -193,3 +193,4 @@ mod tests {
         assert!(cfg.servers.is_empty());
         assert_eq!(cfg.gateway.namespace_separator, "__");
     }
+

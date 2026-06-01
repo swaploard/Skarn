@@ -119,3 +119,12 @@ impl From<NetArg> for NetPolicy {
 }
 
 // ---------------------------------------------------------------------------
+// serve
+// ---------------------------------------------------------------------------
+
+pub async fn serve(args: ServeArgs) -> anyhow::Result<()> {
+    let mut config = load_config(args.config.as_ref())?;
+    if args.passthrough {
+        config.gateway.passthrough = true;
+    }
+    tracing::info!(

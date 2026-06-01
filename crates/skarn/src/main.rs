@@ -28,3 +28,4 @@ struct Cli {
 #[derive(Subcommand, Debug)]
 enum Command {
     /// Run the MCP gateway (stdio transport) for an AI client to connect to.
+    Serve(commands::ServeArgs),

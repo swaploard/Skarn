@@ -278,3 +278,7 @@ fn result_to_json(result: CallToolResult) -> serde_json::Value {
         .content
         .iter()
         .filter_map(|c| c.as_text().map(|t| t.text.clone()))
+        .collect();
+    match texts.len() {
+        0 => serde_json::Value::Null,
+        1 => serde_json::from_str(&texts[0])

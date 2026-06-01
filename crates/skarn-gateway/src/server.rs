@@ -201,3 +201,5 @@ impl ServerHandler for GatewayServer {
                 } else {
                     format!("{} (via {})", t.description, t.server)
                 };
+                tools.push(Tool::new(
+                    t.namespaced.clone(),

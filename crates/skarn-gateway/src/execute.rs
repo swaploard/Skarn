@@ -472,3 +472,5 @@ mod worker {
 
         // Demux replies to the waiting call by id.
         let demux = pending.clone();
+        let demux_task = tokio::spawn(async move {
+            while let Some(reply) = reply_rx.recv().await {
