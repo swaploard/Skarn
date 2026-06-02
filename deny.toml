@@ -20,3 +20,4 @@ allow = [
     "ISC",
     "Unicode-3.0",
     "Zlib",
+    "MPL-2.0",

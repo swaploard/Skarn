@@ -85,3 +85,5 @@ jobs:
 
   publish:
     name: publish to crates.io
+    needs: release
+    runs-on: ubuntu-latest

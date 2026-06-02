@@ -193,3 +193,7 @@ mod tests {
     }
 
     #[test]
+    fn namespacing_and_resolution() {
+        let r = registry();
+        assert_eq!(r.len(), 3);
+        assert_eq!(

@@ -491,3 +491,7 @@ mod worker {
 
     /// A [`ToolBridge`] that forwards each call to the parent over stdout and
     /// awaits the matching reply (demultiplexed by id). `Send` so the demux task
+    /// can run on the same current-thread runtime via `tokio::spawn`.
+    struct PipeBridge {
+        next_id: AtomicU64,
+        pending: Arc<Mutex<HashMap<u64, oneshot::Sender<ReplyMsg>>>>,

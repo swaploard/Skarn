@@ -144,3 +144,8 @@ pub async fn serve(args: ServeArgs) -> anyhow::Result<()> {
 // exec
 // ---------------------------------------------------------------------------
 
+pub async fn exec(args: ExecArgs) -> anyhow::Result<()> {
+    let config = load_config(args.config.as_ref())?;
+    let code = read_script(&args)?;
+
+    let outcome = skarn_gateway::run_script(&config, args.limits.to_limits(), &code)

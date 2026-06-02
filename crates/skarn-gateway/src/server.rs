@@ -213,3 +213,5 @@ impl ServerHandler for GatewayServer {
 
     async fn call_tool(
         &self,
+        request: CallToolRequestParams,
+        _context: RequestContext<RoleServer>,
