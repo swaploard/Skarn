@@ -200,3 +200,5 @@ mod tests {
             r.resolve("github__search_issues"),
             Some(("github", "search_issues"))
         );
+        assert_eq!(r.resolve("db__query"), Some(("db", "query")));
+        assert_eq!(r.resolve("nope__nope"), None);

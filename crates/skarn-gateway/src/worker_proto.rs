@@ -55,3 +55,4 @@ pub enum WorkerMsg {
 
 /// The parent's reply to a [`WorkerMsg::Request`].
 #[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct ReplyMsg {

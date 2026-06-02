@@ -33,3 +33,4 @@ enum Command {
     Run(commands::RunArgs),
     /// Execute a Code Mode script against the configured downstream servers.
     Exec(commands::ExecArgs),
+    /// Report the active sandbox backend and subsystem status.

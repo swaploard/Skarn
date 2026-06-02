@@ -299,3 +299,6 @@ fn extract_text(result: &CallToolResult) -> String {
 /// A [`ToolBridge`] backed by a [`DownstreamManager`]: this is what a Code Mode
 /// script's `skarn.callTool` ultimately reaches when running in-process.
 pub struct GatewayBridge {
+    manager: Arc<DownstreamManager>,
+}
+

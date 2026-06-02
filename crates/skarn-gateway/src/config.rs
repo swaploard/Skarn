@@ -207,3 +207,4 @@ mod tests {
         let remote = &cfg.servers["remote"];
         match &remote.transport {
             TransportConfig::Http {
+                url,

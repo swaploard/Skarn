@@ -502,3 +502,7 @@ mod worker {
             let id = self.next_id.fetch_add(1, Ordering::Relaxed);
             let (tx, rx) = oneshot::channel();
             self.pending.lock().unwrap().insert(id, tx);
+            write_line(&WorkerMsg::Request { id, op }).map_err(|e| e.to_string())?;
+            let reply = rx
+                .await
+                .map_err(|_| "worker bridge channel closed".to_string())?;

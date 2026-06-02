@@ -38,3 +38,4 @@ passthrough = false
 # url = "https://api.example.com/mcp"
 # auth_bearer_env = "EXAMPLE_API_TOKEN"
 # headers = { X-Org = "acme" }
+"#;

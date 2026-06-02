@@ -156,3 +156,9 @@ pub async fn exec(args: ExecArgs) -> anyhow::Result<()> {
         eprintln!("[log] {line}");
     }
     eprintln!("[tool calls: {}]", outcome.tool_calls);
+
+    if outcome.ok {
+        println!("{}", serde_json::to_string_pretty(&outcome.value)?);
+        Ok(())
+    } else {
+        Err(anyhow!(
