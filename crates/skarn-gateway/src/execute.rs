@@ -485,3 +485,9 @@ mod worker {
             pending,
         });
         let outcome = Engine::new(limits).run(code, bridge).await;
+        demux_task.abort();
+        outcome
+    }
+
+    /// A [`ToolBridge`] that forwards each call to the parent over stdout and
+    /// awaits the matching reply (demultiplexed by id). `Send` so the demux task

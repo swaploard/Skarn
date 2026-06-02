@@ -291,3 +291,4 @@ fn extract_text(result: &CallToolResult) -> String {
     result
         .content
         .iter()
+        .filter_map(|c| c.as_text().map(|t| t.text.clone()))

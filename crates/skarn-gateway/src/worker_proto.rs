@@ -53,3 +53,5 @@ pub enum WorkerMsg {
     Failed { error: String },
 }
 
+/// The parent's reply to a [`WorkerMsg::Request`].
+#[derive(Clone, Debug, Serialize, Deserialize)]

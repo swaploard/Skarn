@@ -21,3 +21,4 @@ Run the same checks CI runs:
 ```bash
 cargo fmt --all --check
 cargo clippy --workspace --all-targets -- -D warnings
+cargo test --workspace

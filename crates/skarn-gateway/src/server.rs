@@ -209,3 +209,7 @@ impl ServerHandler for GatewayServer {
             }
         }
         Ok(ListToolsResult::with_all_items(tools))
+    }
+
+    async fn call_tool(
+        &self,
