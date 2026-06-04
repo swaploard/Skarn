@@ -57,3 +57,4 @@ pub enum WorkerMsg {
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct ReplyMsg {
     /// Matches the `id` of the request being answered.
+    pub id: u64,

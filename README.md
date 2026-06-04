@@ -142,3 +142,5 @@ still lands in a kernel-confined process. Configure it with `isolation` in
 ## Architecture
 
 A Cargo workspace with strictly separated, independently usable crates:
+
+| Crate | Responsibility |

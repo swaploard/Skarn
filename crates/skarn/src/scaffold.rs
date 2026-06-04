@@ -39,3 +39,5 @@ passthrough = false
 # auth_bearer_env = "EXAMPLE_API_TOKEN"
 # headers = { X-Org = "acme" }
 "#;
+
+/// Printed by `skarn init` after writing the config.

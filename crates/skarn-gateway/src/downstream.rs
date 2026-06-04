@@ -303,3 +303,5 @@ pub struct GatewayBridge {
 }
 
 impl GatewayBridge {
+    pub fn new(manager: Arc<DownstreamManager>) -> Self {
+        Self { manager }

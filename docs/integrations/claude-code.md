@@ -30,3 +30,4 @@ project directory, denied network access, and have their output compressed
 70–90% — without changing how the agent prompts.
 
 Run `skarn hook` to print a starter snippet. The essence is to wrap the agent's
+command invocation with `skarn run --`:

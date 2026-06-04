@@ -25,3 +25,4 @@ Streamable HTTP transport is the one client surface.
   more cross-compile-friendly crypto backend with no cmake/C build, keeping the
   single-binary goal and a permissive license tree. The provider is installed as
   the process default before the first HTTPS request.
+

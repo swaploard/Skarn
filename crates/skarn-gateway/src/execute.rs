@@ -508,3 +508,7 @@ mod worker {
                 .map_err(|_| "worker bridge channel closed".to_string())?;
             if reply.ok {
                 Ok(reply.payload)
+            } else {
+                Err(reply.payload)
+            }
+        }

@@ -166,3 +166,7 @@ pub async fn exec(args: ExecArgs) -> anyhow::Result<()> {
             outcome.error.unwrap_or_else(|| "unknown".into())
         ))
     }
+}
+
+fn read_script(args: &ExecArgs) -> anyhow::Result<String> {
+    if let Some(code) = &args.code {

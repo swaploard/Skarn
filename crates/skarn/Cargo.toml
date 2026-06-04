@@ -12,3 +12,5 @@ keywords.workspace = true
 categories.workspace = true
 readme = "../../README.md"
 default-run = "skarn"
+
+[[bin]]

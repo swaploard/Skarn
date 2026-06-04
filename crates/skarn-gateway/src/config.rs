@@ -212,3 +212,4 @@ mod tests {
                 headers,
                 auth_bearer,
             } => {
+                assert_eq!(url, "https://api.example.com/mcp");
