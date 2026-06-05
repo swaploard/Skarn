@@ -318,3 +318,7 @@ impl ToolBridge for GatewayBridge {
     ) -> std::result::Result<String, String> {
         self.manager
             .call(server, tool, args_json)
+            .await
+            .map_err(|e| e.to_string())
+    }
+

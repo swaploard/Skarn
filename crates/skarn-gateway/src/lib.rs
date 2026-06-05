@@ -93,3 +93,5 @@ fn build_instructions(dts: &str, manager: &DownstreamManager) -> String {
          1. Call `search` to find relevant tools by intent.\n\
          2. Optionally call `read_tool_docs` for a tool's exact JSON Schema.\n\
          3. Call `execute` with a short async script that orchestrates the tools.\n\n\
+         Inside `execute`, the global `skarn` is available. Call tools with \
+         `await skarn.callTool(server, tool, args)` or `skarn.server(name).tool(args)`. \

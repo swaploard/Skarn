@@ -31,3 +31,5 @@ project directory, denied network access, and have their output compressed
 
 Run `skarn hook` to print a starter snippet. The essence is to wrap the agent's
 command invocation with `skarn run --`:
+
+```jsonc

@@ -217,3 +217,6 @@ mod tests {
                 assert_eq!(auth_bearer.as_deref(), None);
                 assert_eq!(headers.get("X-Org").map(String::as_str), Some("acme"));
             }
+            _ => panic!("expected an http transport"),
+        }
+    }

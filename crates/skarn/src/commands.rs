@@ -189,3 +189,7 @@ fn read_script(args: &ExecArgs) -> anyhow::Result<String> {
 // ---------------------------------------------------------------------------
 
 pub fn run(args: RunArgs) -> anyhow::Result<()> {
+    let spec = CommandSpec::from_argv(&args.command).context("no command provided after `--`")?;
+
+    let policy = if args.no_sandbox {
+        None

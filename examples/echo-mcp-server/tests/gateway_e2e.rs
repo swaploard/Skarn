@@ -12,3 +12,5 @@ use std::collections::BTreeMap;
 use skarn_codemode::ExecLimits;
 use skarn_gateway::{GatewayConfig, GatewaySettings, Isolation, ServerConfig, TransportConfig};
 
+const ECHO_BIN: &str = env!("CARGO_BIN_EXE_echo-mcp-server");
+

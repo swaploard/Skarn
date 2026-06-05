@@ -25,3 +25,4 @@ cargo test --workspace
 cargo deny check          # licenses & advisories (install: cargo install cargo-deny)
 ```
 
+If you touched the Linux or Windows sandbox backends, also type-check them from

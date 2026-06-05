@@ -533,3 +533,4 @@ mod worker {
         async fn read_resource(
             &self,
             server: &str,
+            uri: &str,

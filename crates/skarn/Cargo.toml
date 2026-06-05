@@ -14,3 +14,4 @@ readme = "../../README.md"
 default-run = "skarn"
 
 [[bin]]
+name = "skarn"

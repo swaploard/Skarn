@@ -40,3 +40,4 @@ enum Command {
     /// Print a Claude Code PreToolUse hook that routes shell commands through skarn.
     Hook,
     /// Internal: the OS-sandboxed Code Mode worker (driven by `skarn serve`).
+    /// Reads its job from stdin; not intended for direct use.
