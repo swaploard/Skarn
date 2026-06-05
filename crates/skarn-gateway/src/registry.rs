@@ -209,3 +209,5 @@ mod tests {
     fn search_ranks_by_relevance() {
         let r = registry();
         let hits = r.search("issue", 10);
+        assert!(!hits.is_empty());
+        // The tool literally named with "issue" / describing issues should rank.

@@ -525,3 +525,6 @@ mod worker {
             self.request(BridgeOpWire::CallTool {
                 server: server.to_string(),
                 tool: tool.to_string(),
+                args: args_json.to_string(),
+            })
+            .await

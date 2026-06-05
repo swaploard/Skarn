@@ -313,3 +313,6 @@ impl ToolBridge for GatewayBridge {
     async fn call_tool(
         &self,
         server: &str,
+        tool: &str,
+        args_json: &str,
+    ) -> std::result::Result<String, String> {

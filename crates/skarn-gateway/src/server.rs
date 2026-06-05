@@ -230,3 +230,5 @@ impl ServerHandler for GatewayServer {
             other => {
                 return Err(McpError::invalid_params(
                     format!("unknown tool `{other}`"),
+                    None,
+                ));

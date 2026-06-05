@@ -6,3 +6,5 @@
 //! the QuickJS isolate, the host bridge, and result extraction. We also drive
 //! the gateway's *upstream* MCP surface (`search` / `execute`) with an
 //! in-memory client.
+
+use std::collections::BTreeMap;
