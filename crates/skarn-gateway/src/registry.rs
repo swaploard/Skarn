@@ -206,3 +206,6 @@ mod tests {
     }
 
     #[test]
+    fn search_ranks_by_relevance() {
+        let r = registry();
+        let hits = r.search("issue", 10);

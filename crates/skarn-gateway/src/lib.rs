@@ -92,3 +92,4 @@ fn build_instructions(dts: &str, manager: &DownstreamManager) -> String {
          Workflow:\n\
          1. Call `search` to find relevant tools by intent.\n\
          2. Optionally call `read_tool_docs` for a tool's exact JSON Schema.\n\
+         3. Call `execute` with a short async script that orchestrates the tools.\n\n\

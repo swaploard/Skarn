@@ -229,3 +229,4 @@ impl ServerHandler for GatewayServer {
             other if self.passthrough => self.handle_passthrough(other, &args.to_string()).await,
             other => {
                 return Err(McpError::invalid_params(
+                    format!("unknown tool `{other}`"),

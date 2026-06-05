@@ -42,3 +42,5 @@ passthrough = false
 
 /// Printed by `skarn init` after writing the config.
 pub const INTEGRATION_SNIPPETS: &str = r#"Next steps
+==========
+

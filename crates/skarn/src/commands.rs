@@ -182,3 +182,6 @@ fn read_script(args: &ExecArgs) -> anyhow::Result<String> {
         Some(p) => std::fs::read_to_string(p).with_context(|| format!("reading {}", p.display())),
         None => Err(anyhow!("provide a script with --code or --file")),
     }
+}
+
+// ---------------------------------------------------------------------------

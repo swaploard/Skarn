@@ -37,3 +37,6 @@ enum Command {
     Doctor,
     /// Scaffold an `skarn.toml` and print client integration snippets.
     Init(commands::InitArgs),
+    /// Print a Claude Code PreToolUse hook that routes shell commands through skarn.
+    Hook,
+    /// Internal: the OS-sandboxed Code Mode worker (driven by `skarn serve`).

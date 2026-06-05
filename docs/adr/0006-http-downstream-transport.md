@@ -26,3 +26,4 @@ Streamable HTTP transport is the one client surface.
   single-binary goal and a permissive license tree. The provider is installed as
   the process default before the first HTTPS request.
 
+## Consequences

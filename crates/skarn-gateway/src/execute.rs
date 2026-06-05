@@ -520,3 +520,8 @@ mod worker {
             &self,
             server: &str,
             tool: &str,
+            args_json: &str,
+        ) -> std::result::Result<String, String> {
+            self.request(BridgeOpWire::CallTool {
+                server: server.to_string(),
+                tool: tool.to_string(),

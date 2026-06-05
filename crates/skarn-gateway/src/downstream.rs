@@ -311,3 +311,5 @@ impl GatewayBridge {
 #[async_trait(?Send)]
 impl ToolBridge for GatewayBridge {
     async fn call_tool(
+        &self,
+        server: &str,

@@ -4,3 +4,5 @@
 //! namespaces its tools, and a Code Mode script calls those tools through the
 //! `skarn` bridge — exercising: downstream stdio transport, tool aggregation,
 //! the QuickJS isolate, the host bridge, and result extraction. We also drive
+//! the gateway's *upstream* MCP surface (`search` / `execute`) with an
+//! in-memory client.

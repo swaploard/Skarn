@@ -29,3 +29,4 @@ its docs anticipated bridge calls being "forwarded over a pipe to the parent."
   `execute` uses the in-process hermetic isolate; AppContainer is instead wired
   into `skarn run` for shell commands (where the parent launches the child).
 
+## Consequences
