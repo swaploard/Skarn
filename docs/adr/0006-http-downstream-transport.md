@@ -27,3 +27,4 @@ Streamable HTTP transport is the one client surface.
   the process default before the first HTTPS request.
 
 ## Consequences
+

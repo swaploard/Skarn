@@ -2,3 +2,4 @@
 //!
 //! Stands up [`EchoServer`] behind an rmcp `StreamableHttpService` on an
 //! ephemeral loopback port, then connects to it through the gateway's `http`
+//! transport and exercises tool listing + a tool call — the same downstream

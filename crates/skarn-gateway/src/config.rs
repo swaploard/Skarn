@@ -220,3 +220,4 @@ mod tests {
             _ => panic!("expected an http transport"),
         }
     }
+

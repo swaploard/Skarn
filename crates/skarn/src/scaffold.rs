@@ -48,3 +48,5 @@ pub const INTEGRATION_SNIPPETS: &str = r#"Next steps
 
 2. Point your AI client at Skarn:
 
+   Claude Code / Cursor / Windsurf — add to the client's MCP config
+   (e.g. ~/.cursor/mcp.json or .mcp.json):

@@ -24,3 +24,4 @@ while the published spec has advanced to `2025-11-25`.
   MCP clients fragile (see ADR 0003). We run multi-threaded and isolate the
   engine on its own thread instead.
 
+## Consequences

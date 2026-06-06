@@ -534,3 +534,7 @@ mod worker {
             &self,
             server: &str,
             uri: &str,
+        ) -> std::result::Result<String, String> {
+            self.request(BridgeOpWire::ReadResource {
+                server: server.to_string(),
+                uri: uri.to_string(),

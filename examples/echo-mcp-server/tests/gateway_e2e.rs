@@ -14,3 +14,4 @@ use skarn_gateway::{GatewayConfig, GatewaySettings, Isolation, ServerConfig, Tra
 
 const ECHO_BIN: &str = env!("CARGO_BIN_EXE_echo-mcp-server");
 
+fn config() -> GatewayConfig {

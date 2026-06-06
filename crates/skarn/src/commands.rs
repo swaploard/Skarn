@@ -193,3 +193,5 @@ pub fn run(args: RunArgs) -> anyhow::Result<()> {
 
     let policy = if args.no_sandbox {
         None
+    } else {
+        let workspace = match &args.workspace {
