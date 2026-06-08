@@ -226,3 +226,4 @@ mod tests {
         let err = GatewayConfig::from_toml("[gateway]\nnamespace_separator = \"/\"\n").unwrap_err();
         assert!(err.to_string().contains("namespace_separator"));
         // Empty is rejected too.
+        assert!(GatewayConfig::from_toml("[gateway]\nnamespace_separator = \"\"\n").is_err());

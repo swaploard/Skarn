@@ -99,3 +99,5 @@ fn build_instructions(dts: &str, manager: &DownstreamManager) -> String {
          Large intermediate payloads never enter your context window.\n\n\
          The available tools have these TypeScript types:\n\n```typescript\n{dts}\n```\n",
         registry.len(),
+    )
+}

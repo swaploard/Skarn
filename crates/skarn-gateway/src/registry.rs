@@ -216,3 +216,4 @@ mod tests {
         assert!(!hits.iter().any(|h| h.tool == "query"));
     }
 
+    #[test]

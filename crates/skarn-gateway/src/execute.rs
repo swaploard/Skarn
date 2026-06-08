@@ -551,3 +551,4 @@ mod worker {
         let mut line = serde_json::to_string(msg).map_err(|e| Error::CodeMode(e.to_string()))?;
         line.push('\n');
         let mut out = std::io::stdout().lock();
+        out.write_all(line.as_bytes())

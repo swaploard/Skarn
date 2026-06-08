@@ -6,3 +6,5 @@
 //! surface the stdio transport provides, proving the manager is transport-
 //! agnostic.
 
+use std::collections::BTreeMap;
+use std::sync::Arc;

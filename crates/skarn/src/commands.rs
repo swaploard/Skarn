@@ -216,3 +216,6 @@ pub fn run(args: RunArgs) -> anyhow::Result<()> {
     } else {
         let compressor = Compressor::builtin();
         let compressed = compressor.compress(&spec, &output.stdout, &output.stderr);
+        print!("{}", compressed.text);
+        if !compressed.text.is_empty() && !compressed.text.ends_with('\n') {
+            println!();

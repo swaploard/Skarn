@@ -330,3 +330,4 @@ impl ToolBridge for GatewayBridge {
     }
 
     async fn list_tools(&self) -> std::result::Result<String, String> {
+        let registry = self.manager.registry();

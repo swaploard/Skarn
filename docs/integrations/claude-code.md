@@ -34,3 +34,4 @@ command invocation with `skarn run --`:
 
 ```jsonc
 // .claude/settings.json
+{

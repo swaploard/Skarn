@@ -25,3 +25,5 @@ fn config() -> GatewayConfig {
                 args: vec![],
                 env: BTreeMap::new(),
                 cwd: None,
+            },
+        },
