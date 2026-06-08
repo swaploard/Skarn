@@ -52,3 +52,9 @@ pub const INTEGRATION_SNIPPETS: &str = r#"Next steps
    (e.g. ~/.cursor/mcp.json or .mcp.json):
 
      {
+       "mcpServers": {
+         "skarn": {
+           "command": "skarn",
+           "args": ["serve"]
+         }
+       }

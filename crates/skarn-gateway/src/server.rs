@@ -238,3 +238,7 @@ impl ServerHandler for GatewayServer {
     }
 }
 
+/// Coerce a JSON value into an object map (for tool input schemas).
+fn schema(v: serde_json::Value) -> serde_json::Map<String, serde_json::Value> {
+    match v {
+        serde_json::Value::Object(m) => m,

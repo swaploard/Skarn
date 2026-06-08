@@ -148,3 +148,4 @@ A Cargo workspace with strictly separated, independently usable crates:
 | [`skarn-sandbox`](crates/skarn-sandbox) | OS-native sandbox abstraction (Seatbelt / Landlock+seccomp / AppContainer) |
 | [`skarn-compress`](crates/skarn-compress) | YAML-driven shell-output token compression |
 | [`skarn-codemode`](crates/skarn-codemode) | Hermetic QuickJS isolate + `oxc` TS-strip & AST validation + tool bridge |
+| [`skarn-gateway`](crates/skarn-gateway) | MCP server/client aggregation on the official `rmcp` SDK |

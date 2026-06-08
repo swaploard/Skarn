@@ -96,3 +96,8 @@ fn build_instructions(dts: &str, manager: &DownstreamManager) -> String {
          Inside `execute`, the global `skarn` is available. Call tools with \
          `await skarn.callTool(server, tool, args)` or `skarn.server(name).tool(args)`. \
          Fetch, filter, and aggregate data locally; `return` only a small summary. \
+         Large intermediate payloads never enter your context window.\n\n\
+         The available tools have these TypeScript types:\n\n```typescript\n{dts}\n```\n",
+        registry.len(),
+    )
+}

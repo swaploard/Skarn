@@ -28,3 +28,4 @@ Streamable HTTP transport is the one client surface.
 
 ## Consequences
 
+- Remote MCP servers can be aggregated exactly like local ones.

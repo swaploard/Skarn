@@ -39,3 +39,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: EmbarkStudios/cargo-deny-action@v2
 
+  package:
+    name: cargo package (publish readiness)
+    runs-on: ubuntu-latest

@@ -31,3 +31,4 @@ its docs anticipated bridge calls being "forwarded over a pipe to the parent."
 
 ## Consequences
 
+- On macOS/Linux, in-gateway `execute` gains a second, kernel-enforced isolation

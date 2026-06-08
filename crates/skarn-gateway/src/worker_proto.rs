@@ -61,3 +61,5 @@ pub struct ReplyMsg {
     /// Whether the operation succeeded.
     pub ok: bool,
     /// The result JSON (when `ok`) or the error message (when `!ok`).
+    pub payload: String,
+}

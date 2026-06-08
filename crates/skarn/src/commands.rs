@@ -204,3 +204,26 @@ pub fn run(args: RunArgs) -> anyhow::Result<()> {
                 .net(args.net.into())
                 .build(),
         )
+    };
+
+    let (output, sandboxed) = run_capture(policy.as_ref(), &spec)
+        .with_context(|| format!("running `{}`", spec.display()))?;
+
+    if args.no_compress {
+        use std::io::Write;
+        std::io::stdout().write_all(&output.stdout)?;
+        std::io::stderr().write_all(&output.stderr)?;
+    } else {
+        let compressor = Compressor::builtin();
+        let compressed = compressor.compress(&spec, &output.stdout, &output.stderr);
+        print!("{}", compressed.text);
+        if !compressed.text.is_empty() && !compressed.text.ends_with('\n') {
+            println!();
+        }
+        if args.stats {
+            eprintln!(
+                "skarn: {} → {} tokens ({}% saved) · profile={} · {}",
+                compressed.savings.before,
+                compressed.savings.after,
+                compressed.savings.percent(),
+                compressed.profile,

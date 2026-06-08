@@ -19,3 +19,12 @@ fn config() -> GatewayConfig {
     servers.insert(
         "echo".to_string(),
         ServerConfig {
+            enabled: true,
+            transport: TransportConfig::Stdio {
+                command: ECHO_BIN.to_string(),
+                args: vec![],
+                env: BTreeMap::new(),
+                cwd: None,
+            },
+        },
+    );

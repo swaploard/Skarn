@@ -15,3 +15,4 @@ default-run = "skarn"
 
 [[bin]]
 name = "skarn"
+path = "src/main.rs"
