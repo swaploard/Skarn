@@ -540,3 +540,6 @@ mod worker {
                 uri: uri.to_string(),
             })
             .await
+        }
+
+        async fn list_tools(&self) -> std::result::Result<String, String> {

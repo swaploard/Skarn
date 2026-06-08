@@ -222,3 +222,4 @@ mod tests {
     }
 
     #[test]
+    fn rejects_bad_namespace_separator() {

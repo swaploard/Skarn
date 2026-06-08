@@ -23,3 +23,5 @@ allow = [
     "MPL-2.0",
     "CC0-1.0",
     # The Mozilla CA root bundle (webpki-root-certs), used by the rustls TLS
+    # stack for the HTTP downstream transport. A permissive data license.
+    "CDLA-Permissive-2.0",

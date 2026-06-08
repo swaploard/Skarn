@@ -17,3 +17,5 @@ const ECHO_BIN: &str = env!("CARGO_BIN_EXE_echo-mcp-server");
 fn config() -> GatewayConfig {
     let mut servers = BTreeMap::new();
     servers.insert(
+        "echo".to_string(),
+        ServerConfig {

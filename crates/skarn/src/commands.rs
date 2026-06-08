@@ -199,3 +199,8 @@ pub fn run(args: RunArgs) -> anyhow::Result<()> {
             None => std::env::current_dir()?,
         };
         Some(
+            Policy::builder()
+                .workspace(&workspace)
+                .net(args.net.into())
+                .build(),
+        )

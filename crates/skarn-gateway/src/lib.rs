@@ -95,3 +95,4 @@ fn build_instructions(dts: &str, manager: &DownstreamManager) -> String {
          3. Call `execute` with a short async script that orchestrates the tools.\n\n\
          Inside `execute`, the global `skarn` is available. Call tools with \
          `await skarn.callTool(server, tool, args)` or `skarn.server(name).tool(args)`. \
+         Fetch, filter, and aggregate data locally; `return` only a small summary. \

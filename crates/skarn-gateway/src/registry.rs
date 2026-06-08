@@ -213,3 +213,4 @@ mod tests {
         // The tool literally named with "issue" / describing issues should rank.
         assert!(hits.iter().any(|h| h.tool == "search_issues"));
         // A SQL tool should not match "issue".
+        assert!(!hits.iter().any(|h| h.tool == "query"));

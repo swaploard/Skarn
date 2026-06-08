@@ -51,3 +51,4 @@ pub const INTEGRATION_SNIPPETS: &str = r#"Next steps
    Claude Code / Cursor / Windsurf — add to the client's MCP config
    (e.g. ~/.cursor/mcp.json or .mcp.json):
 
+     {
