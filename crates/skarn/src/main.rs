@@ -50,3 +50,6 @@ fn main() -> anyhow::Result<()> {
     init_tracing(cli.verbose);
 
     match cli.command {
+        // Synchronous commands. `run` and `__worker` must stay single-threaded
+        // until they apply the sandbox so the self-/post-fork application is safe.
+        Command::Run(args) => commands::run(args),

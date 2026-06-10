@@ -221,3 +221,4 @@ mod tests {
         let r = registry();
         let hits = r.search("sql query", 10);
         assert_eq!(hits[0].tool, "query");
+    }

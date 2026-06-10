@@ -244,3 +244,7 @@ fn run_capture(
     policy: Option<&Policy>,
     spec: &CommandSpec,
 ) -> std::io::Result<(std::process::Output, bool)> {
+    use std::os::unix::process::CommandExt;
+    use std::process::Stdio;
+
+    let mut cmd = std::process::Command::new(&spec.program);

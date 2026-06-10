@@ -29,3 +29,4 @@ If you touched the Linux or Windows sandbox backends, also type-check them from
 any host:
 
 ```bash
+rustup target add x86_64-unknown-linux-gnu x86_64-pc-windows-gnu

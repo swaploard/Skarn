@@ -12,3 +12,5 @@ threat model must be explicit. Please read this before relying on it.
 - **Unauthorized network egress.** Network access is denied by default, which is
   the primary control against data exfiltration — even if a script reads
   something sensitive, it cannot send it anywhere.
+- **Secret disclosure of well-known credential stores.** On macOS, where reads
+  are otherwise broad (see below), `~/.ssh`, `~/.aws`, `~/.gnupg`, cloud CLI

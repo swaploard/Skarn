@@ -37,3 +37,5 @@ fn config() -> GatewayConfig {
             ..GatewaySettings::default()
         },
         servers,
+    }
+}
