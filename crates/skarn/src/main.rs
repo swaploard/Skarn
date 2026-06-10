@@ -54,3 +54,4 @@ fn main() -> anyhow::Result<()> {
         // until they apply the sandbox so the self-/post-fork application is safe.
         Command::Run(args) => commands::run(args),
         Command::Doctor => commands::doctor(),
+        Command::Init(args) => commands::init(args),

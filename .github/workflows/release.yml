@@ -93,3 +93,4 @@ jobs:
       - uses: dtolnay/rust-toolchain@1.95
       # Publish in dependency order. A short pause between crates gives the
       # crates.io index time to expose each newly published version before the
+      # next crate that depends on it is verified.

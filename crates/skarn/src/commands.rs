@@ -254,3 +254,11 @@ fn run_capture(
     }
     cmd.stdin(Stdio::null())
         .stdout(Stdio::piped())
+        .stderr(Stdio::piped());
+
+    let sandboxed = policy.is_some();
+    if let Some(policy) = policy {
+        let policy = policy.clone();
+        // SAFETY: `apply_to_current_process` is run in the forked child before
+        // exec. The parent is single-threaded here (the `run` path uses no async
+        // runtime), so this avoids the fork+non-async-signal-safe deadlock.

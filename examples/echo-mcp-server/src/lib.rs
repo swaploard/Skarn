@@ -18,3 +18,7 @@ pub struct EchoServer;
 impl EchoServer {
     /// The tool manifest this server exposes.
     pub fn tools() -> Vec<Tool> {
+        vec![
+            Tool::new(
+                "echo",
+                "Echo back the provided text.",

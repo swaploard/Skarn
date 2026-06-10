@@ -44,3 +44,7 @@ fn config() -> GatewayConfig {
 /// to its own thread internally).
 fn run_local<F: std::future::Future<Output = ()>>(fut: F) {
     let rt = tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .build()
+        .unwrap();
+    rt.block_on(fut);

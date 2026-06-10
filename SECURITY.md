@@ -16,3 +16,4 @@ threat model must be explicit. Please read this before relying on it.
   are otherwise broad (see below), `~/.ssh`, `~/.aws`, `~/.gnupg`, cloud CLI
   configs, and similar locations are explicitly denied. On Linux the allow-list
   model means only granted paths are readable at all.
+- **Code Mode escapes — defense in depth, not the boundary.** Before any script
