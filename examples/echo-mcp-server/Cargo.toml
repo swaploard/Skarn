@@ -3,3 +3,4 @@ name = "echo-mcp-server"
 description = "A tiny downstream MCP server used by Skarn's examples and integration tests."
 version.workspace = true
 edition.workspace = true
+rust-version.workspace = true

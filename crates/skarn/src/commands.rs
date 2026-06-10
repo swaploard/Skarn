@@ -231,3 +231,9 @@ pub fn run(args: RunArgs) -> anyhow::Result<()> {
                     "sandboxed"
                 } else {
                     "UNSANDBOXED"
+                },
+            );
+        }
+    }
+
+    std::process::exit(output.status.code().unwrap_or(1));

@@ -26,3 +26,4 @@ upstream also reintroduces exactly the context bloat we set out to remove.
 4. **Lock-free reads.** The registry is held in an `arc-swap` cell so concurrent
    reads never block and a refresh swaps a new snapshot atomically.
 
+## Consequences

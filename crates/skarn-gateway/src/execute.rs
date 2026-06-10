@@ -555,3 +555,5 @@ mod worker {
             .map_err(|e| Error::CodeMode(e.to_string()))?;
         out.flush().map_err(|e| Error::CodeMode(e.to_string()))?;
         Ok(())
+    }
+

@@ -10,3 +10,5 @@ threat model must be explicit. Please read this before relying on it.
   only write inside the workspace you grant it. `rm -rf ~`, overwriting dotfiles,
   or scribbling on system directories are blocked at the kernel level.
 - **Unauthorized network egress.** Network access is denied by default, which is
+  the primary control against data exfiltration — even if a script reads
+  something sensitive, it cannot send it anywhere.

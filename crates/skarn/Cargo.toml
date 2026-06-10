@@ -17,3 +17,4 @@ default-run = "skarn"
 name = "skarn"
 path = "src/main.rs"
 
+[dependencies]

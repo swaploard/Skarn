@@ -11,3 +11,4 @@ reasoning (including the trade-offs we accepted).
 | [0004](0004-tool-namespacing-and-manifest.md) | Namespace downstream tools; expose a constant meta-tool surface |
 | [0005](0005-mcp-sdk-and-protocol-version.md) | Build on the official `rmcp` SDK; track its protocol revision |
 | [0006](0006-http-downstream-transport.md) | Add a Streamable HTTP downstream transport |
+| [0007](0007-cross-process-sandboxed-worker.md) | Run Code Mode in a cross-process OS-sandboxed worker |
