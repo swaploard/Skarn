@@ -262,3 +262,6 @@ fn run_capture(
         // SAFETY: `apply_to_current_process` is run in the forked child before
         // exec. The parent is single-threaded here (the `run` path uses no async
         // runtime), so this avoids the fork+non-async-signal-safe deadlock.
+        unsafe {
+            cmd.pre_exec(move || {
+                policy

@@ -18,3 +18,4 @@ name = "skarn"
 path = "src/main.rs"
 
 [dependencies]
+skarn-common = { workspace = true }

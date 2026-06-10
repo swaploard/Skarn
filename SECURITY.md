@@ -17,3 +17,4 @@ threat model must be explicit. Please read this before relying on it.
   configs, and similar locations are explicitly denied. On Linux the allow-list
   model means only granted paths are readable at all.
 - **Code Mode escapes — defense in depth, not the boundary.** Before any script
+  runs it is parsed with `oxc` and rejected if it references `eval`, `Function`,

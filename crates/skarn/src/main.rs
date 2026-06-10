@@ -55,3 +55,5 @@ fn main() -> anyhow::Result<()> {
         Command::Run(args) => commands::run(args),
         Command::Doctor => commands::doctor(),
         Command::Init(args) => commands::init(args),
+        Command::Hook => commands::hook(),
+        Command::Worker => commands::worker(),

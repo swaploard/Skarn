@@ -22,3 +22,5 @@ impl EchoServer {
             Tool::new(
                 "echo",
                 "Echo back the provided text.",
+                obj(serde_json::json!({
+                    "type": "object",

@@ -36,3 +36,4 @@ command invocation with `skarn run --`:
 // .claude/settings.json
 {
   "hooks": {
+    "PreToolUse": [

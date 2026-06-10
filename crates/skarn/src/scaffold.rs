@@ -64,3 +64,5 @@ pub const INTEGRATION_SNIPPETS: &str = r#"Next steps
    compression and OS sandboxing — run `skarn hook` to print a Claude Code
    PreToolUse hook.
 
+Verify your setup with:  skarn doctor
+"#;

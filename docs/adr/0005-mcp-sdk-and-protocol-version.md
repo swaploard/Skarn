@@ -25,3 +25,5 @@ while the published spec has advanced to `2025-11-25`.
   engine on its own thread instead.
 
 ## Consequences
+
+- We inherit `rmcp`'s transport support and protocol upgrades.

@@ -48,3 +48,6 @@ fn run_local<F: std::future::Future<Output = ()>>(fut: F) {
         .build()
         .unwrap();
     rt.block_on(fut);
+}
+
+#[test]

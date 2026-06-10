@@ -5,3 +5,5 @@
 // never enters the model's context window.
 //
 // Assumes downstream servers named "github" and "slack" in skarn.toml. Adapt the
+// tool/argument names to your actual servers (use `search` / `read_tool_docs`).
+
