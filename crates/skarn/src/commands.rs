@@ -275,3 +275,6 @@ fn run_capture(
     Ok((cmd.output()?, sandboxed))
 }
 
+#[cfg(windows)]
+fn run_capture(
+    policy: Option<&Policy>,

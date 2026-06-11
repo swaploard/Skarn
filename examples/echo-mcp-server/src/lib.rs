@@ -24,3 +24,5 @@ impl EchoServer {
                 "Echo back the provided text.",
                 obj(serde_json::json!({
                     "type": "object",
+                    "properties": { "text": { "type": "string" } },
+                    "required": ["text"]

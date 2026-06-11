@@ -20,3 +20,6 @@ threat model must be explicit. Please read this before relying on it.
   runs it is parsed with `oxc` and rejected if it references `eval`, `Function`,
   `require`, `import`, `process`, `Deno`, `globalThis`, `Reflect`, or the
   `.constructor`/`.__proto__`/`.prototype` properties (whether by dot or bracket
+  access, e.g. `x["constructor"]`). Because we ban the *identifiers*, alias hops
+  (`const e = eval; e(...)`) are caught too. This static pass exists to reject
+  obviously hostile scripts early; the *actual* guarantees are the hermetic

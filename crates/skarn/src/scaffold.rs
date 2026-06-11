@@ -66,3 +66,5 @@ pub const INTEGRATION_SNIPPETS: &str = r#"Next steps
 
 Verify your setup with:  skarn doctor
 "#;
+
+/// Printed by `skarn hook`.

@@ -58,3 +58,6 @@ fn diag_connect_call_drop() {
         let r = manager
             .call("echo", "add", r#"{"a":2,"b":3}"#)
             .await
+            .unwrap();
+        println!("DIAG call result: {r}");
+        assert!(r.contains("\"sum\":5"));

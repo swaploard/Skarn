@@ -151,3 +151,4 @@ A Cargo workspace with strictly separated, independently usable crates:
 | [`skarn-gateway`](crates/skarn-gateway) | MCP server/client aggregation on the official `rmcp` SDK |
 | [`skarn`](crates/skarn) | The `skarn` CLI tying it all together |
 
+See the [Architecture Decision Records](docs/adr/) for the engineering rationale.

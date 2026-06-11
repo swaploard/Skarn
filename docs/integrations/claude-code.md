@@ -37,3 +37,4 @@ command invocation with `skarn run --`:
 {
   "hooks": {
     "PreToolUse": [
+      {

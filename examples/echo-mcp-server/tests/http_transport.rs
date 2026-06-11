@@ -17,3 +17,4 @@ use skarn_gateway::{
     DownstreamManager, GatewayConfig, GatewaySettings, ServerConfig, TransportConfig,
 };
 
+#[tokio::test(flavor = "multi_thread")]

@@ -57,3 +57,5 @@ fn main() -> anyhow::Result<()> {
         Command::Init(args) => commands::init(args),
         Command::Hook => commands::hook(),
         Command::Worker => commands::worker(),
+        // Async commands run on a normal multi-threaded runtime; the gateway
+        // confines the `!Send` Code Mode isolate to its own thread internally.
