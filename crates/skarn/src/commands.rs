@@ -265,3 +265,13 @@ fn run_capture(
         unsafe {
             cmd.pre_exec(move || {
                 policy
+                    .apply_to_current_process()
+                    .map(|_| ())
+                    .map_err(|e| std::io::Error::other(e.to_string()))
+            });
+        }
+    }
+
+    Ok((cmd.output()?, sandboxed))
+}
+

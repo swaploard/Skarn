@@ -37,3 +37,4 @@ The MCP clients live their whole life on the main runtime (stable reactor; clean
 `Drop`); the `!Send` isolate never crosses a thread boundary; channels are `Send`
 and runtime-agnostic.
 
+## Consequences

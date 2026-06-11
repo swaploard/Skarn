@@ -51,3 +51,10 @@ fn run_local<F: std::future::Future<Output = ()>>(fut: F) {
 }
 
 #[test]
+fn diag_connect_call_drop() {
+    use skarn_gateway::DownstreamManager;
+    run_local(async {
+        let manager = DownstreamManager::connect(&config()).await.unwrap();
+        let r = manager
+            .call("echo", "add", r#"{"a":2,"b":3}"#)
+            .await

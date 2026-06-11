@@ -18,3 +18,5 @@ threat model must be explicit. Please read this before relying on it.
   model means only granted paths are readable at all.
 - **Code Mode escapes — defense in depth, not the boundary.** Before any script
   runs it is parsed with `oxc` and rejected if it references `eval`, `Function`,
+  `require`, `import`, `process`, `Deno`, `globalThis`, `Reflect`, or the
+  `.constructor`/`.__proto__`/`.prototype` properties (whether by dot or bracket
