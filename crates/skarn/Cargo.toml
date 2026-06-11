@@ -21,3 +21,4 @@ path = "src/main.rs"
 skarn-common = { workspace = true }
 skarn-sandbox = { workspace = true }
 skarn-compress = { workspace = true }
+skarn-codemode = { workspace = true }

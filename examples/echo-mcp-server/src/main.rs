@@ -4,3 +4,4 @@
 //! gateway can aggregate.
 
 use echo_mcp_server::EchoServer;
+use rmcp::ServiceExt;

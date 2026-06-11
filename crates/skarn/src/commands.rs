@@ -286,3 +286,6 @@ fn run_capture(
         // A sandbox was requested: launch into an AppContainer with captured
         // stdio. Any failure propagates (fail closed) rather than running
         // unconfined.
+        Some(policy) => {
+            let child = skarn_sandbox::spawn_appcontainer(policy, spec)
+                .map_err(|e| std::io::Error::other(format!("AppContainer sandbox: {e}")))?;

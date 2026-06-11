@@ -61,3 +61,6 @@ fn main() -> anyhow::Result<()> {
         // confines the `!Send` Code Mode isolate to its own thread internally.
         Command::Serve(args) => block_on(commands::serve(args)),
         Command::Exec(args) => block_on(commands::exec(args)),
+    }
+}
+

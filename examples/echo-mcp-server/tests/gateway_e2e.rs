@@ -64,3 +64,7 @@ fn diag_connect_call_drop() {
         drop(manager);
         tokio::task::yield_now().await;
     });
+}
+
+#[test]
+fn code_mode_calls_downstream_tools_through_the_gateway() {

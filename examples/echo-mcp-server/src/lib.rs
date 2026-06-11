@@ -26,3 +26,5 @@ impl EchoServer {
                     "type": "object",
                     "properties": { "text": { "type": "string" } },
                     "required": ["text"]
+                })),
+            ),

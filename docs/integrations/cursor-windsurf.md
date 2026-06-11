@@ -39,3 +39,4 @@ Both read the same `skarn.toml` from the working directory. Run `skarn init` and
 uncomment/add the servers you want aggregated. For example:
 
 ```toml
+[servers.fs]

@@ -33,3 +33,5 @@ its docs anticipated bridge calls being "forwarded over a pipe to the parent."
 
 - On macOS/Linux, in-gateway `execute` gains a second, kernel-enforced isolation
   layer at the cost of a subprocess spawn per run.
+- The in-process path remains as a tested fallback (and the default where no
+  sandbox backend exists), so behaviour degrades gracefully.

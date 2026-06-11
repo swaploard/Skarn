@@ -69,3 +69,6 @@ Verify your setup with:  skarn doctor
 
 /// Printed by `skarn hook`.
 pub const CLAUDE_HOOK_SNIPPET: &str = r#"# Claude Code PreToolUse hook
+#
+# Add this to your Claude Code settings (.claude/settings.json) to route Bash
+# commands through Skarn, applying OS sandboxing and ~70-90% output
