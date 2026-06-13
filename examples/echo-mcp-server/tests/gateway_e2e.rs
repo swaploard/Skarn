@@ -78,3 +78,5 @@ fn code_mode_calls_downstream_tools_through_the_gateway() {
         "#;
 
         let outcome = skarn_gateway::run_script(&config(), ExecLimits::default(), script)
+            .await
+            .expect("run_script");

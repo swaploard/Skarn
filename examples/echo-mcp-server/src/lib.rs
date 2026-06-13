@@ -33,3 +33,5 @@ impl EchoServer {
                 "Add two integers and return the sum.",
                 obj(serde_json::json!({
                     "type": "object",
+                    "properties": { "a": { "type": "number" }, "b": { "type": "number" } },
+                    "required": ["a", "b"]

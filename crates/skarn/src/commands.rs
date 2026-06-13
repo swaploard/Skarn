@@ -308,3 +308,12 @@ fn run_capture(
 fn run_capture(
     policy: Option<&Policy>,
     spec: &CommandSpec,
+) -> std::io::Result<(std::process::Output, bool)> {
+    match policy {
+        Some(_) => Err(std::io::Error::other(
+            "OS sandboxing is unavailable on this platform; re-run with \
+             --no-sandbox to run unconfined (NOT recommended)",
+        )),
+        None => Ok((unconfined_output(spec)?, false)),
+    }
+}

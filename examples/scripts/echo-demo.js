@@ -4,3 +4,4 @@
 //   # the echo-mcp-server binary:
 //   skarn exec --file examples/scripts/echo-demo.js
 //
+// It chains two tool calls and aggregates locally.

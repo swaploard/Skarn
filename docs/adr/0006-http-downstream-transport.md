@@ -30,3 +30,4 @@ Streamable HTTP transport is the one client surface.
 
 - Remote MCP servers can be aggregated exactly like local ones.
 - Credentials are passed via headers the gateway builds; they never enter the
+  Code Mode isolate (which only ever sees tool results).

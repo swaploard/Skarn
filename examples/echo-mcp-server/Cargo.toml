@@ -10,3 +10,4 @@ publish = false
 [[bin]]
 name = "echo-mcp-server"
 path = "src/main.rs"
+
