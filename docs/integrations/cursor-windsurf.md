@@ -43,3 +43,4 @@ uncomment/add the servers you want aggregated. For example:
 transport = "stdio"
 command = "npx"
 args = ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/project"]
+

@@ -24,3 +24,5 @@ async fn http_transport_lists_and_calls_tools() {
         || Ok::<_, std::io::Error>(EchoServer),
         Arc::new(LocalSessionManager::default()),
         StreamableHttpServerConfig::default(),
+    );
+    let app = axum::Router::new().nest_service("/mcp", service);

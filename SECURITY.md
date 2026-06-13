@@ -26,3 +26,6 @@ threat model must be explicit. Please read this before relying on it.
   context and the OS sandbox below — neither relies on the validator being
   complete.
 - **Resource exhaustion.** Code Mode execution is bounded by a memory limit, a
+  native stack limit, a wall-clock deadline (with an uncatchable interrupt), a
+  tool-call budget, and an output-size cap.
+- **Context poisoning.** Intermediate tool results stay inside the isolate; only

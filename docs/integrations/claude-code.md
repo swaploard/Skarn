@@ -40,3 +40,5 @@ command invocation with `skarn run --`:
       {
         "matcher": "Bash",
         "hooks": [{ "type": "command", "command": "skarn run --net deny --stats --" }]
+      }
+    ]

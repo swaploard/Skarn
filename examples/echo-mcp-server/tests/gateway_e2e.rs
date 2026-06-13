@@ -75,3 +75,6 @@ fn code_mode_calls_downstream_tools_through_the_gateway() {
             const e = await skarn.server("echo").echo({ text: "hi" });         // {echoed:"hi"}
             skarn.log("partial sums", r1.sum, r2.sum);
             return { total: r2.sum, echoed: e.echoed, calls: 3 };
+        "#;
+
+        let outcome = skarn_gateway::run_script(&config(), ExecLimits::default(), script)

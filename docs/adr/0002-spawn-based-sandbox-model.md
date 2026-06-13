@@ -34,3 +34,5 @@ allow-list reliably breaks `execve`. So on macOS we **allow broad reads and
 subtract known-secret locations** (`~/.ssh`, cloud creds, …) via
 `Policy::fs_deny_read`. The robust guarantees on macOS are therefore *no writes
 outside the workspace* and *no network egress*; strict read confinement is a
+Linux (Landlock allow-list) property. See `SECURITY.md`.
+

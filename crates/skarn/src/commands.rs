@@ -302,3 +302,9 @@ fn run_capture(
         // `--no-sandbox`: run unconfined.
         None => Ok((unconfined_output(spec)?, false)),
     }
+}
+
+#[cfg(not(any(unix, windows)))]
+fn run_capture(
+    policy: Option<&Policy>,
+    spec: &CommandSpec,

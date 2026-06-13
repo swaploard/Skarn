@@ -32,3 +32,4 @@ impl EchoServer {
                 "add",
                 "Add two integers and return the sum.",
                 obj(serde_json::json!({
+                    "type": "object",
