@@ -28,3 +28,4 @@ allow = [
 ]
 confidence-threshold = 0.9
 
+[bans]

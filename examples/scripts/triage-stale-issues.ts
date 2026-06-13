@@ -9,3 +9,4 @@
 
 const issues = await skarn.server("github").search_issues({
   q: "is:open label:bug",
+  per_page: 100,

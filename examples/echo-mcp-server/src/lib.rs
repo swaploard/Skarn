@@ -31,3 +31,4 @@ impl EchoServer {
             Tool::new(
                 "add",
                 "Add two integers and return the sum.",
+                obj(serde_json::json!({

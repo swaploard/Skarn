@@ -70,3 +70,8 @@ fn diag_connect_call_drop() {
 fn code_mode_calls_downstream_tools_through_the_gateway() {
     run_local(async {
         let script = r#"
+            const r1 = await skarn.callTool("echo", "add", { a: 2, b: 3 });    // {sum:5}
+            const r2 = await skarn.server("echo").add({ a: r1.sum, b: 10 });   // {sum:15}
+            const e = await skarn.server("echo").echo({ text: "hi" });         // {echoed:"hi"}
+            skarn.log("partial sums", r1.sum, r2.sum);
+            return { total: r2.sum, echoed: e.echoed, calls: 3 };

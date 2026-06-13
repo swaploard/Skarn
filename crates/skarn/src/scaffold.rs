@@ -76,3 +76,4 @@ pub const CLAUDE_HOOK_SNIPPET: &str = r#"# Claude Code PreToolUse hook
 # directory and denies network access by default.
 
 {
+  "hooks": {

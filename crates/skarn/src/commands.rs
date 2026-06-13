@@ -295,3 +295,10 @@ fn run_capture(
             let output = std::process::Output {
                 status: std::process::ExitStatus::from_raw(captured.code as u32),
                 stdout: captured.stdout,
+                stderr: captured.stderr,
+            };
+            Ok((output, true))
+        }
+        // `--no-sandbox`: run unconfined.
+        None => Ok((unconfined_output(spec)?, false)),
+    }

@@ -25,3 +25,4 @@ threat model must be explicit. Please read this before relying on it.
   obviously hostile scripts early; the *actual* guarantees are the hermetic
   context and the OS sandbox below — neither relies on the validator being
   complete.
+- **Resource exhaustion.** Code Mode execution is bounded by a memory limit, a
