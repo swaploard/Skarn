@@ -42,3 +42,6 @@ command invocation with `skarn run --`:
         "hooks": [{ "type": "command", "command": "skarn run --net deny --stats --" }]
       }
     ]
+  }
+}
+```

@@ -67,3 +67,8 @@ fn main() -> anyhow::Result<()> {
 /// Run an async command to completion on a multi-threaded Tokio runtime.
 fn block_on<F>(fut: F) -> anyhow::Result<()>
 where
+    F: std::future::Future<Output = anyhow::Result<()>>,
+{
+    let runtime = tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .build()?;

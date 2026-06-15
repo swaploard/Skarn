@@ -1,0 +1,3 @@
+#!/bin/sh
+# Skarn installer.
+#

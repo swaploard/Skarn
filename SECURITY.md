@@ -29,3 +29,8 @@ threat model must be explicit. Please read this before relying on it.
   native stack limit, a wall-clock deadline (with an uncatchable interrupt), a
   tool-call budget, and an output-size cap.
 - **Context poisoning.** Intermediate tool results stay inside the isolate; only
+  the explicitly returned value and `skarn.log` lines leave it.
+
+## Defense in depth
+
+Two independent layers protect Code Mode execution:

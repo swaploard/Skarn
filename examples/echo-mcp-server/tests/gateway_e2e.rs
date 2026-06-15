@@ -78,3 +78,20 @@ fn code_mode_calls_downstream_tools_through_the_gateway() {
         "#;
 
         let outcome = skarn_gateway::run_script(&config(), ExecLimits::default(), script)
+            .await
+            .expect("run_script");
+
+        assert!(outcome.ok, "script error: {:?}", outcome.error);
+        assert_eq!(outcome.value["total"], serde_json::json!(15));
+        assert_eq!(outcome.value["echoed"], serde_json::json!("hi"));
+        assert_eq!(outcome.tool_calls, 3, "three downstream calls were made");
+        assert!(outcome.logs.iter().any(|l| l.contains("partial sums 5 15")));
+    });
+}
+
+/// Exercise the cross-process OS-sandboxed worker end-to-end: spawn the real
+/// `skarn __worker`, confine it, and bridge a downstream tool call back over its
+/// stdio pipes. Unix-only (the worker self-applies the sandbox).
+#[cfg(unix)]
+#[test]
+fn code_mode_runs_in_the_sandboxed_worker() {

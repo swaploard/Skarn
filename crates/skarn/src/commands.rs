@@ -308,3 +308,24 @@ fn run_capture(
 fn run_capture(
     policy: Option<&Policy>,
     spec: &CommandSpec,
+) -> std::io::Result<(std::process::Output, bool)> {
+    match policy {
+        Some(_) => Err(std::io::Error::other(
+            "OS sandboxing is unavailable on this platform; re-run with \
+             --no-sandbox to run unconfined (NOT recommended)",
+        )),
+        None => Ok((unconfined_output(spec)?, false)),
+    }
+}
+
+#[cfg(not(unix))]
+fn unconfined_output(spec: &CommandSpec) -> std::io::Result<std::process::Output> {
+    let mut cmd = std::process::Command::new(&spec.program);
+    cmd.args(&spec.args);
+    if let Some(cwd) = &spec.cwd {
+        cmd.current_dir(cwd);
+    }
+    cmd.output()
+}
+
+// ---------------------------------------------------------------------------

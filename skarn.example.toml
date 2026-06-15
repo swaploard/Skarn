@@ -38,3 +38,5 @@ env = { GITHUB_TOKEN = "ghp_replace_me" }
 # A remote server over Streamable HTTP. Prefer `auth_bearer_env` so the token is
 # read from the environment at startup instead of being stored in this file.
 [servers.remote]
+transport = "http"
+url = "https://api.example.com/mcp"

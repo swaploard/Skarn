@@ -39,3 +39,4 @@ and runtime-agnostic.
 
 ## Consequences
 
+- Robust: no cross-runtime polling, no reactor-less drops, no `local`-feature

@@ -23,3 +23,5 @@ skarn-sandbox = { workspace = true }
 skarn-compress = { workspace = true }
 skarn-codemode = { workspace = true }
 skarn-gateway = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
