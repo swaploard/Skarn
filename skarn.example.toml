@@ -39,3 +39,4 @@ env = { GITHUB_TOKEN = "ghp_replace_me" }
 # read from the environment at startup instead of being stored in this file.
 [servers.remote]
 transport = "http"
+url = "https://api.example.com/mcp"

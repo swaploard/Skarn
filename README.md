@@ -155,3 +155,5 @@ See the [Architecture Decision Records](docs/adr/) for the engineering rationale
 
 ## Security
 
+Skarn runs untrusted, model-generated code by design. Read [SECURITY.md](SECURITY.md) for the threat model, what is and isn't defended, and how to report vulnerabilities.
+
