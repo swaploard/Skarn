@@ -100,3 +100,7 @@ fn code_mode_runs_in_the_sandboxed_worker() {
     let target_dir = std::path::Path::new(ECHO_BIN).parent().unwrap();
     let skarn = target_dir.join("skarn");
     let built = std::process::Command::new(env!("CARGO"))
+        .args(["build", "-p", "skarn"])
+        .status()
+        .expect("invoke cargo build");
+    assert!(built.success(), "failed to build the skarn binary");

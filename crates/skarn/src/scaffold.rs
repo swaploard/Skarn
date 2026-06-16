@@ -85,3 +85,4 @@ pub const CLAUDE_HOOK_SNIPPET: &str = r#"# Claude Code PreToolUse hook
             "type": "command",
             "command": "skarn run --net deny --stats --"
           }
+        ]

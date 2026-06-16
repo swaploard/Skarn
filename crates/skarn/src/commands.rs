@@ -337,3 +337,11 @@ pub fn doctor() -> anyhow::Result<()> {
     println!("Skarn v{}", env!("CARGO_PKG_VERSION"));
     println!();
     println!("Sandbox backend : {} [{:?}]", report.backend, report.status);
+    for note in &report.notes {
+        println!("    • {note}");
+    }
+    println!();
+    let compressor = Compressor::builtin();
+    println!(
+        "Compression     : ready ({} tool profiles)",
+        compressor.ruleset().profiles.len()

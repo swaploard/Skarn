@@ -39,3 +39,5 @@ cargo clippy -p skarn-sandbox --target x86_64-pc-windows-gnu  --all-targets -- -
 - **Match the surrounding code.** Comment density, naming, and idioms should look
   like the file you're editing.
 - **Tests are not optional** for behavior changes. The sandbox has runtime tests
+  (via the `skarn-sandbox-probe` helper); the Code Mode validator has a bypass
+  suite — add to them.

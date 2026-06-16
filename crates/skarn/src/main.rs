@@ -72,3 +72,5 @@ where
     let runtime = tokio::runtime::Builder::new_multi_thread()
         .enable_all()
         .build()?;
+    runtime.block_on(fut)
+}

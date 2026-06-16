@@ -36,3 +36,4 @@ threat model must be explicit. Please read this before relying on it.
 Two independent layers protect Code Mode execution:
 
 1. The **hermetic isolate** — a QuickJS context with *no* filesystem, network, or
+   `fetch` bindings. Its only egress is the host tool bridge.

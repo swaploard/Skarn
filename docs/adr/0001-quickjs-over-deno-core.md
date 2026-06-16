@@ -32,3 +32,4 @@ Use **`rquickjs`** with the `futures` + `macro` features.
 `boa` (pure Rust) remains an attractive portability escape hatch but is slower
 and has weaker untrusted-execution controls today; it can return behind a feature
 flag if a no-C-compiler target ever requires it.
+
