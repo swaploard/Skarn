@@ -13,3 +13,4 @@ const issues = await skarn.server("github").search_issues({
 });
 
 const now = Date.now();
+const NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;

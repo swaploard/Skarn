@@ -38,3 +38,6 @@ Two independent layers protect Code Mode execution:
 1. The **hermetic isolate** — a QuickJS context with *no* filesystem, network, or
    `fetch` bindings. Its only egress is the host tool bridge.
 2. The **OS-native sandbox** — the same kernel confinement used for shell
+   commands. On macOS and Linux, `skarn serve` runs `execute` in a dedicated
+   **worker subprocess** that applies this sandbox to itself (deny network, no
+   workspace writes) before touching the script, so even a hypothetical isolate

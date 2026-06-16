@@ -105,3 +105,5 @@ fn code_mode_runs_in_the_sandboxed_worker() {
         .expect("invoke cargo build");
     assert!(built.success(), "failed to build the skarn binary");
     assert!(
+        skarn.exists(),
+        "skarn binary missing at {}",

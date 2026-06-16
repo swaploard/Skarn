@@ -7,3 +7,4 @@ use echo_mcp_server::EchoServer;
 use rmcp::ServiceExt;
 use rmcp::transport::stdio;
 
+#[tokio::main]

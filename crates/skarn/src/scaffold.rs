@@ -89,3 +89,6 @@ pub const CLAUDE_HOOK_SNIPPET: &str = r#"# Claude Code PreToolUse hook
       }
     ]
   }
+}
+
+# Note: hook wiring differs slightly between agents and versions. The essential

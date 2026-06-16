@@ -351,3 +351,8 @@ pub fn doctor() -> anyhow::Result<()> {
     Ok(())
 }
 
+pub fn init(args: InitArgs) -> anyhow::Result<()> {
+    let path = PathBuf::from("skarn.toml");
+    if path.exists() && !args.force {
+        println!("skarn.toml already exists (use --force to overwrite).");
+    } else {

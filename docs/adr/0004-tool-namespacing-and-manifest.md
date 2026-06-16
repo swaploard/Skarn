@@ -28,3 +28,4 @@ upstream also reintroduces exactly the context bloat we set out to remove.
 
 ## Consequences
 
+- Context cost is decoupled from the number of connected tools.
