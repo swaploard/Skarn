@@ -34,3 +34,5 @@ threat model must be explicit. Please read this before relying on it.
 ## Defense in depth
 
 Two independent layers protect Code Mode execution:
+
+1. The **hermetic isolate** — a QuickJS context with *no* filesystem, network, or

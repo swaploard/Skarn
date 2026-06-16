@@ -329,3 +329,11 @@ fn unconfined_output(spec: &CommandSpec) -> std::io::Result<std::process::Output
 }
 
 // ---------------------------------------------------------------------------
+// doctor / init / hook
+// ---------------------------------------------------------------------------
+
+pub fn doctor() -> anyhow::Result<()> {
+    let report = skarn_sandbox::backend_report();
+    println!("Skarn v{}", env!("CARGO_PKG_VERSION"));
+    println!();
+    println!("Sandbox backend : {} [{:?}]", report.backend, report.status);

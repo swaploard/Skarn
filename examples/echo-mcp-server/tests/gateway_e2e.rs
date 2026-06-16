@@ -95,3 +95,8 @@ fn code_mode_calls_downstream_tools_through_the_gateway() {
 #[cfg(unix)]
 #[test]
 fn code_mode_runs_in_the_sandboxed_worker() {
+    // The gateway spawns the `skarn` binary (which carries `__worker`). Ensure it
+    // is built, then point the worker locator at it.
+    let target_dir = std::path::Path::new(ECHO_BIN).parent().unwrap();
+    let skarn = target_dir.join("skarn");
+    let built = std::process::Command::new(env!("CARGO"))

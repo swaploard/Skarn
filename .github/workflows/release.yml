@@ -95,3 +95,5 @@ jobs:
       # crates.io index time to expose each newly published version before the
       # next crate that depends on it is verified.
       - name: cargo publish
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
