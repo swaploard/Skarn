@@ -84,3 +84,4 @@ fn init_tracing(verbose: bool) {
     let _ = fmt()
         .with_env_filter(filter)
         .with_writer(std::io::stderr)
+        .with_target(false)

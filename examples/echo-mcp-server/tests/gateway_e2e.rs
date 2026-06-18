@@ -121,3 +121,7 @@ fn code_mode_runs_in_the_sandboxed_worker() {
         // Happy path: a downstream tool call routed through the sandboxed worker.
         let script = r#"
             const r = await skarn.server("echo").add({ a: 40, b: 2 });
+            skarn.log("worker computed", r.sum);
+            return { answer: r.sum };
+        "#;
+        let outcome = skarn_gateway::run_script(&cfg, ExecLimits::default(), script)

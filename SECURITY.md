@@ -44,3 +44,5 @@ Two independent layers protect Code Mode execution:
    escape lands in a kernel-confined process (see the `isolation` setting and
    [ADR 0007](docs/adr/0007-cross-process-sandboxed-worker.md)).
 
+A bug in one layer does not by itself grant access.
+

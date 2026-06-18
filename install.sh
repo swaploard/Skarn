@@ -8,3 +8,4 @@
 # crates.io).
 
 set -eu
+

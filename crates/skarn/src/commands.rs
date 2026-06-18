@@ -378,3 +378,9 @@ pub fn worker() -> anyhow::Result<()> {
 // ---------------------------------------------------------------------------
 // helpers
 // ---------------------------------------------------------------------------
+
+fn load_config(path: Option<&PathBuf>) -> anyhow::Result<GatewayConfig> {
+    match path {
+        Some(p) => GatewayConfig::load(p).map_err(|e| anyhow!("{e}")),
+        None => {
+            let default = PathBuf::from("skarn.toml");

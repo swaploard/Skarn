@@ -50,3 +50,4 @@ impl ServerHandler for EchoServer {
     }
 
     async fn list_tools(
+        &self,

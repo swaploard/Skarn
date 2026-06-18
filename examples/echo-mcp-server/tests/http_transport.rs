@@ -39,3 +39,6 @@ async fn http_transport_lists_and_calls_tools() {
     servers.insert(
         "echo".to_string(),
         ServerConfig {
+            enabled: true,
+            transport: TransportConfig::Http {
+                url: format!("http://{addr}/mcp"),

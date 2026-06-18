@@ -99,3 +99,4 @@ jobs:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
         run: |
           set -euo pipefail
+          if [ -z "${CARGO_REGISTRY_TOKEN:-}" ]; then

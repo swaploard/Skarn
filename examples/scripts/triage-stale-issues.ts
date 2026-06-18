@@ -17,3 +17,4 @@ const NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;
 
 const stale = (issues.items ?? issues).filter((i: any) => {
   const updated = new Date(i.updated_at).getTime();
+  return now - updated > NINETY_DAYS;

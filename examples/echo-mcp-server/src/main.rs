@@ -9,3 +9,4 @@ use rmcp::transport::stdio;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+    // Logs to stderr so they never corrupt the stdio MCP channel.
