@@ -46,3 +46,4 @@ Two independent layers protect Code Mode execution:
 
 A bug in one layer does not by itself grant access.
 
+## Platform notes & known limitations

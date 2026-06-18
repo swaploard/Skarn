@@ -41,3 +41,4 @@ and runtime-agnostic.
 
 - Robust: no cross-runtime polling, no reactor-less drops, no `local`-feature
   fragility.
+- Defense in depth still holds: the isolate is hermetic (no fs/net bindings), and

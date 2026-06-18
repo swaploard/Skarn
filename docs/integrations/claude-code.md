@@ -45,3 +45,5 @@ command invocation with `skarn run --`:
   }
 }
 ```
+
+So a model-issued `cargo test` effectively becomes:

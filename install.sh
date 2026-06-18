@@ -9,3 +9,6 @@
 
 set -eu
 
+REPO="Rani367/Skarn"
+BIN="skarn"
+INSTALL_DIR="${SKARN_INSTALL_DIR:-$HOME/.local/bin}"

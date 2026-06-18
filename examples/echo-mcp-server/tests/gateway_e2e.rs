@@ -125,3 +125,6 @@ fn code_mode_runs_in_the_sandboxed_worker() {
             return { answer: r.sum };
         "#;
         let outcome = skarn_gateway::run_script(&cfg, ExecLimits::default(), script)
+            .await
+            .expect("run_script via worker");
+        assert!(outcome.ok, "worker script error: {:?}", outcome.error);

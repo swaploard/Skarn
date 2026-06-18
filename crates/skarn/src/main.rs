@@ -85,3 +85,5 @@ fn init_tracing(verbose: bool) {
         .with_env_filter(filter)
         .with_writer(std::io::stderr)
         .with_target(false)
+        .try_init();
+}

@@ -37,3 +37,4 @@ outside the workspace* and *no network egress*; strict read confinement is a
 Linux (Landlock allow-list) property. See `SECURITY.md`.
 
 ## Consequences
+

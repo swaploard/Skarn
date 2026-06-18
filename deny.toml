@@ -32,3 +32,4 @@ confidence-threshold = 0.9
 multiple-versions = "warn"
 wildcards = "deny"
 # We deliberately do not depend on GPL-licensed sandboxing crates (e.g. birdcage);
+# this makes that explicit.

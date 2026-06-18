@@ -51,3 +51,7 @@ impl ServerHandler for EchoServer {
 
     async fn list_tools(
         &self,
+        _request: Option<PaginatedRequestParams>,
+        _context: RequestContext<RoleServer>,
+    ) -> Result<ListToolsResult, McpError> {
+        Ok(ListToolsResult::with_all_items(Self::tools()))
