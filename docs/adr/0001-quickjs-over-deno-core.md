@@ -35,3 +35,4 @@ flag if a no-C-compiler target ever requires it.
 
 ## Consequences
 
+- We get a tiny, statically-linkable, cross-compilable engine.

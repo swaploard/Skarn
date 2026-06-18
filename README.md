@@ -161,3 +161,5 @@ Skarn runs untrusted, model-generated code by design. Read [SECURITY.md](SECURIT
 
 ```bash
 git clone https://github.com/Rani367/Skarn
+cd skarnmcp
+cargo build --release            # binary at target/release/skarn

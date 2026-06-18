@@ -370,3 +370,11 @@ pub fn hook() -> anyhow::Result<()> {
 }
 
 /// The hidden `__worker` subcommand: run one Code Mode job inside an OS sandbox,
+/// reading the job from stdin and reporting on stdout. Driven by `skarn serve`.
+pub fn worker() -> anyhow::Result<()> {
+    skarn_gateway::run_worker_job().map_err(|e| anyhow!("worker: {e}"))
+}
+
+// ---------------------------------------------------------------------------
+// helpers
+// ---------------------------------------------------------------------------

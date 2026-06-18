@@ -43,3 +43,4 @@ url = "https://api.example.com/mcp"
 auth_bearer_env = "EXAMPLE_API_TOKEN"
 headers = { X-Org = "acme" }
 
+# A server can be disabled without deleting its config:

@@ -81,3 +81,6 @@ fn init_tracing(verbose: bool) {
     use tracing_subscriber::{EnvFilter, fmt};
     let default = if verbose { "skarn=debug,info" } else { "warn" };
     let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new(default));
+    let _ = fmt()
+        .with_env_filter(filter)
+        .with_writer(std::io::stderr)

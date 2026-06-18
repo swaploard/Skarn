@@ -95,3 +95,5 @@ pub const CLAUDE_HOOK_SNIPPET: &str = r#"# Claude Code PreToolUse hook
 # idea is to prefix the agent's shell invocation with `skarn run --`, e.g.:
 #
 #     skarn run --net deny -- cargo test
+#
+# which sandboxes `cargo test`, captures its output, and returns only the

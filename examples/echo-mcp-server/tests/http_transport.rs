@@ -37,3 +37,5 @@ async fn http_transport_lists_and_calls_tools() {
     // Point the gateway's `http` transport at it.
     let mut servers = BTreeMap::new();
     servers.insert(
+        "echo".to_string(),
+        ServerConfig {

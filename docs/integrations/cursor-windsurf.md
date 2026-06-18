@@ -50,3 +50,4 @@ command = "npx"
 args = ["-y", "@modelcontextprotocol/server-postgres", "postgres://localhost/mydb"]
 ```
 
+The IDE's agent will see the compact `search` / `read_tool_docs` / `execute`
