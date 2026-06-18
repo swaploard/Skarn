@@ -52,3 +52,7 @@ A bug in one layer does not by itself grant access.
   (the dyld shared cache, Cryptexes, firmlinks) in ways that make a precise
   read allow-list unreliable across OS versions — so Skarn allows broad reads
   and *subtracts* known-secret locations. The robust confidentiality guarantee on
+  macOS is therefore **"no network egress" + "no writes outside the workspace"**,
+  not "no reads outside the workspace". The named-secret deny-list reduces, but
+  does not eliminate, read exposure. If you need strict read confinement, run on
+  Linux (Landlock allow-list) or add a microVM layer.

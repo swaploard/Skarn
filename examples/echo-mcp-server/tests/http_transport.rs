@@ -47,3 +47,5 @@ async fn http_transport_lists_and_calls_tools() {
                 headers: BTreeMap::new(),
             },
         },
+    );
+    let config = GatewayConfig {

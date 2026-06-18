@@ -20,3 +20,5 @@ const stale = (issues.items ?? issues).filter((i: any) => {
   return now - updated > NINETY_DAYS;
 });
 
+skarn.log(`scanned ${(issues.items ?? issues).length} issues, ${stale.length} stale`);
+

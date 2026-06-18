@@ -44,3 +44,7 @@ auth_bearer_env = "EXAMPLE_API_TOKEN"
 headers = { X-Org = "acme" }
 
 # A server can be disabled without deleting its config:
+[servers.experimental]
+enabled = false
+transport = "stdio"
+command = "my-mcp-server"

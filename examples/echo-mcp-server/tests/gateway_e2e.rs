@@ -144,3 +144,10 @@ fn code_mode_runs_in_the_sandboxed_worker() {
         };
         let timed_out = skarn_gateway::run_script(&cfg, limits, "while (true) {}").await;
         assert!(
+            timed_out.is_err(),
+            "infinite loop in the worker must not run forever: {timed_out:?}"
+        );
+    });
+
+    // SAFETY: paired with the set_var above.
+    unsafe { std::env::remove_var("SKARN_WORKER_BIN") };
