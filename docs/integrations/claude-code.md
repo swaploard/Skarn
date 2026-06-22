@@ -55,3 +55,4 @@ skarn run --net deny -- cargo test
 > Hook payload formats differ between agent versions. The portable idea is the
 > `skarn run -- <cmd>` prefix; adapt the wiring to your agent's hook contract.
 
+## Verifying

@@ -33,3 +33,4 @@ Streamable HTTP transport is the one client surface.
   Code Mode isolate (which only ever sees tool results).
 - A new dependency surface (reqwest + rustls) is pulled in, gated to the gateway
   crate. The transport is covered by an end-to-end test that hosts the example
+  server over HTTP on loopback.

@@ -53,3 +53,4 @@ cargo clippy -p skarn-sandbox --target x86_64-pc-windows-gnu  --all-targets -- -
 Significant design choices live in [`docs/adr/`](docs/adr/). If you're proposing
 a structural change, write one (copy the format of an existing ADR).
 
+## Code of conduct

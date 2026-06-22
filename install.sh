@@ -30,3 +30,4 @@ detect_target() {
     *) err "unsupported architecture: $arch" ;;
   esac
   echo "${arch_part}-${os_part}"
+}

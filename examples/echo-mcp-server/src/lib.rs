@@ -74,3 +74,4 @@ impl ServerHandler for EchoServer {
                 )]))
             }
             "add" => {
+                let a = args.get("a").and_then(|v| v.as_i64()).unwrap_or(0);

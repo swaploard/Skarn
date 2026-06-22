@@ -174,3 +174,9 @@ fn gateway_upstream_surface_search_and_execute() {
         let _running = server_res.expect("serve gateway");
         let client = client_res.expect("connect client");
 
+        // The upstream surface is the small, fixed meta-tool set.
+        let tools = client.list_all_tools().await.expect("list_all_tools");
+        let names: Vec<String> = tools.iter().map(|t| t.name.to_string()).collect();
+        assert!(names.contains(&"search".to_string()));
+        assert!(names.contains(&"execute".to_string()));
+        assert!(names.contains(&"read_tool_docs".to_string()));

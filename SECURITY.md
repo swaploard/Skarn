@@ -65,3 +65,6 @@ A bug in one layer does not by itself grant access.
   Windows (reported in the `RestrictionReport` notes). The Windows backend is
   exercised on Windows CI runners.
 - **The cross-process OS-sandboxed worker runs `execute` on macOS and Linux.**
+  On Windows, in-gateway `execute` uses the hermetic isolate only (a process
+  cannot move itself into an AppContainer); the Windows-parity worker is a
+  documented future step. Select the strategy with the `isolation` setting

@@ -57,3 +57,7 @@ set `passthrough = true` under `[gateway]` or pass `--passthrough` to
 
 ## Tip: enable verbose logs
 
+```json
+{ "mcpServers": { "skarn": { "command": "skarn", "args": ["serve", "--verbose"] } } }
+```
+
