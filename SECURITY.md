@@ -76,3 +76,5 @@ Skarn does **not** defend against:
 
 - CPU side-channel / speculative-execution attacks.
 - Kernel 0-days or vulnerabilities in the OS sandbox primitives themselves.
+- Multi-tenant isolation for hostile co-tenants (use microVMs/Firecracker).
+- Supply-chain compromise of the tools you connect downstream.

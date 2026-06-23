@@ -62,3 +62,4 @@ set `passthrough = true` under `[gateway]` or pass `--passthrough` to
 ```
 
 Logs go to stderr (never the MCP stdio channel). You can also set
+`RUST_LOG=skarn=debug,rmcp=info`.

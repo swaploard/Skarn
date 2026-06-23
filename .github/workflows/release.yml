@@ -108,3 +108,4 @@ jobs:
             echo "::group::publish $crate"
             cargo publish -p "$crate"
             echo "::endgroup::"
+            sleep 25

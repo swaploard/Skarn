@@ -15,3 +15,4 @@ skarn.log("first sum:", a.sum, "second sum:", b.sum);
 return {
   total: b.sum,
   greeting: greeting.echoed,
+};

@@ -68,3 +68,4 @@ async fn http_transport_lists_and_calls_tools() {
     // And a tool call round-trips over HTTP.
     let result = manager
         .call("echo", "add", r#"{"a":40,"b":2}"#)
+        .await

@@ -39,3 +39,5 @@ main() {
 
   target="$(detect_target)"
   say "detected target: $target"
+
+  latest="$(curl -fsSL "https://api.github.com/repos/${REPO}/releases/latest" \

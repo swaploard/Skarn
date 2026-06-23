@@ -204,3 +204,11 @@ fn gateway_upstream_surface_search_and_execute() {
         let exec_text = first_text(&execute);
         assert!(exec_text.contains("42"), "execute result: {exec_text}");
 
+        client.cancel().await.ok();
+    });
+}
+
+fn json_obj(v: serde_json::Value) -> serde_json::Map<String, serde_json::Value> {
+    match v {
+        serde_json::Value::Object(m) => m,
+        _ => serde_json::Map::new(),

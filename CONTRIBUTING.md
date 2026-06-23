@@ -56,3 +56,4 @@ a structural change, write one (copy the format of an existing ADR).
 ## Code of conduct
 
 Be respectful and constructive. We follow the spirit of the
+[Rust Code of Conduct](https://www.rust-lang.org/policies/code-of-conduct).

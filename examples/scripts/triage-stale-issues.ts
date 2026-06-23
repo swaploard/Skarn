@@ -29,3 +29,4 @@ if (stale.length > 0) {
     text: `${stale.length} stale bugs:\n${lines.join("\n")}`,
   });
 }
+

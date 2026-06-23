@@ -30,3 +30,4 @@ axum = "0.8"
 rmcp = { version = "1.8.0", features = [
     "server",
     "transport-io",
+    "transport-streamable-http-server",
