@@ -188,3 +188,9 @@ fn gateway_upstream_surface_search_and_execute() {
                     .with_arguments(json_obj(serde_json::json!({ "query": "add numbers" }))),
             )
             .await
+            .expect("call search");
+        let search_text = first_text(&search);
+        assert!(search_text.contains("add"), "search result: {search_text}");
+
+        // execute() should run a script that calls the downstream tool.
+        let execute = client

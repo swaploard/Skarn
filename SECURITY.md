@@ -70,3 +70,5 @@ A bug in one layer does not by itself grant access.
   documented future step. Select the strategy with the `isolation` setting
   (`auto`/`worker`/`in_process`).
 
+## Explicitly out of scope
+

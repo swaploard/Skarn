@@ -48,3 +48,4 @@ jobs:
       - uses: Swatinem/rust-cache@v2
       # Verify the publishable crates package cleanly (metadata, included files).
       # Workspace packaging lets the unpublished sibling crates satisfy each
+      # other's path+version deps; `--no-verify` skips the per-crate rebuild.

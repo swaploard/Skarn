@@ -76,3 +76,7 @@ impl ServerHandler for EchoServer {
             "add" => {
                 let a = args.get("a").and_then(|v| v.as_i64()).unwrap_or(0);
                 let b = args.get("b").and_then(|v| v.as_i64()).unwrap_or(0);
+                Ok(CallToolResult::success(vec![Content::text(
+                    serde_json::json!({ "sum": a + b }).to_string(),
+                )]))
+            }

@@ -104,3 +104,6 @@ jobs:
             echo "Set the secret in repo Settings → Secrets → Actions, then re-run this job."
             exit 0
           fi
+          for crate in skarn-common skarn-sandbox skarn-compress skarn-codemode skarn-gateway skarn; do
+            echo "::group::publish $crate"
+            cargo publish -p "$crate"

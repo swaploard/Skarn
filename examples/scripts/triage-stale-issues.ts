@@ -26,3 +26,5 @@ if (stale.length > 0) {
   const lines = stale.slice(0, 10).map((i: any) => `#${i.number} ${i.title}`);
   await skarn.server("slack").post_message({
     channel: "#triage",
+    text: `${stale.length} stale bugs:\n${lines.join("\n")}`,
+  });
