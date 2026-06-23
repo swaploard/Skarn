@@ -219,3 +219,7 @@ fn first_text(result: &rmcp::model::CallToolResult) -> String {
     result
         .content
         .iter()
+        .filter_map(|c| c.as_text().map(|t| t.text.clone()))
+        .collect::<Vec<_>>()
+        .join("\n")
+}

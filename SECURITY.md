@@ -82,3 +82,8 @@ Skarn does **not** defend against:
 
 ## Reporting a vulnerability
 
+Please report security issues privately via [GitHub Security Advisories][gsa]
+(the **Report a vulnerability** button on the repository's Security tab) rather
+than a public issue. We aim to acknowledge within 72 hours. Include a minimal
+reproduction and the output of `skarn doctor`.
+

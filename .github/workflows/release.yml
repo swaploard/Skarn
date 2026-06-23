@@ -109,3 +109,4 @@ jobs:
             cargo publish -p "$crate"
             echo "::endgroup::"
             sleep 25
+          done

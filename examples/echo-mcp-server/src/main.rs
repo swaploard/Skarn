@@ -17,3 +17,4 @@ async fn main() -> anyhow::Result<()> {
     let service = EchoServer.serve(stdio()).await?;
     service.waiting().await?;
     Ok(())
+}

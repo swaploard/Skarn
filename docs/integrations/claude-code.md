@@ -59,3 +59,5 @@ skarn run --net deny -- cargo test
 
 ```bash
 skarn doctor                       # shows the active kernel sandbox
+skarn run --stats -- cargo test    # try it directly; see the token savings
+```

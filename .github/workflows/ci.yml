@@ -50,3 +50,4 @@ jobs:
       # Workspace packaging lets the unpublished sibling crates satisfy each
       # other's path+version deps; `--no-verify` skips the per-crate rebuild.
       - name: cargo package
+        run: cargo package --workspace --no-verify --exclude echo-mcp-server

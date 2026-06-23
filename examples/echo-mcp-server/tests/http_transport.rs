@@ -71,3 +71,4 @@ async fn http_transport_lists_and_calls_tools() {
         .await
         .unwrap();
     assert!(result.contains("\"sum\":42"), "result: {result}");
+}

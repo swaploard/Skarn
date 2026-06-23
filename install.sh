@@ -45,3 +45,7 @@ main() {
   if [ -z "${latest:-}" ]; then
     say "no published release found; falling back to cargo"
     command -v cargo >/dev/null 2>&1 || err "cargo not found either"
+    exec cargo install skarn
+  fi
+
+  url="https://github.com/${REPO}/releases/download/${latest}/skarn-${target}.tar.gz"
