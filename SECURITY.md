@@ -87,3 +87,4 @@ Please report security issues privately via [GitHub Security Advisories][gsa]
 than a public issue. We aim to acknowledge within 72 hours. Include a minimal
 reproduction and the output of `skarn doctor`.
 
+[gsa]: https://github.com/Rani367/Skarn/security/advisories/new

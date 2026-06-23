@@ -49,3 +49,23 @@ main() {
   fi
 
   url="https://github.com/${REPO}/releases/download/${latest}/skarn-${target}.tar.gz"
+  say "downloading ${latest} from ${url}"
+  tmp="$(mktemp -d)"
+  trap 'rm -rf "$tmp"' EXIT
+  curl -fsSL "$url" -o "$tmp/skarn.tar.gz" || err "download failed (try: cargo install skarn)"
+  tar -xzf "$tmp/skarn.tar.gz" -C "$tmp"
+
+  mkdir -p "$INSTALL_DIR"
+  found="$(find "$tmp" -name "$BIN" -type f | head -1)"
+  [ -n "$found" ] || err "binary not found in archive"
+  install -m 0755 "$found" "$INSTALL_DIR/$BIN"
+
+  say "installed to $INSTALL_DIR/$BIN"
+  case ":$PATH:" in
+    *":$INSTALL_DIR:"*) ;;
+    *) say "add $INSTALL_DIR to your PATH to use 'skarn'." ;;
+  esac
+  "$INSTALL_DIR/$BIN" --version || true
+}
+
+main "$@"

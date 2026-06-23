@@ -172,3 +172,6 @@ Requires Rust 1.95+.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Issues and PRs welcome.
 
+## License
+
+Licensed under either of [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE) at your option.
