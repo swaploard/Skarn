@@ -1,8 +1,8 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { CRATE, INSTALL_ONELINER, PUNCHLINE, REPO, TAGLINE } from '../data/content'
+import { CARGO_INSTALL, CRATE, INSTALL_ONELINER, PILLARS, PUNCHLINE, REPO, TAGLINE } from '../data/content'
 import { TurbulentFlow } from './ui/turbulent-flow'
 import { CopyButton } from './ui/CopyButton'
-import { ArrowIcon, GitHubIcon, RustIcon } from './ui/Icons'
+import { GitHubIcon, RustIcon, ShieldIcon } from './ui/Icons'
 import './hero.css'
 
 export function Hero() {
@@ -10,11 +10,11 @@ export function Hero() {
 
   const container = {
     hidden: {},
-    show: { transition: { staggerChildren: reduce ? 0 : 0.1, delayChildren: 0.15 } },
+    show: { transition: { staggerChildren: reduce ? 0 : 0.08, delayChildren: 0.15 } },
   }
   const item = {
-    hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 24 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] } },
+    hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
   }
 
   return (
@@ -50,28 +50,23 @@ export function Hero() {
           <a className="btn btn-primary" href={REPO} target="_blank" rel="noreferrer noopener">
             <GitHubIcon width={18} height={18} /> Star on GitHub
           </a>
-          <a className="btn btn-glass" href="#code-mode">
-            See how it works <ArrowIcon width={17} height={17} />
+          <a className="hero-crate mono" href={CRATE} target="_blank" rel="noreferrer noopener">
+            <RustIcon width={16} height={16} /> {CARGO_INSTALL}
           </a>
-          <a className="hero-crate" href={CRATE} target="_blank" rel="noreferrer noopener">
-            <RustIcon width={16} height={16} /> cargo install skarn
+          <a className="hero-security mono" href={`${REPO}/blob/main/SECURITY.md`} target="_blank" rel="noreferrer noopener">
+            <ShieldIcon width={15} height={15} /> threat model
           </a>
         </motion.div>
-      </motion.div>
 
-      {!reduce && (
-        <motion.div
-          className="hero-scroll"
-          aria-hidden="true"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 1 }}
-        >
-          <span className="hero-scroll-track">
-            <span className="hero-scroll-dot" />
-          </span>
-        </motion.div>
-      )}
+        <motion.ul className="hero-pillars" variants={item}>
+          {PILLARS.map((p) => (
+            <li className="pillar" key={p.name}>
+              <span className="pillar-name mono">{p.name}</span>
+              <p className="pillar-body">{p.body}</p>
+            </li>
+          ))}
+        </motion.ul>
+      </motion.div>
     </section>
   )
 }

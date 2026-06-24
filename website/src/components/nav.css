@@ -2,21 +2,13 @@
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 50;
-  transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
-  border-bottom: 1px solid transparent;
-}
-
-.nav.is-scrolled {
-  background: rgba(11, 13, 16, 0.72);
-  backdrop-filter: blur(14px) saturate(140%);
-  border-bottom-color: var(--hairline);
 }
 
 .nav-inner {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  height: 68px;
+  height: 72px;
 }
 
 .nav-brand {
@@ -35,9 +27,9 @@
   width: 30px;
   height: 30px;
   border-radius: 9px;
-  color: var(--obsidian);
+  color: #fff;
   background: var(--heat);
-  box-shadow: 0 6px 18px -6px rgba(226, 85, 43, 0.7);
+  box-shadow: 0 6px 18px -6px rgba(255, 77, 26, 0.7);
 }
 
 .nav-word {
@@ -47,36 +39,41 @@
   -webkit-text-fill-color: transparent;
 }
 
-.nav-links {
+/* the headline numbers ---------------------------------------------------- */
+.nav-stats {
   display: flex;
-  gap: 1.7rem;
-  margin-left: auto;
-  font-size: 0.92rem;
-  color: var(--slate);
+  align-items: center;
+  gap: 1.6rem;
+  margin: 0 auto;
 }
 
-.nav-links a {
-  position: relative;
-  transition: color 0.2s;
+.nav-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
 }
 
-.nav-links a:hover {
-  color: var(--ink);
+.nav-stat-num {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  background: var(--forge);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 1.5px;
-  background: var(--malachite);
-  transition: width 0.25s var(--ease-out);
-}
-
-.nav-links a:hover::after {
-  width: 100%;
+.nav-stat-label {
+  margin-top: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .nav-gh {
@@ -85,7 +82,9 @@
   gap: 0.5rem;
   padding: 0.5rem 0.9rem;
   border-radius: 9px;
-  border: 1px solid var(--hairline-strong);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(8, 8, 12, 0.4);
+  backdrop-filter: blur(8px);
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--ink);
@@ -94,11 +93,37 @@
 
 .nav-gh:hover {
   border-color: var(--malachite);
-  background: rgba(47, 212, 182, 0.06);
+  background: rgba(20, 211, 232, 0.08);
 }
 
-@media (max-width: 760px) {
-  .nav-links {
-    display: none;
+/* on narrow screens the brand + GitHub share the top row, numbers wrap under */
+@media (max-width: 720px) {
+  .nav-inner {
+    height: auto;
+    flex-wrap: wrap;
+    padding-top: 0.9rem;
+    padding-bottom: 0.6rem;
+    column-gap: 1rem;
+    row-gap: 0.6rem;
+  }
+  .nav-brand {
+    order: 1;
+  }
+  .nav-gh {
+    order: 2;
+    margin-left: auto;
+  }
+  .nav-stats {
+    order: 3;
+    width: 100%;
+    margin: 0;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .nav-stat {
+    align-items: flex-start;
+  }
+  .nav-stat-num {
+    font-size: 1.15rem;
   }
 }

@@ -60,13 +60,11 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+html,
+body {
+  height: 100%;
 }
 
 body {
@@ -77,7 +75,8 @@ body {
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  /* single-screen site — no scrolling */
+  overflow: hidden;
 }
 
 /* The deep, slow molten glow that lives behind the whole page. */
