@@ -12,7 +12,6 @@
 
 *Cut your agent's API bill while physically stopping it from wiping your disk or exfiltrating your secrets.*
 
-
 <img src="https://raw.githubusercontent.com/Rani367/Skarn/main/docs/demo.gif" alt="skarn doctor reports the active kernel sandbox, then skarn run compresses 14k tokens of shell output down to about 700 while sandboxed" width="820">
 
 </div>

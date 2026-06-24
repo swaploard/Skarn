@@ -11,7 +11,7 @@
 mod commands;
 mod scaffold;
 
-use clap::{CommandFactory, Parser, Subcommand};
+use clap::{Parser, Subcommand};
 
 /// Skarn: a fast, OS-sandboxed MCP gateway with Code Mode and token compression.
 #[derive(Parser, Debug)]
@@ -89,4 +89,31 @@ fn init_tracing(verbose: bool) {
         .with_writer(std::io::stderr)
         .with_target(false)
         .try_init();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use clap::CommandFactory;
+    use clap_complete::{Shell, generate};
+
+    #[test]
+    fn cli_definition_is_valid() {
+        Cli::command().debug_assert();
+    }
+
+    #[test]
+    fn completion_scripts_generate_for_all_shells() {
+        for shell in [
+            Shell::Bash,
+            Shell::Zsh,
+            Shell::Fish,
+            Shell::PowerShell,
+            Shell::Elvish,
+        ] {
+            let mut buf = Vec::new();
+            generate(shell, &mut Cli::command(), "skarn", &mut buf);
+            assert!(!buf.is_empty(), "empty completion script for {shell:?}");
+        }
+    }
 }
