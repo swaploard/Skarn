@@ -12,7 +12,6 @@
 
 *Cut your agent's API bill while physically stopping it from wiping your disk or exfiltrating your secrets.*
 
-
 <img src="https://raw.githubusercontent.com/Rani367/Skarn/main/docs/demo.gif" alt="skarn doctor reports the active kernel sandbox, then skarn run compresses 14k tokens of shell output down to about 700 while sandboxed" width="820">
 
 </div>
@@ -80,6 +79,10 @@ skarn exec --code 'return (await skarn.listTools()).length'
 
 # 5. (Optional) compress + sandbox the agent's shell commands directly:
 skarn run --net deny -- cargo test
+
+# 6. (Optional) install shell completion (bash/zsh/fish/powershell):
+#    skarn completions zsh > ~/.zfunc/_skarn
+#    Then add `fpath+=~/.zfunc` and `compinit` to your .zshrc
 ```
 
 Downstream servers can be local (`transport = "stdio"`) or remote

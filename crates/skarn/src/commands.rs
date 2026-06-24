@@ -4,7 +4,8 @@ use std::path::PathBuf;
 use std::time::Duration;
 
 use anyhow::{Context, anyhow};
-use clap::{Args, ValueEnum};
+use clap::{Args, CommandFactory, ValueEnum};
+use clap_complete::Shell;
 use skarn_codemode::ExecLimits;
 use skarn_common::CommandSpec;
 use skarn_compress::Compressor;
@@ -69,6 +70,13 @@ pub struct InitArgs {
     /// Overwrite an existing skarn.toml.
     #[arg(long)]
     force: bool,
+}
+
+#[derive(Args, Debug)]
+pub struct CompletionsArgs {
+    /// The shell to generate a completion script for (bash, zsh, fish, powershell).
+    #[arg(value_enum)]
+    pub shell: Shell,
 }
 
 #[derive(Args, Debug)]
@@ -366,6 +374,12 @@ pub fn init(args: InitArgs) -> anyhow::Result<()> {
 
 pub fn hook() -> anyhow::Result<()> {
     println!("{}", crate::scaffold::CLAUDE_HOOK_SNIPPET);
+    Ok(())
+}
+
+pub fn completions(args: CompletionsArgs) -> anyhow::Result<()> {
+    let mut cmd = crate::Cli::command();
+    clap_complete::generate(args.shell, &mut cmd, "skarn", &mut std::io::stdout());
     Ok(())
 }
 

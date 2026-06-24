@@ -16,7 +16,7 @@ use clap::{Parser, Subcommand};
 /// Skarn: a fast, OS-sandboxed MCP gateway with Code Mode and token compression.
 #[derive(Parser, Debug)]
 #[command(name = "skarn", version, about, long_about = None)]
-struct Cli {
+pub struct Cli {
     #[command(subcommand)]
     command: Command,
 
@@ -39,6 +39,8 @@ enum Command {
     Init(commands::InitArgs),
     /// Print a Claude Code PreToolUse hook that routes shell commands through skarn.
     Hook,
+    /// Print a shell completion script for the given shell.
+    Completions(commands::CompletionsArgs),
     /// Internal: the OS-sandboxed Code Mode worker (driven by `skarn serve`).
     /// Reads its job from stdin; not intended for direct use.
     #[command(name = "__worker", hide = true)]
@@ -57,6 +59,7 @@ fn main() -> anyhow::Result<()> {
         Command::Init(args) => commands::init(args),
         Command::Hook => commands::hook(),
         Command::Worker => commands::worker(),
+        Command::Completions(args) => commands::completions(args),
         // Async commands run on a normal multi-threaded runtime; the gateway
         // confines the `!Send` Code Mode isolate to its own thread internally.
         Command::Serve(args) => block_on(commands::serve(args)),
@@ -86,4 +89,31 @@ fn init_tracing(verbose: bool) {
         .with_writer(std::io::stderr)
         .with_target(false)
         .try_init();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use clap::CommandFactory;
+    use clap_complete::{Shell, generate};
+
+    #[test]
+    fn cli_definition_is_valid() {
+        Cli::command().debug_assert();
+    }
+
+    #[test]
+    fn completion_scripts_generate_for_all_shells() {
+        for shell in [
+            Shell::Bash,
+            Shell::Zsh,
+            Shell::Fish,
+            Shell::PowerShell,
+            Shell::Elvish,
+        ] {
+            let mut buf = Vec::new();
+            generate(shell, &mut Cli::command(), "skarn", &mut buf);
+            assert!(!buf.is_empty(), "empty completion script for {shell:?}");
+        }
+    }
 }
