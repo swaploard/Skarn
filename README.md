@@ -12,7 +12,7 @@
 
 *Cut your agent's API bill while physically stopping it from wiping your disk or exfiltrating your secrets.*
 
-**🌐 [rani367.github.io/Skarn](https://rani367.github.io/Skarn/)** — interactive overview, live token-compression demo, and one-line install.
+**🌐 [rani367.github.io/Skarn](https://rani367.github.io/Skarn/)** — a single-screen animated overview with the one-line install.
 
 <img src="https://raw.githubusercontent.com/Rani367/Skarn/main/docs/demo.gif" alt="skarn doctor reports the active kernel sandbox, then skarn run compresses 14k tokens of shell output down to about 700 while sandboxed" width="820">
 
@@ -183,9 +183,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Issues and PRs welcome.
 
 ## Website
 
-The landing page lives at **[rani367.github.io/Skarn](https://rani367.github.io/Skarn/)** — an
-animated overview with an interactive token-compression demo. It also serves the installer, so the
-one-liner above (`curl -fsSL https://rani367.github.io/Skarn/install.sh | sh`) pulls from there.
+The landing page lives at **[rani367.github.io/Skarn](https://rani367.github.io/Skarn/)** — a
+single-screen animated overview (a WebGL turbulent-flow hero with the headline numbers and one-line
+install). It also serves the installer, so the one-liner above
+(`curl -fsSL https://rani367.github.io/Skarn/install.sh | sh`) pulls from there.
 
 The site source is in [`website/`](website) (Vite + React) and deploys to GitHub Pages automatically
 via [`.github/workflows/pages.yml`](.github/workflows/pages.yml) on every push that touches it.
