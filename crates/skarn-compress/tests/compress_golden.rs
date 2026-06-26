@@ -11,8 +11,9 @@ fn fixture_path(name: &str) -> String {
 }
 
 fn read_fixture(name: &str) -> String {
-    std::fs::read_to_string(fixture_path(name))
-        .unwrap_or_else(|e| panic!("failed to read fixture {name}: {e}"))
+    let s = std::fs::read_to_string(fixture_path(name))
+        .unwrap_or_else(|e| panic!("failed to read fixture {name}: {e}"));
+    s.replace("\r\n", "\n")
 }
 
 fn run_golden(profile_name: &str, fixture_stem: &str, extra_args: Vec<&str>) {
