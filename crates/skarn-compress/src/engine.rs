@@ -61,10 +61,11 @@ impl CompiledProfile {
         let mut lines: Vec<String> = Vec::with_capacity(original_lines);
         for raw_line in text.split('\n') {
             // A progress bar redraws with \r; keep only the final frame.
+            let line = raw_line.trim_end_matches('\r');
             let line = if self.collapse_carriage_returns {
-                raw_line.rsplit('\r').next().unwrap_or(raw_line)
+                line.rsplit('\r').next().unwrap_or(line)
             } else {
-                raw_line.trim_end_matches('\r')
+                line
             };
             let line = if self.strip_ansi {
                 let stripped = strip_ansi_escapes::strip(line.as_bytes());
